@@ -6,6 +6,7 @@ FROM ros:humble-ros-core-jammy
 RUN apt-get update && apt-get install --no-install-recommends -y \
     build-essential \
     git \
+    nano \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
     python3-rosdep \
@@ -29,4 +30,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-ros-base=0.10.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /home/ros && cd /home/ros && git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+RUN mkdir --p /ros2/lib && cd /ros2/lib && git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
