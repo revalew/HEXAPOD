@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  ros2:
+    build: .
+#    network_mode: "host"
+    # restart: no
+#    ports: 
+#      - "3332:3332"
+#      - "11811:11811" # node discoverer
+#      - "32650:32650"
+#      - "32651:32651"
+#      - "32662:32662"
+#      - "32663:32663"
+    volumes:
+      - /home/makspi/ros2:/home/ros
+#    devices:
+#      - /dev/ttyUSB0:/dev/ttyUSB0
+    tty: true
