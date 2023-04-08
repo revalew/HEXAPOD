@@ -30,4 +30,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-ros-base=0.10.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir --p /ros2/lib && cd /ros2/lib && git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+# create the directory and clone the DynamixelSDK into it
+WORKDIR /home/ros2/lib
+RUN git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+
+# enable ROS functionality on every tty instance => add this code to the end of bash tty
+RUN source /opt/ros/humble/setup.bash >> /root/.bashrc
