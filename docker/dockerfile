@@ -6,7 +6,8 @@ FROM ros:humble-ros-core-jammy
 RUN apt-get update && apt-get install --no-install-recommends -y \
     build-essential \
     git \
-    nano \
+    # nano \
+    python3-pip \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
     python3-rosdep \
@@ -31,8 +32,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # create the directory and clone the DynamixelSDK into it
-WORKDIR /home/ros2/lib
+WORKDIR /home/ros/lib
 RUN git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 
+# resolves this issue: "1 package had stderr output: my_robot_controller" when we are building the new package
+RUN pip install setuptools==58.2.0
+
 # enable ROS functionality on every tty instance => add this code to the end of bash tty
-RUN source /opt/ros/humble/setup.bash >> /root/.bashrc
+# ros2 command with all of its functionality
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+# colcon (building workspace command) autocompletion
+RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /root/.bashrc
+# setup the correct node source for a custom workspace
+RUN echo "source /home/ros/ros2_ws/install/setup.bash" >> /root/.bashrc

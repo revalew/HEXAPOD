@@ -1,0 +1,116 @@
+-------------------------------------------------------------------------------------------------------------
+ROS2 + Docker BASICS:
+
+docker-compose up -d // start from compose file
+docker ps // list all running containers
+docker exec -it docker_ros2_1 bash // launch interactive terminal inside the running container
+docker stop docker_ros2_1 // stop the running container
+
+
+-------------------------------------------------------------------------------------------------------------
+TUTORIAL Z ROS2:
+
+https://www.youtube.com/playlist?list=PLLSegLrePWgJudpPUof4-nVFHGkB62Izy
+
+
+-------------------------------------------------------------------------------------------------------------
+DOCKER install process (Raspberry / Linux):
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+chmod +x get-docker.sh 
+sudo apt-get purge docker-ce docker-ce-cli containerd.io -y
+./get-docker.sh
+sudo usermod -aG docker pi (pi is the user name)
+sudo systemctl unmask docker
+sudo chmod 666 /var/run/docker.sock
+pip3 -v install docker-compose
+sudo systemctl start docker
+sudo init 6
+
+
+-------------------------------------------------------------------------------------------------------------
+Docker building the container:
+
+get the dockerfile & docker-compose.yml (whole repo suggested)
+cd HEXAPOD/docker
+docker build -t ros2 . (ros2 is the image name of the file we created)
+
+
+-------------------------------------------------------------------------------------------------------------
+Running & connecting to the container:
+
+docker-compose up -d (running the container, can check with "docker ps")
+docker exec -it docker_ros2_1 bash (or docker-ros2-1, can check with that "docker ps" command)
+
+
+-------------------------------------------------------------------------------------------------------------
+Running ROS:
+
+if the "ros2" command does not work we have to specify the source with "source /opt/ros/humble/setup.bash" (should be automatic tho)
+
+
+-------------------------------------------------------------------------------------------------------------
+ROS Workspace:
+
+cd /ros2
+mkdir first_app
+cd first_app
+mkdir src
+colcon build
+lssource install/setup.bash
+chmod 777 -R ../first_app
+# now create the .py script => whatever You please
+colcon build
+python3 src/myPythonScript.py
+
+
+-------------------------------------------------------------------------------------------------------------
+Create Custom ROS2 pkg:
+
+cd ros2_ws/src
+ros2 pkg create my_robot_controller --build-type ament_python --dependencies rclpy
+cd ros2_ws (cd ..)
+colcon build
+    '-> if(1 package had stderr output: my_robot_controller){
+                sudo apt update && sudo apt install pip -y
+                // pip3 list | grep setuptools
+                // setuptools == 59.6.0 so we have to downgrade
+                pip install setuptools==58.2.0
+          }
+colcon build (again, but should work this time)
+chmod 777 -R ros2_ws/ (to make shure we can edit files from within the VSC)
+
+
+-------------------------------------------------------------------------------------------------------------
+Create Custom ROS2 Node:
+
+cd ros2_ws/src/my_robot_controller/my_robot_controller/
+chmod +x my_first_node.py
+./my_first_node.py
+
+
+-------------------------------------------------------------------------------------------------------------
+Install Custom ROS2 Node:
+
+cd ros2_ws/src/my_robot_controller/
+nano setup.py 
+    entry_points={
+        'console_scripts': [
+            "test_node = my_robot_controller.my_first_node:main"
+        ],
+    },
+cd ros2_ws
+colcon build
+source ~/.bashrc
+ros2 run my_robot_controller test_node
+
+// reflect all the changes in real time without building it on every code change
+colcon build --symlink-install
+source ~/.bashrc
+
+
+-------------------------------------------------------------------------------------------------------------
+ROS2 Node commands:
+
+ros2 node list
+ros2 node info /first_node
