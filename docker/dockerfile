@@ -45,3 +45,5 @@ RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /root/.bashrc
 # setup the correct node source for a custom workspace
 RUN echo "source /home/ros/ros2_ws/install/setup.bash" >> /root/.bashrc
+# go to a project directory
+# RUN echo "cd /home/ros/" >> /root/.bashrc
