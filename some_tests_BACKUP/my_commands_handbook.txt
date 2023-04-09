@@ -14,6 +14,13 @@ TUTORIAL ABOUT ROS2:
 
 
 -------------------------------------------------------------------------------------------------------------
+CHANGE .git OWNERSHIP (if it requires sudo to run):
+
+	sudo chown -R <owner>:<group> .git
+	sudo chmod -R 775 .git
+	
+	(chown might be sufficient)
+-------------------------------------------------------------------------------------------------------------
 DOCKER install process (Raspberry / Linux):
 
 	curl -fsSL https://get.docker.com -o get-docker.sh
@@ -141,3 +148,41 @@ ROS2 Subscriber with Python:
 
 	we have to know the name of the topic which we want to listen to and the msg type we are going to listen to
 	i.e. /turtle1/pose as a topic and turtlesim/msg/Pose as a type
+
+
+-------------------------------------------------------------------------------------------------------------	
+ROS2 Closed Loop System with a Publisher and a Subscriber:
+
+	create both subscriber and publisher inside of a single node
+
+
+-------------------------------------------------------------------------------------------------------------	
+ROS2 Services:
+
+	Enables the client-server like functionality => 
+		the closed loop system makes it possible so that we can send and read messages between 2 nodes BUT we can not do a request and response SO... we use the ROS2 SERVICE for that.
+		
+	Using rqt_graph tool you can see nodes and topics but you CAN NOT see services!
+		ros2 service list
+		ros2 service type /add_two_ints
+		ros2 interface show example_interfaces/srv/AddTwoInts
+		
+
+	We are using services mainly for 2 kinds of requests:
+	- compute the data and get the response
+		ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{'a': 2, 'b': 5}"
+
+	- change of settings of our robot
+		ros2 service call /turtle1/set_pen turtlesim/srv/SetPen "{'r': 255, 'g': 0, 'b': 0, 'width': 3, 'off': 0}"
+		
+	TOPICS => send data streams between 2 points without expecting the answer
+	SERVICE => data exchange requires interaction like changing the setting or doing some computational work where the answer is necessary
+	
+
+-------------------------------------------------------------------------------------------------------------
+Writing a ROS2 Service Client with Python:
+
+	We should not overload the service with 10000 requests per second!
+	We can check the frequency of the topic publishing:
+		ros2 topic hz /turtle1/pose
+		to try and limit the service calls based on the topic subscription.
