@@ -1,6 +1,6 @@
 # HEXAPOD Robot 🤖🕷
 <p align='center'>
-<img src="./some_tests_BACKUP/my_robot_controller/hexapod.png" width="375" height="260" />
+<img src="./img/hexapod.png" width="375" height="260" />
 </p>
 
 ## About:
@@ -24,5 +24,12 @@ We created a closed loop control system utilizing:
 - Turtlesim demo.
 
 <p align='center'>
-<img src="./some_tests_BACKUP/my_robot_controller/turtle.png" width="375" height="260" />
+<img src="./img/turtle.png" width="375" height="260" />
+</p>
+
+### Successful connection:
+We managed to connect the servos and made sure that all 18 of them were working! 🥳
+
+<p align='center'>
+<img src="./img/first_move.gif" width="375" height="260" />
 </p>
