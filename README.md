@@ -33,3 +33,10 @@ We managed to connect the servos and made sure that all 18 of them were working!
 <p align='center'>
 <img src="./img/first_move.gif" width="375" height="260" />
 </p>
+
+### First Standu up:
+After a few attempts, hexapod stand up easily, still a lot of work to do, but we are ready to move prototype Python scripts to ROS2 to control all servos simultaneously
+
+<p align='center'>
+<img src="./img/hexapod_standup.gif" width="375" height="260" />
+</p>
