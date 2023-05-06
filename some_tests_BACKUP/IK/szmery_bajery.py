@@ -14,7 +14,7 @@ TIBIA_LENGTH = 125
 
 # control inputs
 pos_x = 0
-pos_y = 0
+pos_y = 70
 pos_z = 0
 rot_x = 0
 rot_y = 0
@@ -297,7 +297,7 @@ tibia_servo_value_3 = tibia_servo_angle_3 / 300 * 1023
 # --------------------------------------------- ##
 
 # leg 4
-coxa_angle_4 = ik_coxa_angle_4 - 210
+coxa_angle_4 = ik_coxa_angle_4 - 270
 femur_angle_4 = ik_femur_angle_4
 tibia_angle_4 = ik_tibia_angle_4
 
@@ -337,7 +337,7 @@ tibia_servo_value_5 = tibia_servo_angle_5 / 300 * 1023
 # --------------------------------------------- ##
 
 # leg 6
-coxa_angle_6 = ik_coxa_angle_6 - 150
+coxa_angle_6 = ik_coxa_angle_6 - 90
 femur_angle_6 = ik_femur_angle_6
 tibia_angle_6 = ik_tibia_angle_6
 
@@ -382,7 +382,7 @@ else:
     quit()
 # ------------------------------------------------------------
 
-DXL_ID = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+DXL_ID = [1,2,3,4,5,6,7,8,9,16,17,18,13,14,15,10,11,12]
 print(type(DXL_ID[0]))
 
 

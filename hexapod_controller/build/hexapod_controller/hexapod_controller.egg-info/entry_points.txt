@@ -1,0 +1,3 @@
+[console_scripts]
+body_IK_node = hexapod_controller.body:main
+

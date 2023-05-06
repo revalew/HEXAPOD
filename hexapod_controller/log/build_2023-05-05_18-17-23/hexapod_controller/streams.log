@@ -1,0 +1,23 @@
+[2.613s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build --no-deps install_data
+[3.587s] running develop
+[4.020s] running egg_info
+[4.021s] creating hexapod_controller.egg-info
+[4.021s] writing hexapod_controller.egg-info/PKG-INFO
+[4.022s] writing dependency_links to hexapod_controller.egg-info/dependency_links.txt
+[4.023s] writing entry points to hexapod_controller.egg-info/entry_points.txt
+[4.024s] writing requirements to hexapod_controller.egg-info/requires.txt
+[4.024s] writing top-level names to hexapod_controller.egg-info/top_level.txt
+[4.025s] writing manifest file 'hexapod_controller.egg-info/SOURCES.txt'
+[4.031s] reading manifest file 'hexapod_controller.egg-info/SOURCES.txt'
+[4.034s] writing manifest file 'hexapod_controller.egg-info/SOURCES.txt'
+[4.040s] running build_ext
+[4.041s] Creating /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod-controller.egg-link (link to .)
+[4.044s] 
+[4.045s] Installed /home/ros/hexapod_controller/build/hexapod_controller
+[4.045s] running install_data
+[4.046s] creating /home/ros/hexapod_controller/install/hexapod_controller/share/ament_index
+[4.046s] creating /home/ros/hexapod_controller/install/hexapod_controller/share/ament_index/resource_index
+[4.047s] creating /home/ros/hexapod_controller/install/hexapod_controller/share/ament_index/resource_index/packages
+[4.047s] copying resource/hexapod_controller -> /home/ros/hexapod_controller/install/hexapod_controller/share/ament_index/resource_index/packages
+[4.048s] copying package.xml -> /home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller
+[4.184s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller' returned '0': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build --no-deps install_data

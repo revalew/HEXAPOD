@@ -64,7 +64,8 @@ ROS Workspace:
 	cd first_app
 	mkdir src
 	colcon build
-	lssource install/setup.bash
+	ls
+	source install/setup.bash
 	chmod 777 -R ../first_app
 	# now create the .py script => whatever You please
 	colcon build

@@ -7,8 +7,6 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
     # INPUTS - desire positions in 6 def of freedom
     # OUTPUT - angle for each motor ex. leg_value[1][2] is a tibia angle for seccond leg
 
-    sleep_time = 0.005
-
 
     ## --------------------------------------------- ##
     # DIRECT INPUTS - STEP 1
@@ -21,6 +19,7 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
     pos_x = pos_x_input
     pos_y = pos_y_input
     pos_z = pos_z_input
+    
     rot_x = rot_x_input
     rot_y = rot_y_input
     rot_z = rot_z_input
@@ -90,7 +89,7 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
     body_ik_z = [0,0,0,0,0,0]
 
     # body ik
-    for leg in range(0, 5, 1):
+    for leg in range(0, 6, 1):
         total_y[leg] = feet_pos_y[leg] + BODY_CENTER_OFFSET_Y[leg] + pos_y
         total_x[leg] = feet_pos_x[leg] + BODY_CENTER_OFFSET_X[leg] + pos_x
         dist_body_center_feet[leg] = mh.sqrt((total_y[leg]**2) + (total_x[leg]**2))
@@ -120,7 +119,7 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
     ik_coxa_angle = [0,0,0,0,0,0]
 
     # leg ik
-    for leg in range(0, 5, 1):
+    for leg in range(0, 6, 1):
         new_pos_x[leg] = pos_x + feet_pos_x[leg] + body_ik_x[leg]
         new_pos_y[leg] = pos_y + feet_pos_y[leg] + body_ik_y[leg]
         new_pos_z[leg] = pos_z + feet_pos_z[leg] + body_ik_z[leg]
@@ -150,22 +149,22 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
     tibia_servo_value = [0,0,0,0,0,0]
 
     # specyfic leg rotation angle
-    leg_rot_angle = [-90, 0 , 90, -210, -180, -150]
+    leg_rot_angle = [-90, 0 , 90, -270, -180, -90]
 
     # specyfic leg angle inverse, if "-1" that means it rotates servo angle in for loop
     # you can simply give all ones here, and rotate phisical motor
     coxa_angle_inverse_flag = [1, 1, 1, 1, 1, 1]
-    femur_angle_inverse_flag = [1, 1, 1, 1, 1, 1]
-    tibia_angle_inverse_flag = [1, 1, 1, 1, 1, 1]
+    femur_angle_inverse_flag = [-1, -1, -1, 1, 1, 1]
+    tibia_angle_inverse_flag = [1, 1, 1, -1, -1, -1]
 
     # return array init
     leg_values = [[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0]]
 
     # leg angles
-    for leg in range(0, 5, 1):
+    for leg in range(0, 6, 1):
         
         # leg inverse kinematics angles
-        coxa_angle[leg] = ik_coxa_angle[leg] - leg_rot_angle[leg]
+        coxa_angle[leg] = ik_coxa_angle[leg] + leg_rot_angle[leg]
         femur_angle[leg] = ik_femur_angle[leg]
         tibia_angle[leg] = ik_tibia_angle[leg]
 
@@ -180,10 +179,10 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
         tibia_servo_value[leg] = tibia_servo_angle[leg] / 300 * 1023
 
         # saves values for return
-        leg_values[leg][0] = coxa_servo_value[leg];
-        leg_values[leg][1] = femur_servo_value[leg];
-        leg_values[leg][2] = tibia_servo_value[leg];
+        leg_values[leg][0] = int(coxa_servo_value[leg])
+        leg_values[leg][1] = int(femur_servo_value[leg])
+        leg_values[leg][2] = int(tibia_servo_value[leg])
 
 
     ## --------------------------------------------- ##
-    return (leg_values)
+    return leg_values
