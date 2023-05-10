@@ -9,6 +9,7 @@
 
   <depend>rclpy</depend>
   <depend>math</depend>
+  <depend>hexapod_controller_interfaces</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

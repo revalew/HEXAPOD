@@ -1,0 +1,4 @@
+[31mCMake Error at CMakeLists.txt:16 (rosidl_export_dependencies):
+  Unknown CMake command "rosidl_export_dependencies".
+
+[0m

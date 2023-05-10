@@ -6,17 +6,21 @@ from rclpy.node import Node
 # from com_settings import *
 from inverse_kinematics import body_ik
 
+# importing our new message type
+from hexapod_controller_interfaces.msg import ServoPositionValues
+
 # impoort the msg type
 # from turtlesim.msg import Pose
 
-class AxlePoses():
-    '''
-    MESSAGE TYPE
-    '''
-    ID_pose = [0, ..., 18]
-    def __init__(self):
-        for i in self.ID_pose:
-            i = 512
+# THIS WAS SO WRONG I CANT EVEN LMFAO
+# class AxlePoses():
+#     '''
+#     MESSAGE TYPE
+#     '''
+#     ID_pose = [0, ..., 18]
+#     def __init__(self):
+#         for i in self.ID_pose:
+#             i = 512
 
 
 class BodyIKNode(Node):
