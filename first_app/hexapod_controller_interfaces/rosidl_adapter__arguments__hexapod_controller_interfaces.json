@@ -1,0 +1,6 @@
+{
+  "package_name": "hexapod_controller_interfaces",
+  "non_idl_tuples": [
+    "/home/ros/hexapod_controller/src/hexapod_controller_interfaces:msg/ServoPositionValues.msg"
+  ]
+}

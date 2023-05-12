@@ -1,0 +1,22 @@
+[1.885s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller': AMENT_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces CMAKE_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces LD_LIBRARY_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages /usr/bin/python3 setup.py develop --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build --no-deps install_data
+[2.612s] running develop
+[2.617s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.618s]   warnings.warn(
+[2.623s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.624s]   warnings.warn(
+[2.831s] running egg_info
+[2.832s] writing hexapod_controller.egg-info/PKG-INFO
+[2.832s] writing dependency_links to hexapod_controller.egg-info/dependency_links.txt
+[2.833s] writing entry points to hexapod_controller.egg-info/entry_points.txt
+[2.834s] writing requirements to hexapod_controller.egg-info/requires.txt
+[2.835s] writing top-level names to hexapod_controller.egg-info/top_level.txt
+[2.842s] reading manifest file 'hexapod_controller.egg-info/SOURCES.txt'
+[2.846s] writing manifest file 'hexapod_controller.egg-info/SOURCES.txt'
+[2.852s] running build_ext
+[2.852s] Creating /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod-controller.egg-link (link to .)
+[2.857s] Installing body_IK_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[2.859s] 
+[2.859s] Installed /home/ros/hexapod_controller/build/hexapod_controller
+[2.860s] running install_data
+[2.860s] copying package.xml -> /home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller
+[2.978s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller' returned '0': AMENT_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces CMAKE_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces LD_LIBRARY_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages /usr/bin/python3 setup.py develop --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build --no-deps install_data

@@ -9,10 +9,29 @@ setup.py
 ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt
 ../../build/hexapod_controller/hexapod_controller.egg-info/zip-safe
 hexapod_controller/__init__.py
+hexapod_controller/body copy 2.py
+hexapod_controller/body copy.py
 hexapod_controller/body.py
 hexapod_controller/com_settings.py
 hexapod_controller/inverse_kinematics.py
-hexapod_controller/inverse_kinematics2.py
+hexapod_controller/servo_1.py
+hexapod_controller/servo_10.py
+hexapod_controller/servo_11.py
+hexapod_controller/servo_12.py
+hexapod_controller/servo_13.py
+hexapod_controller/servo_14.py
+hexapod_controller/servo_15.py
+hexapod_controller/servo_16.py
+hexapod_controller/servo_17.py
+hexapod_controller/servo_18.py
+hexapod_controller/servo_2.py
+hexapod_controller/servo_3.py
+hexapod_controller/servo_4.py
+hexapod_controller/servo_5.py
+hexapod_controller/servo_6.py
+hexapod_controller/servo_7.py
+hexapod_controller/servo_8.py
+hexapod_controller/servo_9.py
 hexapod_controller.egg-info/PKG-INFO
 hexapod_controller.egg-info/SOURCES.txt
 hexapod_controller.egg-info/dependency_links.txt
@@ -20,4 +39,5 @@ hexapod_controller.egg-info/entry_points.txt
 hexapod_controller.egg-info/requires.txt
 hexapod_controller.egg-info/top_level.txt
 hexapod_controller.egg-info/zip-safe
+launch/hexapod.launch.py
 resource/hexapod_controller

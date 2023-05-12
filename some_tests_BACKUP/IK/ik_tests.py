@@ -2,7 +2,7 @@ from com_settings import *
 from inverse_kinematics import body_ik
 
 sleep_time = 0.0
-leg_values = body_ik(0, 0, 0, 0, 0, 0)
+leg_values = body_ik(0, 0, 30, 0, 0, 0)
 
 # should be ??? idk yet
 print(leg_values)
@@ -238,10 +238,6 @@ time.sleep(sleep_time)
 # )
 # time.sleep(sleep_time)
 # ---------------------------------------------------------------
-
-
-
-
 
 # DISABLE =================
 # for i in range(1, 19):

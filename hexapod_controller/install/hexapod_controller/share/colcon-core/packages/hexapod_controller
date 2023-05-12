@@ -1,1 +1,1 @@
-hexapod_controller_interfaces:math:rclpy
+dynamixel_sdk:hexapod_controller_interfaces:math:rclpy:threading

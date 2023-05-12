@@ -1,5 +1,4 @@
 import math as mh
-from com_settings import *
 
 def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot_z_input):
     # INFO - function calculate a body inverse kinematics

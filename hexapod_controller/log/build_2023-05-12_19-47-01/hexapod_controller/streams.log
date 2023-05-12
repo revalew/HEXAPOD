@@ -1,0 +1,37 @@
+[2.464s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --uninstall --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build
+[3.621s] running develop
+[4.080s] Removing /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod-controller.egg-link (link to .)
+[4.249s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller' returned '0': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --uninstall --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build
+[4.263s] Invoking command in '/home/ros/hexapod_controller/src/hexapod_controller': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/ros/hexapod_controller/build/hexapod_controller/build install --record /home/ros/hexapod_controller/build/hexapod_controller/install.log --single-version-externally-managed
+[5.180s] running egg_info
+[5.183s] writing ../../build/hexapod_controller/hexapod_controller.egg-info/PKG-INFO
+[5.185s] writing dependency_links to ../../build/hexapod_controller/hexapod_controller.egg-info/dependency_links.txt
+[5.185s] writing entry points to ../../build/hexapod_controller/hexapod_controller.egg-info/entry_points.txt
+[5.186s] writing requirements to ../../build/hexapod_controller/hexapod_controller.egg-info/requires.txt
+[5.187s] writing top-level names to ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt
+[5.194s] reading manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[5.199s] writing manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[5.200s] running build
+[5.201s] running build_py
+[5.203s] running install
+[5.205s] running install_lib
+[5.208s] creating /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[5.208s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/body.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[5.209s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/inverse_kinematics.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[5.215s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/body copy.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[5.216s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/__init__.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[5.216s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/body copy 2.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[5.217s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/com_settings.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[5.217s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body.py to body.cpython-310.pyc
+[5.220s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/inverse_kinematics.py to inverse_kinematics.cpython-310.pyc
+[5.226s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body copy.py to body copy.cpython-310.pyc
+[5.230s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__init__.py to __init__.cpython-310.pyc
+[5.231s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body copy 2.py to body copy 2.cpython-310.pyc
+[5.239s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/com_settings.py to com_settings.cpython-310.pyc
+[5.241s] running install_data
+[5.243s] running install_egg_info
+[5.250s] Copying ../../build/hexapod_controller/hexapod_controller.egg-info to /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info
+[5.259s] running install_scripts
+[5.338s] Installing body_IK_node = hexapod_controller.body:mainservo_1_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.342s] writing list of installed files to '/home/ros/hexapod_controller/build/hexapod_controller/install.log'
+[5.480s] Invoked command in '/home/ros/hexapod_controller/src/hexapod_controller' returned '0': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/ros/hexapod_controller/build/hexapod_controller/build install --record /home/ros/hexapod_controller/build/hexapod_controller/install.log --single-version-externally-managed

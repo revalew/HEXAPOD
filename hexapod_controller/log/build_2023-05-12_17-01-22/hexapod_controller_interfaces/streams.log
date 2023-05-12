@@ -1,0 +1,9 @@
+[0.070s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
+[0.310s] failed to create symbolic link '/home/ros/hexapod_controller/build/hexapod_controller_interfaces/ament_cmake_python/hexapod_controller_interfaces/hexapod_controller_interfaces' because existing path cannot be removed: Is a directory
+[0.311s] gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces] Error 1
+[0.313s] gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/all] Error 2
+[0.313s] [  3%] Built target hexapod_controller_interfaces__cpp
+[0.314s] gmake[1]: *** Waiting for unfinished jobs....
+[0.322s] [ 12%] Built target hexapod_controller_interfaces__rosidl_generator_c
+[0.326s] gmake: *** [Makefile:146: all] Error 2
+[0.334s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4

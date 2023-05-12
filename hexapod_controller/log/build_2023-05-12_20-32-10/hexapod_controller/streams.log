@@ -1,0 +1,92 @@
+[2.429s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --uninstall --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build
+[3.403s] running develop
+[3.849s] Removing /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod-controller.egg-link (link to .)
+[3.989s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller' returned '0': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --uninstall --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build
+[3.997s] Invoking command in '/home/ros/hexapod_controller/src/hexapod_controller': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/ros/hexapod_controller/build/hexapod_controller/build install --record /home/ros/hexapod_controller/build/hexapod_controller/install.log --single-version-externally-managed
+[4.910s] running egg_info
+[4.912s] writing ../../build/hexapod_controller/hexapod_controller.egg-info/PKG-INFO
+[4.916s] writing dependency_links to ../../build/hexapod_controller/hexapod_controller.egg-info/dependency_links.txt
+[4.917s] writing entry points to ../../build/hexapod_controller/hexapod_controller.egg-info/entry_points.txt
+[4.918s] writing requirements to ../../build/hexapod_controller/hexapod_controller.egg-info/requires.txt
+[4.920s] writing top-level names to ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt
+[4.926s] reading manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[4.932s] writing manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[4.933s] running build
+[4.934s] running build_py
+[4.942s] running install
+[4.944s] running install_lib
+[4.947s] creating /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.948s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_12.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.949s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/body.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.950s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_6.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.951s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_10.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.952s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/inverse_kinematics.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.953s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_15.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.953s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_8.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.954s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_18.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.955s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_14.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.956s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/body copy.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.957s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_4.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.958s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_9.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.959s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/__init__.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.960s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/body copy 2.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.961s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_16.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.962s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_17.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.963s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_3.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.964s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_11.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.966s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_5.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.970s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_13.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.970s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_7.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.972s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_1.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.973s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/servo_2.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.973s] copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/com_settings.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[4.974s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_12.py to servo_12.cpython-310.pyc
+[4.978s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body.py to body.cpython-310.pyc
+[4.981s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_6.py to servo_6.cpython-310.pyc
+[4.983s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_10.py to servo_10.cpython-310.pyc
+[4.986s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/inverse_kinematics.py to inverse_kinematics.cpython-310.pyc
+[4.991s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_15.py to servo_15.cpython-310.pyc
+[4.993s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_8.py to servo_8.cpython-310.pyc
+[4.997s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_18.py to servo_18.cpython-310.pyc
+[4.998s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_14.py to servo_14.cpython-310.pyc
+[5.000s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body copy.py to body copy.cpython-310.pyc
+[5.004s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_4.py to servo_4.cpython-310.pyc
+[5.006s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_9.py to servo_9.cpython-310.pyc
+[5.008s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__init__.py to __init__.cpython-310.pyc
+[5.010s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body copy 2.py to body copy 2.cpython-310.pyc
+[5.017s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_16.py to servo_16.cpython-310.pyc
+[5.019s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_17.py to servo_17.cpython-310.pyc
+[5.022s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_3.py to servo_3.cpython-310.pyc
+[5.024s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_11.py to servo_11.cpython-310.pyc
+[5.026s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_5.py to servo_5.cpython-310.pyc
+[5.028s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_13.py to servo_13.cpython-310.pyc
+[5.031s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_7.py to servo_7.cpython-310.pyc
+[5.033s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_1.py to servo_1.cpython-310.pyc
+[5.035s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servo_2.py to servo_2.cpython-310.pyc
+[5.037s] byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/com_settings.py to com_settings.cpython-310.pyc
+[5.043s] running install_data
+[5.044s] copying launch/hexapod.launch.py -> /home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/launch/
+[5.045s] running install_egg_info
+[5.051s] Copying ../../build/hexapod_controller/hexapod_controller.egg-info to /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info
+[5.057s] running install_scripts
+[5.143s] Installing body_IK_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.146s] Installing servo_10_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.147s] Installing servo_11_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.148s] Installing servo_12_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.153s] Installing servo_13_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.156s] Installing servo_14_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.157s] Installing servo_15_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.158s] Installing servo_16_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.158s] Installing servo_17_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.159s] Installing servo_18_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.159s] Installing servo_1_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.160s] Installing servo_2_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.160s] Installing servo_3_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.165s] Installing servo_4_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.165s] Installing servo_5_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.167s] Installing servo_6_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.168s] Installing servo_7_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.169s] Installing servo_8_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.171s] Installing servo_9_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[5.181s] writing list of installed files to '/home/ros/hexapod_controller/build/hexapod_controller/install.log'
+[5.309s] Invoked command in '/home/ros/hexapod_controller/src/hexapod_controller' returned '0': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/ros/hexapod_controller/build/hexapod_controller/build install --record /home/ros/hexapod_controller/build/hexapod_controller/install.log --single-version-externally-managed
