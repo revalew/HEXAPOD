@@ -4,40 +4,26 @@ import rclpy
 from rclpy.node import Node
 
 # from com_settings import *
-from inverse_kinematics import body_ik
+import inverse_kinematics as ik
 
 # importing our new message type
 from hexapod_controller_interfaces.msg import ServoPositionValues
-
-# impoort the msg type
-# from turtlesim.msg import Pose
-
-# THIS WAS SO WRONG I CANT EVEN LMFAO
-# class AxlePoses():
-#     '''
-#     MESSAGE TYPE
-#     '''
-#     ID_pose = [0, ..., 18]
-#     def __init__(self):
-#         for i in self.ID_pose:
-#             i = 512
-
 
 class BodyIKNode(Node):
     def __init__(self):
         super().__init__("body_IK")
        
-        # self.get_logger().info("HEXAPOD body Inverse Kinematics calculation has been started.")
+        self.get_logger().info("HEXAPOD body Inverse Kinematics calculation has been started.")
 
         # create publisher
-        self.body_IK_ = self.create_publisher(AxlePoses, "/bodyIK_topic", 30) # FLAGA BLEDU
+        self.body_IK_ = self.create_publisher(ServoPositionValues, "bodyIK_topic", 10) # FLAGA BLEDU
         self.timer_ = self.create_timer(2.0, self.send_data)
         
     def send_data(self):
-        leg_values = body_ik(0, 0, 0, 0, 0, 0)
+        # leg_values = body_ik(0, 0, 0, 0, 0, 0)
         
         # create the msg with the specific type
-        cmd = AxlePoses()
+        cmd = ServoPositionValues()
         
         j, k = 0, 0
         for i in range(0, 18, 1):
@@ -46,12 +32,14 @@ class BodyIKNode(Node):
                 j += 1
                 k = 0
             else: k += 1
-            cmd.ID_pose[i + 1] = leg_values[j - 1][k]
+            # cmd.id_pose[i] = leg_values[j - 1][k]
+            # cmd.id_pose[i] = 512
 
         # publish the message 
-        self.cmd_vel_publisher_.publish(cmd)
+        self.body_IK_.publish(cmd)
+        print(cmd)
         
-        # print(leg_values)
+        # print("\n" + leg_values)
         
 
 # class MotorControler(Node):

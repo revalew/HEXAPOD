@@ -35,6 +35,7 @@ PROTOCOL_VERSION = 1.0  # See which protocol version is used in the Dynamixel
 # Default setting
 BAUDRATE = 9600
 DEVICENAME = "/dev/ttyUSB0"  # Check which port is being used on your controller
+# DEVICENAME = "/dev/ttyAMA0"  # Check which port is being used on your controller
 
 TORQUE_ENABLE = 1  # Value for enabling the torque
 TORQUE_DISABLE = 0  # Value for disabling the torque

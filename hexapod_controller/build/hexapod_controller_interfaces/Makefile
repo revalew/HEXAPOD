@@ -315,17 +315,17 @@ hexapod_controller_interfaces__rosidl_typesupport_cpp/fast:
 .PHONY : hexapod_controller_interfaces__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_copy_hexapod_controller_interfaces
+# Target rules for targets named ament_cmake_python_symlink_hexapod_controller_interfaces
 
 # Build rule for target.
-ament_cmake_python_copy_hexapod_controller_interfaces: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_hexapod_controller_interfaces
-.PHONY : ament_cmake_python_copy_hexapod_controller_interfaces
+ament_cmake_python_symlink_hexapod_controller_interfaces: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_hexapod_controller_interfaces
+.PHONY : ament_cmake_python_symlink_hexapod_controller_interfaces
 
 # fast build rule for target.
-ament_cmake_python_copy_hexapod_controller_interfaces/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_hexapod_controller_interfaces.dir/build.make CMakeFiles/ament_cmake_python_copy_hexapod_controller_interfaces.dir/build
-.PHONY : ament_cmake_python_copy_hexapod_controller_interfaces/fast
+ament_cmake_python_symlink_hexapod_controller_interfaces/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/build.make CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/build
+.PHONY : ament_cmake_python_symlink_hexapod_controller_interfaces/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_hexapod_controller_interfaces_egg
@@ -683,7 +683,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_hexapod_controller_interfaces_egg"
-	@echo "... ament_cmake_python_copy_hexapod_controller_interfaces"
+	@echo "... ament_cmake_python_symlink_hexapod_controller_interfaces"
 	@echo "... hexapod_controller_interfaces"
 	@echo "... hexapod_controller_interfaces__cpp"
 	@echo "... hexapod_controller_interfaces__py"

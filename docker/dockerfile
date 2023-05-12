@@ -38,7 +38,7 @@ RUN git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 # resolves this issue: "1 package had stderr output: my_robot_controller" when we are building the new package
 RUN pip install setuptools==58.2.0 \
     dynamixel_sdk \
-    RPi.GPIO
+    # RPi.GPIO
 
 # enable ROS functionality on every tty instance => add this code to the end of bash tty
 # ros2 command with all of its functionality
@@ -46,6 +46,8 @@ RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 # colcon (building workspace command) autocompletion
 RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /root/.bashrc
 # setup the correct node source for a custom workspace
-RUN echo "source /home/ros/ros2_ws/install/setup.bash" >> /root/.bashrc
+RUN echo "source /home/ros/hexapod_controller/install/setup.bash" >> /root/.bashrc
 # go to a project directory
 # RUN echo "cd /home/ros/" >> /root/.bashrc
+
+WORKDIR /home/ros

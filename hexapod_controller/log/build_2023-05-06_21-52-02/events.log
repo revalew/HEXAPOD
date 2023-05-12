@@ -1,0 +1,101 @@
+[0.000000] (-) TimerEvent: {}
+[0.001944] (hexapod_controller) JobQueued: {'identifier': 'hexapod_controller', 'dependencies': OrderedDict()}
+[0.002182] (hexapod_controller) JobStarted: {'identifier': 'hexapod_controller'}
+[0.098932] (-) TimerEvent: {}
+[0.199618] (-) TimerEvent: {}
+[0.300372] (-) TimerEvent: {}
+[0.401254] (-) TimerEvent: {}
+[0.502004] (-) TimerEvent: {}
+[0.602769] (-) TimerEvent: {}
+[0.703666] (-) TimerEvent: {}
+[0.804355] (-) TimerEvent: {}
+[0.905089] (-) TimerEvent: {}
+[1.005805] (-) TimerEvent: {}
+[1.106773] (-) TimerEvent: {}
+[1.210691] (-) TimerEvent: {}
+[1.311624] (-) TimerEvent: {}
+[1.412412] (-) TimerEvent: {}
+[1.513211] (-) TimerEvent: {}
+[1.613908] (-) TimerEvent: {}
+[1.714662] (-) TimerEvent: {}
+[1.815428] (-) TimerEvent: {}
+[1.916180] (-) TimerEvent: {}
+[2.016970] (-) TimerEvent: {}
+[2.117745] (-) TimerEvent: {}
+[2.218552] (-) TimerEvent: {}
+[2.320599] (-) TimerEvent: {}
+[2.421626] (-) TimerEvent: {}
+[2.522550] (-) TimerEvent: {}
+[2.624001] (-) TimerEvent: {}
+[2.634956] (hexapod_controller) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--uninstall', '--editable', '--build-directory', '/home/ros/hexapod_controller/build/hexapod_controller/build'], 'cwd': '/home/ros/hexapod_controller/build/hexapod_controller', 'env': {'HOSTNAME': '5dd988dafbee', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/home/ros', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/home/ros/hexapod_controller/build/hexapod_controller', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[2.724191] (-) TimerEvent: {}
+[2.824981] (-) TimerEvent: {}
+[2.925779] (-) TimerEvent: {}
+[3.026539] (-) TimerEvent: {}
+[3.127334] (-) TimerEvent: {}
+[3.228024] (-) TimerEvent: {}
+[3.328741] (-) TimerEvent: {}
+[3.429500] (-) TimerEvent: {}
+[3.530221] (-) TimerEvent: {}
+[3.630956] (-) TimerEvent: {}
+[3.725700] (hexapod_controller) StdoutLine: {'line': b'running develop\n'}
+[3.731121] (-) TimerEvent: {}
+[3.831861] (-) TimerEvent: {}
+[3.932582] (-) TimerEvent: {}
+[4.033381] (-) TimerEvent: {}
+[4.134092] (-) TimerEvent: {}
+[4.234940] (-) TimerEvent: {}
+[4.336248] (-) TimerEvent: {}
+[4.360366] (hexapod_controller) CommandEnded: {'returncode': 0}
+[4.364240] (hexapod_controller) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/hexapod_controller', 'build', '--build-base', '/home/ros/hexapod_controller/build/hexapod_controller/build', 'install', '--record', '/home/ros/hexapod_controller/build/hexapod_controller/install.log', '--single-version-externally-managed'], 'cwd': '/home/ros/hexapod_controller/src/hexapod_controller', 'env': {'HOSTNAME': '5dd988dafbee', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/home/ros', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/home/ros/hexapod_controller/build/hexapod_controller', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[4.436434] (-) TimerEvent: {}
+[4.537253] (-) TimerEvent: {}
+[4.638194] (-) TimerEvent: {}
+[4.739028] (-) TimerEvent: {}
+[4.840342] (-) TimerEvent: {}
+[4.941449] (-) TimerEvent: {}
+[5.042626] (-) TimerEvent: {}
+[5.143368] (-) TimerEvent: {}
+[5.244063] (-) TimerEvent: {}
+[5.344774] (-) TimerEvent: {}
+[5.381342] (hexapod_controller) StdoutLine: {'line': b'running egg_info\n'}
+[5.384048] (hexapod_controller) StdoutLine: {'line': b'writing ../../build/hexapod_controller/hexapod_controller.egg-info/PKG-INFO\n'}
+[5.385437] (hexapod_controller) StdoutLine: {'line': b'writing dependency_links to ../../build/hexapod_controller/hexapod_controller.egg-info/dependency_links.txt\n'}
+[5.386541] (hexapod_controller) StdoutLine: {'line': b'writing entry points to ../../build/hexapod_controller/hexapod_controller.egg-info/entry_points.txt\n'}
+[5.392539] (hexapod_controller) StdoutLine: {'line': b'writing requirements to ../../build/hexapod_controller/hexapod_controller.egg-info/requires.txt\n'}
+[5.393451] (hexapod_controller) StdoutLine: {'line': b'writing top-level names to ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt\n'}
+[5.402605] (hexapod_controller) StdoutLine: {'line': b"reading manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'\n"}
+[5.408581] (hexapod_controller) StdoutLine: {'line': b"writing manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'\n"}
+[5.409375] (hexapod_controller) StdoutLine: {'line': b'running build\n'}
+[5.409937] (hexapod_controller) StdoutLine: {'line': b'running build_py\n'}
+[5.410534] (hexapod_controller) StdoutLine: {'line': b'creating /home/ros/hexapod_controller/build/hexapod_controller/build\n'}
+[5.411186] (hexapod_controller) StdoutLine: {'line': b'creating /home/ros/hexapod_controller/build/hexapod_controller/build/lib\n'}
+[5.411740] (hexapod_controller) StdoutLine: {'line': b'creating /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller\n'}
+[5.412161] (hexapod_controller) StdoutLine: {'line': b'copying hexapod_controller/inverse_kinematics.py -> /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller\n'}
+[5.412698] (hexapod_controller) StdoutLine: {'line': b'copying hexapod_controller/__init__.py -> /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller\n'}
+[5.413369] (hexapod_controller) StdoutLine: {'line': b'copying hexapod_controller/com_settings.py -> /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller\n'}
+[5.414320] (hexapod_controller) StdoutLine: {'line': b'copying hexapod_controller/body.py -> /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller\n'}
+[5.415645] (hexapod_controller) StdoutLine: {'line': b'running install\n'}
+[5.417582] (hexapod_controller) StdoutLine: {'line': b'running install_lib\n'}
+[5.421107] (hexapod_controller) StdoutLine: {'line': b'creating /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller\n'}
+[5.421769] (hexapod_controller) StdoutLine: {'line': b'copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/inverse_kinematics.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller\n'}
+[5.422791] (hexapod_controller) StdoutLine: {'line': b'copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/__init__.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller\n'}
+[5.423684] (hexapod_controller) StdoutLine: {'line': b'copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/com_settings.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller\n'}
+[5.424634] (hexapod_controller) StdoutLine: {'line': b'copying /home/ros/hexapod_controller/build/hexapod_controller/build/lib/hexapod_controller/body.py -> /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller\n'}
+[5.427562] (hexapod_controller) StdoutLine: {'line': b'byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/inverse_kinematics.py to inverse_kinematics.cpython-310.pyc\n'}
+[5.434836] (hexapod_controller) StdoutLine: {'line': b'byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__init__.py to __init__.cpython-310.pyc\n'}
+[5.436086] (hexapod_controller) StdoutLine: {'line': b'byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/com_settings.py to com_settings.cpython-310.pyc\n'}
+[5.438276] (hexapod_controller) StdoutLine: {'line': b'byte-compiling /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body.py to body.cpython-310.pyc\n'}
+[5.440574] (hexapod_controller) StdoutLine: {'line': b'running install_data\n'}
+[5.442912] (hexapod_controller) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.444904] (-) TimerEvent: {}
+[5.450730] (hexapod_controller) StdoutLine: {'line': b'Copying ../../build/hexapod_controller/hexapod_controller.egg-info to /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info\n'}
+[5.458500] (hexapod_controller) StdoutLine: {'line': b'running install_scripts\n'}
+[5.541520] (hexapod_controller) StdoutLine: {'line': b'Installing body_IK_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller\n'}
+[5.543415] (hexapod_controller) StdoutLine: {'line': b"writing list of installed files to '/home/ros/hexapod_controller/build/hexapod_controller/install.log'\n"}
+[5.545200] (-) TimerEvent: {}
+[5.646399] (-) TimerEvent: {}
+[5.673148] (hexapod_controller) CommandEnded: {'returncode': 0}
+[5.747098] (-) TimerEvent: {}
+[5.755194] (hexapod_controller) JobEnded: {'identifier': 'hexapod_controller', 'rc': 0}
+[5.758675] (-) EventReactorShutdown: {}
