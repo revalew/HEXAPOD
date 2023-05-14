@@ -23,6 +23,7 @@ class PoseCallback():
         dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, self.index1 + 1, ADDR_MX_GOAL_POSITION, self.position1)
 
 
+
 class BodyIKNode(Node):
     def __init__(self):
         super().__init__("body_IK")
@@ -31,10 +32,24 @@ class BodyIKNode(Node):
 
         # create publisher
         self.body_IK_ = self.create_publisher(ServoPositionValues, "bodyIK_topic", 10) # FLAGA BLEDU
-        self.timer_ = self.create_timer(2.0, self.send_data)
+        self.timer_ = self.create_timer(0.4, self.send_data)
+        
+        self.index = 0
         
     def send_data(self):
-        leg_values = ik.body_ik(0, 0, 20, 0, 0, 0)
+        data = [0,0,0,10,0,10]
+        data1 = [0,0,0,0,0,0]
+        data2 = [0,0,0,-10,0,-10]
+        data3 = [0,0,0,0,0,0]
+        
+        goal_pos = [data, data1, data2, data3]
+        
+        leg_values = ik.body_ik(goal_pos[self.index][0],
+                                goal_pos[self.index][1],
+                                goal_pos[self.index][2],
+                                goal_pos[self.index][3],
+                                goal_pos[self.index][4],
+                                goal_pos[self.index][5])
         
         # create the msg with the specific type
         cmd = ServoPositionValues()
@@ -52,8 +67,15 @@ class BodyIKNode(Node):
         # publish the message 
         self.body_IK_.publish(cmd)
         
-        print(f"\n {leg_values}")
+        # print(f"\n {leg_values}")
         # print(cmd)
+        if self.index == 0:
+            self.index = 1
+        elif self.index == 1:
+            self.index = 2
+        elif self.index == 2:
+            self.index = 3
+        else: self.index = 0
         
 
 class MotorController(Node):
@@ -81,7 +103,7 @@ def gain_strength(DXL_ID):
     for i in DXL_ID:
         # Enable Dynamixel Torque
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE)
-        time.sleep(0.05)
+        time.sleep(0.1)
    
         
 def loose_strength(DXL_ID):
@@ -118,6 +140,8 @@ def stewpid_init():
 def main(args=None):
     # stewpid_init()
     
+    
+    
     # LIST OF IDs
     # DXL_ID = [1,2,3,4,5,6,7,8,9,16,17,18,13,14,15,10,11,12]
     DXL_ID = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
@@ -128,27 +152,32 @@ def main(args=None):
     rclpy.init(args=args)
     nodePublish = BodyIKNode()
     
-    executor = rclpy.executors.MultiThreadedExecutor()
-    executor.add_node(nodePublish)
+    # executor = rclpy.executors.MultiThreadedExecutor()
+    # executor.add_node(nodePublish)
     
-    # nodeSubscribers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    # for i in range(0,18,1):
-    #     nodeSubscribers[i] = MotorController(DXL_ID[i])
-    #     executor.add_node(nodeSubscribers[i])
+    # # nodeSubscribers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    # # for i in range(0,18,1):
+    # #     nodeSubscribers[i] = MotorController(DXL_ID[i])
+    # #     executor.add_node(nodeSubscribers[i])
     
-    # Spin in a separate thread
-    # you spin me right now, baby right now
-    # https://www.youtube.com/watch?v=PGNiXGX2nLU&ab_channel=DeadOrAliveVEVO
-    executor_thread = threading.Thread(target=executor.spin(), daemon=True)
-    executor_thread.start()
+    # # Spin in a separate thread
+    # # you spin me right now, baby right now
+    # # https://www.youtube.com/watch?v=PGNiXGX2nLU&ab_channel=DeadOrAliveVEVO
+    # executor_thread = threading.Thread(target=executor.spin(), daemon=True)
+    # executor_thread.start()
+    # rclpy.shutdown()
+    # executor_thread.join()
+
+    rclpy.spin(nodePublish)
     rclpy.shutdown()
-    executor_thread.join()
 
     # DISABLE TORQUE
     loose_strength(DXL_ID)
     
     # Close port
     portHandler.closePort()
+    
+    
 
 if __name__ == "__main__":
     main()

@@ -116,24 +116,71 @@ def generate_launch_description():
         name = "servo_18_node",
     )
     
+    leg_1 = Node(
+        package = "hexapod_controller",
+        executable = "leg_1_node",
+        name = "leg_1_node",
+    )
+    
+    
+    leg_2 = Node(
+        package = "hexapod_controller",
+        executable = "leg_2_node",
+        name = "leg_2_node",
+    )
+    
+    
+    leg_3 = Node(
+        package = "hexapod_controller",
+        executable = "leg_3_node",
+        name = "leg_3_node",
+    )
+    
+    
+    leg_4 = Node(
+        package = "hexapod_controller",
+        executable = "leg_4_node",
+        name = "leg_4_node",
+    )
+    
+    
+    leg_5 = Node(
+        package = "hexapod_controller",
+        executable = "leg_5_node",
+        name = "leg_5_node",
+    )
+    
+    
+    leg_6 = Node(
+        package = "hexapod_controller",
+        executable = "leg_6_node",
+        name = "leg_6_node",
+    )
+    
     return LaunchDescription([
         body,
-        servo_1,
-        servo_2,
-        servo_3,
-        servo_4,
-        servo_5,
-        servo_6,
-        servo_7,
-        servo_8,
-        servo_9,
-        servo_10,
-        servo_11,
-        servo_12,
-        servo_13,
-        servo_14,
-        servo_15,
-        servo_16,
-        servo_17,
-        servo_18
+        # servo_1,
+        # servo_2,
+        # servo_3,
+        # servo_4,
+        # servo_5,
+        # servo_6,
+        # servo_7,
+        # servo_8,
+        # servo_9,
+        # servo_10,
+        # servo_11,
+        # servo_12,
+        # servo_13,
+        # servo_14,
+        # servo_15,
+        # servo_16,
+        # servo_17,
+        # servo_18
+        leg_1,
+        leg_2,
+        leg_3,
+        leg_4,
+        leg_5,
+        leg_6
     ])

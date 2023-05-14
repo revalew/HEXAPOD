@@ -6,13 +6,13 @@ FROM ros:humble-ros-core-jammy
 RUN apt-get update && apt-get install --no-install-recommends -y \
     build-essential \
     git \
-    # nano \
     python3-pip \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
     python3-rosdep \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
+    # nano \
 
 # bootstrap rosdep
 RUN rosdep init && \
@@ -37,7 +37,7 @@ RUN git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 
 # resolves this issue: "1 package had stderr output: my_robot_controller" when we are building the new package
 RUN pip install setuptools==58.2.0 \
-    dynamixel_sdk \
+    dynamixel_sdk
     # RPi.GPIO
 
 # enable ROS functionality on every tty instance => add this code to the end of bash tty
@@ -49,5 +49,5 @@ RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> 
 RUN echo "source /home/ros/hexapod_controller/install/setup.bash" >> /root/.bashrc
 # go to a project directory
 # RUN echo "cd /home/ros/" >> /root/.bashrc
-
-WORKDIR /home/ros
+WORKDIR /home/ros/hexapod_controller
+RUN colcon build --packages-select hexapod_controller --symlink-install

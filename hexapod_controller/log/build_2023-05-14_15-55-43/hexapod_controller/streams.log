@@ -1,0 +1,35 @@
+[2.024s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller': AMENT_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces CMAKE_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces LD_LIBRARY_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages /usr/bin/python3 setup.py develop --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build --no-deps install_data
+[2.818s] running develop
+[3.037s] running egg_info
+[3.037s] writing hexapod_controller.egg-info/PKG-INFO
+[3.038s] writing dependency_links to hexapod_controller.egg-info/dependency_links.txt
+[3.040s] writing entry points to hexapod_controller.egg-info/entry_points.txt
+[3.040s] writing requirements to hexapod_controller.egg-info/requires.txt
+[3.041s] writing top-level names to hexapod_controller.egg-info/top_level.txt
+[3.048s] reading manifest file 'hexapod_controller.egg-info/SOURCES.txt'
+[3.053s] writing manifest file 'hexapod_controller.egg-info/SOURCES.txt'
+[3.059s] running build_ext
+[3.060s] Creating /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod-controller.egg-link (link to .)
+[3.064s] Installing body_IK_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.065s] Installing servo_10_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.066s] Installing servo_11_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.067s] Installing servo_12_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.068s] Installing servo_13_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.071s] Installing servo_14_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.072s] Installing servo_15_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.073s] Installing servo_16_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.073s] Installing servo_17_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.074s] Installing servo_18_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.074s] Installing servo_1_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.075s] Installing servo_2_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.076s] Installing servo_3_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.076s] Installing servo_4_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.077s] Installing servo_5_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.078s] Installing servo_6_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.079s] Installing servo_7_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.080s] Installing servo_8_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.081s] Installing servo_9_node script to /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller
+[3.082s] 
+[3.083s] Installed /home/ros/hexapod_controller/build/hexapod_controller
+[3.083s] running install_data
+[3.217s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller' returned '0': AMENT_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces CMAKE_PREFIX_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces LD_LIBRARY_PATH=/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages /usr/bin/python3 setup.py develop --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build --no-deps install_data
