@@ -53,5 +53,5 @@ Many hours and iterations later we finally managed to use the ROS2 capabilities 
 <span>&ensp;</span>
 <img src="./img/hexapod_pushups.gif" width="375" height="260" />
 <br>
-<img src="./img/custom_interface.png" height="150" />
+<img src="./img/custom_interface.png" height="105" />
 </p>
