@@ -50,5 +50,7 @@ Many hours and iterations later we finally managed to use the ROS2 capabilities 
 
 <p align='center'>
 <img src="./img/hexapod_synchro_test.gif" width="375" height="260" />
-<img src="./img/custom_interface.png" width="375" height="260" />
+<img src="./img/hexapod_pushups.gif" width="375" height="260" />
+<br>
+<img src="./img/custom_interface.png" height="180" />
 </p>
