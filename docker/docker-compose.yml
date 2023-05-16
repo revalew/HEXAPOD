@@ -1,22 +1,17 @@
 version: "3.9"
 services:
   ros2:
-    build: ./
+    build: .
   #  network_mode: "host"
     # restart: no
   #  ports: 
-    #  - "3332:3332"
     #  - "11811:11811" # node discoverer
-    #  - "32650:32650"
-    #  - "32651:32651"
-    #  - "32662:32662"
-    #  - "32663:32663"
     volumes:
     # relative PATH which SHULD work when coupled with our GIT repository
     # https://github.com/revalew/HEXAPOD.git
       - ../.:/home/ros
     devices:
-      # USB device - can skip for now
+      # USB device - where our USB to TTL converter is connected
       - /dev/ttyUSB0:/dev/ttyUSB0
       # - /dev/ttyUSB1:/dev/ttyUSB1
 # Enable the terminal - without it it would constantly pop up and close

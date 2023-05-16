@@ -40,3 +40,15 @@ After few attempts HEXAPOD can finaly stand up easily! Still a lot of work to do
 <p align='center'>
 <img src="./img/hexapod_standup.gif" width="375" height="260" />
 </p>
+
+### Controlling all of the servos /w Inverse Kinematics:
+Many hours and iterations later we finally managed to use the ROS2 capabilities to move every leg simultaneously! To achieve this we used:
+- improved code structure - we moved every leg into one file and made separate functions for each leg,
+- custom interface, which is basically an array of positions for the servos,
+- different packet structure for controlling the servos - we used a Dynamixel's class called "GroupSyncWrite" to minimize the number of the messages sent (just 6 now!),
+- launch file, which spawns a separate process for each of the legs and for the body, allowing us to execute them at the same time.
+
+<p align='center'>
+<img src="./img/hexapod_synchro_test.gif" width="375" height="260" />
+<img src="./img/custom_interface.png" width="375" height="260" />
+</p>
