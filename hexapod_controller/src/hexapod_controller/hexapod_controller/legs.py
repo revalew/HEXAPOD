@@ -46,7 +46,7 @@ class MotorController(Node):
     # servo
     def pose_callback_id(self, msg: ServoPositionValues):
         # print(f"Subscriber MotorController id={self.id_id}: received msg = {msg.id_pose[self.id_index]}")
-        time.sleep(0.0125*self.id_id - 1)  # CHANGED HERE
+        time.sleep(0.0125*self.id_id)
         # time.sleep(0.1)
         # dxl_comm_result1, dxl_error1 = packetHandler.write2ByteTxRx(portHandler, self.id_id_1, ADDR_MX_GOAL_POSITION, msg.id_pose[self.coxa])
         # time.sleep(0.02)
