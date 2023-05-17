@@ -261,3 +261,24 @@ Using the custom interfaces (message types) in main package
 		from hexapod_controller_interfaces.msg import ServoPositionValues
 
 	This is everything we need to setup our custom interface in ROS2 
+
+-------------------------------------------------------------------------------------------------------------
+Bluetooth configuration - xbox one controller
+
+	https://fostips.com/install-driver-xbox-one-controller-headset-ubuntu/
+	
+
+	 install the dependency libraries:
+
+		sudo apt install linux-headers-$(uname -r) dkms curl cabextract git
+
+
+	Now, use git command to clone the source code of xone kernel driver:
+
+		git clone https://github.com/medusalix/xone
+
+
+	 build and install the driver module
+
+	 	cd xone
+		sudo ./install.sh --release

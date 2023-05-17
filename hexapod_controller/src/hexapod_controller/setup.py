@@ -24,25 +24,8 @@ setup(
     entry_points={
         'console_scripts': [
             "body_IK_node = hexapod_controller.body:main",
-            # "servo_1_node = hexapod_controller.servos:servo1",
-            # "servo_2_node = hexapod_controller.servos:servo2",
-            # "servo_3_node = hexapod_controller.servos:servo3",
-            # "servo_4_node = hexapod_controller.servos:servo4",
-            # "servo_5_node = hexapod_controller.servos:servo5",
-            # "servo_6_node = hexapod_controller.servos:servo6",
-            # "servo_7_node = hexapod_controller.servos:servo7",
-            # "servo_8_node = hexapod_controller.servos:servo8",
-            # "servo_9_node = hexapod_controller.servos:servo9",
-            # "servo_10_node = hexapod_controller.servos:servo10",
-            # "servo_11_node = hexapod_controller.servos:servo11",
-            # "servo_12_node = hexapod_controller.servos:servo12",
-            # "servo_13_node = hexapod_controller.servos:servo13",
-            # "servo_14_node = hexapod_controller.servos:servo14",
-            # "servo_15_node = hexapod_controller.servos:servo15",
-            # "servo_16_node = hexapod_controller.servos:servo16",
-            # "servo_17_node = hexapod_controller.servos:servo17",
-            # "servo_18_node = hexapod_controller.servos:servo18"
             # "keyboard_node = hexapod_controller.keyboard:main"
+            "joystick_node = hexapod_controller.joystick:main"
             "leg_1_node = hexapod_controller.legs:leg1",
             "leg_2_node = hexapod_controller.legs:leg2",
             "leg_3_node = hexapod_controller.legs:leg3",

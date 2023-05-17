@@ -9,13 +9,11 @@ setup.py
 ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt
 ../../build/hexapod_controller/hexapod_controller.egg-info/zip-safe
 hexapod_controller/__init__.py
-hexapod_controller/body copy 2.py
-hexapod_controller/body copy.py
 hexapod_controller/body.py
 hexapod_controller/com_settings.py
 hexapod_controller/inverse_kinematics.py
+hexapod_controller/joystick.py
 hexapod_controller/legs.py
-hexapod_controller/servos.py
 launch/hexapod.launch.py
 resource/hexapod_controller
 test/test_copyright.py

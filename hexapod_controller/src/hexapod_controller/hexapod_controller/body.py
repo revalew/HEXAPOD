@@ -11,18 +11,6 @@ import hexapod_controller.inverse_kinematics as ik
 # importing our new message type
 from hexapod_controller_interfaces.msg import ServoPositionValues
 
-# Class dedicated to operate specyfic axis as objects
-class PoseCallback():
-    
-    def __init__(self, index, msg: ServoPositionValues):
-        self.index1 = index
-        self.position1 = msg.id_pose[index]
-    
-    def rotateAxis(self, index, position1):
-        print(f"Subscriber MotorController: received msg = {self.position1}")
-        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, self.index1 + 1, ADDR_MX_GOAL_POSITION, self.position1)
-
-
 
 class BodyIKNode(Node):
     def __init__(self):
@@ -54,6 +42,8 @@ class BodyIKNode(Node):
         # create the msg with the specific type
         cmd = ServoPositionValues()
         
+        # sending body_ik return list of lists to msg_interface id_pose 
+        # eg. [0][1] leg one, seccond axis (femur)
         j, k = 0, 0
         for i in range(0, 18, 1):
             
@@ -62,44 +52,21 @@ class BodyIKNode(Node):
                 k = 0
             else: k += 1
             cmd.id_pose[i] = leg_values[j - 1][k]
-            # cmd.id_pose[i] = 512
 
         # publish the message 
         self.body_IK_.publish(cmd)
         
-        # print(f"\n {leg_values}")
-        # print(cmd)
         if self.index == 0:
             self.index = 1
         elif self.index == 1:
             self.index = 2
         elif self.index == 2:
             self.index = 3
-        else: self.index = 0
-        
-
-class MotorController(Node):
-    def __init__(self, id):
-        name = f"pose_subscriber_{id}"
-        super().__init__(name)
-        
-        self.id_id = id
-        self.id_index = self.id_id - 1
-        
-        # -- LEGWAN -- 
-        self.pose_subsciber = self.create_subscription(
-            ServoPositionValues, "bodyIK_topic", self.pose_callback_id,10)
-        
-    # servo 1
-    def pose_callback_id(self, msg: ServoPositionValues):
-        print(f"Subscriber MotorController id={self.id_id}: received msg = {msg.id_pose[self.id_index]}")
-        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, self.id_id, ADDR_MX_GOAL_POSITION, msg.id_pose[self.id_index])
-        time.sleep(1)
+        else: self.index = 0       
     
         
 def gain_strength(DXL_ID):
-    # global packetHandler, portHandler, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE
-    # ENABLE =================
+    # ENABLE TORQUE
     for i in DXL_ID:
         # Enable Dynamixel Torque
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE)
@@ -107,76 +74,31 @@ def gain_strength(DXL_ID):
    
         
 def loose_strength(DXL_ID):
-    # global packetHandler, portHandler, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE
-    # DISABLE =================
+    # DISABLE TORQUE
     for i in range(1, 19):
         DXL_ID = i
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_DISABLE)
         time.sleep(0.05)
-    
-    
-def stewpid_init():
-    global packetHandler, portHandler, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE
-    # Open port
-    if portHandler.openPort():
-        print("Succeeded to open the port")
-    else:
-        print("Failed to open the port")
-        print("Press any key to terminate...")
-        getch()
-        quit()
-
-    # Set port baudrate
-    if portHandler.setBaudRate(BAUDRATE):
-        print("Succeeded to change the baudrate")
-    else:
-        print("Failed to change the baudrate")
-        print("Press any key to terminate...")
-        getch()
-        quit()
-    # ------------------------------------------------------------
 
 
 def main(args=None):
-    # stewpid_init()
-    
-    
-    
     # LIST OF IDs
-    # DXL_ID = [1,2,3,4,5,6,7,8,9,16,17,18,13,14,15,10,11,12]
     DXL_ID = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     
     # ENABLE TORQUE
     gain_strength(DXL_ID)
     
+    # NODE PART
     rclpy.init(args=args)
     nodePublish = BodyIKNode()
-    
-    # executor = rclpy.executors.MultiThreadedExecutor()
-    # executor.add_node(nodePublish)
-    
-    # # nodeSubscribers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    # # for i in range(0,18,1):
-    # #     nodeSubscribers[i] = MotorController(DXL_ID[i])
-    # #     executor.add_node(nodeSubscribers[i])
-    
-    # # Spin in a separate thread
-    # # you spin me right now, baby right now
-    # # https://www.youtube.com/watch?v=PGNiXGX2nLU&ab_channel=DeadOrAliveVEVO
-    # executor_thread = threading.Thread(target=executor.spin(), daemon=True)
-    # executor_thread.start()
-    # rclpy.shutdown()
-    # executor_thread.join()
-
     rclpy.spin(nodePublish)
     rclpy.shutdown()
 
     # DISABLE TORQUE
     loose_strength(DXL_ID)
     
-    # Close port
+    # CLOSING PORT
     portHandler.closePort()
-    
     
 
 if __name__ == "__main__":

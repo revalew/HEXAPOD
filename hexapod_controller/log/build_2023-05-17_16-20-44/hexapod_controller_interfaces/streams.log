@@ -1,0 +1,25 @@
+[0.084s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
+[0.181s] [33mCMake Warning (dev) at CMakeLists.txt:13:
+[0.182s]   Syntax Warning in cmake code at column 32
+[0.182s] 
+[0.183s]   Argument not separated from preceding token by whitespace.
+[0.183s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.183s] [0m
+[0.202s] -- Found ament_cmake: 1.3.4 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.856s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.897s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.906s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.921s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.071s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.210s] [31mCMake Error at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):
+[1.211s]   rosidl_generate_interfaces() the passed file ',' doesn't exist relative to
+[1.211s]   the CMAKE_CURRENT_SOURCE_DIR
+[1.212s]   '/home/ros/hexapod_controller/src/hexapod_controller_interfaces'
+[1.212s] Call Stack (most recent call first):
+[1.213s]   CMakeLists.txt:12 (rosidl_generate_interfaces)
+[1.213s] 
+[1.213s] [0m
+[1.214s] -- Configuring incomplete, errors occurred!
+[1.214s] See also "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/CMakeFiles/CMakeOutput.log".
+[1.224s] gmake: *** [Makefile:963: cmake_check_build_system] Error 1
+[1.231s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4

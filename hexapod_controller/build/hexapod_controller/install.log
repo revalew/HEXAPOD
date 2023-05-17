@@ -1,16 +1,12 @@
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/inverse_kinematics.py
+/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/joystick.py
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__init__.py
-/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body copy.py
-/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body copy 2.py
-/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/servos.py
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/com_settings.py
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/body.py
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/legs.py
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/inverse_kinematics.cpython-310.pyc
+/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/joystick.cpython-310.pyc
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/__init__.cpython-310.pyc
-/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/body copy.cpython-310.pyc
-/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/body copy 2.cpython-310.pyc
-/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/servos.cpython-310.pyc
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/com_settings.cpython-310.pyc
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/body.cpython-310.pyc
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/__pycache__/legs.cpython-310.pyc
@@ -25,7 +21,7 @@
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info/requires.txt
 /home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info/top_level.txt
 /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller/body_IK_node
-/home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller/leg_1_node
+/home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller/joystick_node = hexapod_controller.joystick:mainleg_1_node
 /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller/leg_2_node
 /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller/leg_3_node
 /home/ros/hexapod_controller/install/hexapod_controller/lib/hexapod_controller/leg_4_node

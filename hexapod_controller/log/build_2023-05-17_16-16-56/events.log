@@ -1,0 +1,117 @@
+[0.000000] (-) TimerEvent: {}
+[0.002458] (-) JobUnselected: {'identifier': 'hexapod_controller'}
+[0.003504] (hexapod_controller_interfaces) JobQueued: {'identifier': 'hexapod_controller_interfaces', 'dependencies': OrderedDict()}
+[0.005025] (hexapod_controller_interfaces) JobStarted: {'identifier': 'hexapod_controller_interfaces'}
+[0.071835] (hexapod_controller_interfaces) JobProgress: {'identifier': 'hexapod_controller_interfaces', 'progress': 'cmake'}
+[0.076053] (hexapod_controller_interfaces) JobProgress: {'identifier': 'hexapod_controller_interfaces', 'progress': 'build'}
+[0.079242] (hexapod_controller_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ros/hexapod_controller/build/hexapod_controller_interfaces', '--', '-j4', '-l4'], 'cwd': '/home/ros/hexapod_controller/build/hexapod_controller_interfaces', 'env': OrderedDict([('HOSTNAME', '43c5ee63c197'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/home/ros/hexapod_controller/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/ros/hexapod_controller/install/hexapod_controller:/home/ros/hexapod_controller/install/hexapod_controller_interfaces:/opt/ros/humble'), ('PWD', '/home/ros/hexapod_controller/build/hexapod_controller_interfaces'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/ros/hexapod_controller/build/hexapod_controller:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ros/hexapod_controller/install/hexapod_controller_interfaces:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble')]), 'shell': False}
+[0.097926] (-) TimerEvent: {}
+[0.198719] (-) TimerEvent: {}
+[0.199800] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.4 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.298974] (-) TimerEvent: {}
+[0.400116] (-) TimerEvent: {}
+[0.501097] (-) TimerEvent: {}
+[0.602199] (-) TimerEvent: {}
+[0.702911] (-) TimerEvent: {}
+[0.803694] (-) TimerEvent: {}
+[0.857452] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.900765] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.903883] (-) TimerEvent: {}
+[0.910239] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.924400] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.004105] (-) TimerEvent: {}
+[1.075078] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.104287] (-) TimerEvent: {}
+[1.205063] (-) TimerEvent: {}
+[1.305941] (-) TimerEvent: {}
+[1.406953] (-) TimerEvent: {}
+[1.507727] (-) TimerEvent: {}
+[1.608749] (-) TimerEvent: {}
+[1.709830] (-) TimerEvent: {}
+[1.810699] (-) TimerEvent: {}
+[1.911843] (-) TimerEvent: {}
+[2.013152] (-) TimerEvent: {}
+[2.113978] (-) TimerEvent: {}
+[2.214788] (-) TimerEvent: {}
+[2.315695] (-) TimerEvent: {}
+[2.361974] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[2.415940] (-) TimerEvent: {}
+[2.517238] (-) TimerEvent: {}
+[2.618036] (-) TimerEvent: {}
+[2.718733] (-) TimerEvent: {}
+[2.819488] (-) TimerEvent: {}
+[2.920334] (-) TimerEvent: {}
+[3.021226] (-) TimerEvent: {}
+[3.122071] (-) TimerEvent: {}
+[3.162165] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.222242] (-) TimerEvent: {}
+[3.323017] (-) TimerEvent: {}
+[3.424207] (-) TimerEvent: {}
+[3.525535] (-) TimerEvent: {}
+[3.626370] (-) TimerEvent: {}
+[3.727302] (-) TimerEvent: {}
+[3.828255] (-) TimerEvent: {}
+[3.929063] (-) TimerEvent: {}
+[4.029890] (-) TimerEvent: {}
+[4.130722] (-) TimerEvent: {}
+[4.224850] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.230888] (-) TimerEvent: {}
+[4.314010] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[4.331105] (-) TimerEvent: {}
+[4.405664] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[4.406496] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[4.406898] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[4.431281] (-) TimerEvent: {}
+[4.532034] (-) TimerEvent: {}
+[4.538981] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[4.632264] (-) TimerEvent: {}
+[4.733005] (-) TimerEvent: {}
+[4.752493] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[4.775963] (hexapod_controller_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/ros/hexapod_controller/build/hexapod_controller_interfaces\n'}
+[4.833197] (-) TimerEvent: {}
+[4.888435] (hexapod_controller_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[4.933446] (-) TimerEvent: {}
+[4.940040] (hexapod_controller_interfaces) StderrLine: {'line': b"failed to create symbolic link '/home/ros/hexapod_controller/build/hexapod_controller_interfaces/ament_cmake_python/hexapod_controller_interfaces/hexapod_controller_interfaces' because existing path cannot be removed: Is a directory\n"}
+[4.942940] (hexapod_controller_interfaces) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces] Error 1\n'}
+[4.943943] (hexapod_controller_interfaces) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/all] Error 2\n'}
+[4.944583] (hexapod_controller_interfaces) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[4.946124] (hexapod_controller_interfaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[5.033969] (-) TimerEvent: {}
+[5.134933] (-) TimerEvent: {}
+[5.235811] (-) TimerEvent: {}
+[5.337737] (-) TimerEvent: {}
+[5.439838] (-) TimerEvent: {}
+[5.541892] (-) TimerEvent: {}
+[5.643258] (-) TimerEvent: {}
+[5.745389] (-) TimerEvent: {}
+[5.848811] (-) TimerEvent: {}
+[5.952255] (-) TimerEvent: {}
+[6.054382] (-) TimerEvent: {}
+[6.157299] (-) TimerEvent: {}
+[6.260779] (-) TimerEvent: {}
+[6.363607] (-) TimerEvent: {}
+[6.466534] (-) TimerEvent: {}
+[6.569611] (-) TimerEvent: {}
+[6.678320] (-) TimerEvent: {}
+[6.770014] (hexapod_controller_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target hexapod_controller_interfaces__rosidl_generator_c\x1b[0m\n'}
+[6.776811] (hexapod_controller_interfaces) StdoutLine: {'line': b'[  5%] Built target hexapod_controller_interfaces__cpp\n'}
+[6.778532] (-) TimerEvent: {}
+[6.831202] (hexapod_controller_interfaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.o\x1b[0m\n'}
+[6.832252] (hexapod_controller_interfaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o\x1b[0m\n'}
+[6.878774] (-) TimerEvent: {}
+[6.979667] (-) TimerEvent: {}
+[7.079311] (hexapod_controller_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32m\x1b[1mLinking C shared library libhexapod_controller_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[7.080083] (-) TimerEvent: {}
+[7.181131] (-) TimerEvent: {}
+[7.258933] (hexapod_controller_interfaces) StdoutLine: {'line': b'[ 12%] Built target hexapod_controller_interfaces__rosidl_generator_c\n'}
+[7.263168] (hexapod_controller_interfaces) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.270398] (hexapod_controller_interfaces) CommandEnded: {'returncode': 2}
+[7.281315] (-) TimerEvent: {}
+[7.382835] (-) TimerEvent: {}
+[7.484377] (-) TimerEvent: {}
+[7.585303] (-) TimerEvent: {}
+[7.687454] (-) TimerEvent: {}
+[7.788845] (-) TimerEvent: {}
+[7.891604] (-) TimerEvent: {}
+[7.911626] (hexapod_controller_interfaces) JobEnded: {'identifier': 'hexapod_controller_interfaces', 'rc': 2}
+[7.923796] (-) EventReactorShutdown: {}

@@ -1,0 +1,26 @@
+[0.072s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
+[0.195s] -- Found ament_cmake: 1.3.4 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.841s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.883s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.892s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.906s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.055s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.328s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[3.126s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.182s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.274s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[4.365s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.366s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[4.366s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[4.479s] -- Configuring done
+[4.701s] -- Generating done
+[4.731s] -- Build files have been written to: /home/ros/hexapod_controller/build/hexapod_controller_interfaces
+[4.856s] [35m[1mConsolidate compiler generated dependencies of target hexapod_controller_interfaces__rosidl_generator_c[0m
+[4.900s] failed to create symbolic link '/home/ros/hexapod_controller/build/hexapod_controller_interfaces/ament_cmake_python/hexapod_controller_interfaces/hexapod_controller_interfaces' because existing path cannot be removed: Is a directory
+[4.901s] [  2%] Built target hexapod_controller_interfaces__cpp
+[4.902s] gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces] Error 1
+[4.902s] gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_hexapod_controller_interfaces.dir/all] Error 2
+[4.903s] gmake[1]: *** Waiting for unfinished jobs....
+[4.920s] [ 12%] Built target hexapod_controller_interfaces__rosidl_generator_c
+[4.923s] gmake: *** [Makefile:146: all] Error 2
+[4.931s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4

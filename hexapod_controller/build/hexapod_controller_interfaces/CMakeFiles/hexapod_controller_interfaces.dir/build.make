@@ -67,6 +67,7 @@ include CMakeFiles/hexapod_controller_interfaces.dir/compiler_depend.make
 include CMakeFiles/hexapod_controller_interfaces.dir/progress.make
 
 CMakeFiles/hexapod_controller_interfaces: /home/ros/hexapod_controller/src/hexapod_controller_interfaces/msg/ServoPositionValues.msg
+CMakeFiles/hexapod_controller_interfaces: /home/ros/hexapod_controller/src/hexapod_controller_interfaces/msg/BodyIKCalculate.msg
 
 hexapod_controller_interfaces: CMakeFiles/hexapod_controller_interfaces
 hexapod_controller_interfaces: CMakeFiles/hexapod_controller_interfaces.dir/build.make
