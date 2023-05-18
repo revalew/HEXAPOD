@@ -18,7 +18,7 @@ class MotorController(Node):
         # LEG ID
         self.id_id = id
         
-        # IDs of the leg servos
+        # IDs of the specific leg servos
         self.id_id_1 = id * 3 - 2
         self.id_id_2 = self.id_id_1 + 1
         self.id_id_3 = self.id_id_1 + 2
@@ -38,18 +38,18 @@ class MotorController(Node):
             self.femur = 10
             self.tibia = 11
         
-        # -- LEGWAN -- 
+        # create the leg subscriber
         self.pose_subsciber = self.create_subscription(
             ServoPositionValues, "bodyIK_topic", self.pose_callback_id,20)
         
         
-    # servo
     def pose_callback_id(self, msg: ServoPositionValues):
 
-        # Sleep time added to give some time to tty converter
-        time.sleep(0.0125*self.id_id)
+        # Sleep added to solve the problem of USB to TTL converter's overload
+        time.sleep(0.0125 * self.id_id)
+        # time.sleep(0.0125 * (self.id_id - 1) + 0.000001) # MAYBE WE SHOULD TRY SOMETHING LIKE THIS TO MINIMIZE THE DELAY
 
-        self.get_logger().info("Leg listener is working!")
+        # self.get_logger().info("Leg listener is working!")
         
         # Initialize Groupsyncwrite instance
         groupSyncWrite = GroupSyncWrite(portHandler, packetHandler, ADDR_MX_GOAL_POSITION, self.LEN_MX_GOAL_POSITION)
@@ -72,8 +72,9 @@ class MotorController(Node):
         # Add Dynamixel#3 goal position value to the Syncwrite parameter storage
         dxl_addparam_result = groupSyncWrite.addParam(self.id_id_3, param_goal_position3)
         
-         # Sleep time added to give some time to tty converter
+        # Sleep added to solve the problem of USB to TTL converter's overload
         time.sleep(0.0125*self.id_id)
+        # time.sleep(0.0125 * (self.id_id - 1) + 0.000001) # MAYBE WE SHOULD TRY SOMETHING LIKE THIS TO MINIMIZE THE DELAY
         
         # Syncwrite goal position
         dxl_comm_result = groupSyncWrite.txPacket()
@@ -82,7 +83,7 @@ class MotorController(Node):
         groupSyncWrite.clearParam()
         
         
-# NODE FUNCTIONS (MAINS)
+# NODE FUNCTIONS called from setup.py / hexapod.launch.py
 def leg1(args=None):
     rclpy.init(args=args)
     nodeSubscriber = MotorController(1)

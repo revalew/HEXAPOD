@@ -47,7 +47,17 @@ RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /root/.bashrc
 # setup the correct node source for a custom workspace
 RUN echo "source /home/ros/hexapod_controller/install/setup.bash" >> /root/.bashrc
-# go to a project directory
-# RUN echo "cd /home/ros/" >> /root/.bashrc
+
+# Build the packages since we removed the build and install directories from the repostiory because they caused issues when pulling on a different machine
 WORKDIR /home/ros/hexapod_controller
-# RUN colcon build --packages-select hexapod_controller --symlink-install
+RUN colcon build --packages-select hexapod_controller_interfaces
+RUN colcon build --packages-select hexapod_controller --symlink-install
+
+
+# NETWORK CONFIG (might be useful in the future)
+# Define some ENV Vars
+# ENV PORT=80 \
+  # DIRECTORY=/ros \
+  # IS_DOCKER=true
+# Expose the port
+# EXPOSE ${PORT}

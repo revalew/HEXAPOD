@@ -263,22 +263,63 @@ Using the custom interfaces (message types) in main package
 	This is everything we need to setup our custom interface in ROS2 
 
 -------------------------------------------------------------------------------------------------------------
-Bluetooth configuration - xbox one controller
+Bluetooth controller configuration (the xbox one)
 
 	https://fostips.com/install-driver-xbox-one-controller-headset-ubuntu/
-	
 
-	 install the dependency libraries:
-
+	Install the libraries:
 		sudo apt install linux-headers-$(uname -r) dkms curl cabextract git
 
-
-	Now, use git command to clone the source code of xone kernel driver:
-
+	Clone the source code of xone kernel driver:
 		git clone https://github.com/medusalix/xone
 
-
-	 build and install the driver module
-
+	Build and install the driver module
 	 	cd xone
 		sudo ./install.sh --release
+
+-------------------------------------------------------------------------------------------------------------
+Remove the files from the repository
+
+	.gitignore will prevent untracked files from being added (without an add -f) to the set of files tracked by Git. However, Git will continue to track any files that are already being tracked. To stop tracking a file, we must remove it from the index:
+		git rm --cached <file>
+
+	To remove a folder and all files in the folder recursively:
+		git rm -r --cached <folder>
+	
+	The removal of the file from the head revision will happen on the next commit.
+
+	WARNING: While this will not remove the physical file from your local machine, it will remove the files from other developers' machines on their next git pull.
+	
+	In my case I suppressed the output since my repository had thousands of files: git rm -r -q --cached <files>.
+
+	We can also use a different command to stop tracking BUT leave the files in the repository:
+		git update-index --skip-worktree <file>
+
+	ALSO This takes the list of the ignored files, removes them from the index, and commits the changes:
+		git ls-files -c --ignored --exclude-standard -z | xargs -0 git rm --cached
+		git commit -am "Remove ignored files"
+	
+	If you need to remove them from the working directory, too, then simply run:
+		git ls-files --ignored --exclude-standard | xargs git rm
+
+-------------------------------------------------------------------------------------------------------------
+Creating a symlink (udev rule) to ensure the correct name of the connected USB converter:
+
+	Connect the USB device to your system. Identify the unique attributes of the USB device. You can use the udevadm command to get the attributes. Run the following command and look for the attributes that uniquely identify your device:
+		udevadm info -a -n /dev/ttyUSB0
+		
+	Create a new udev rule file using a text editor. For example:
+		sudo nano /etc/udev/rules.d/99-usb-serial.rules
+		
+	Add the udev rule to assign a persistent name. Use the unique attributes identified in step 2 to match your USB device. The rule may look something like this:
+		SUBSYSTEM=="tty", ATTRS{idVendor}=="1234", ATTRS{idProduct}=="5678", SYMLINK+="myusbdevice"
+	Replace 1234 and 5678 with the appropriate values for your USB device.
+
+	Save the file and exit the text editor. Reload the udev rules using the following command:
+		sudo udevadm control --reload-rules
+
+	Unplug and reconnect the USB device. After creating the udev rule, your USB device should be assigned the persistent name you specified (e.g., /dev/myusbdevice).
+	
+	What seems to be the values of the converter we are using:
+		ATTRS{idVendor}=="1a86"
+		ATTRS{idProduct}=="7523"

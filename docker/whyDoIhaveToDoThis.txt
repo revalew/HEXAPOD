@@ -13,4 +13,5 @@ apt-get update && apt-get install --no-install-recommends -y \
 && echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /root/.bashrc \
 && echo "source /home/ros/hexapod_controller/install/setup.bash" >> /root/.bashrc \
 && cd /home/ros/hexapod_controller \
-&& colcon build --packages-select hexapod_controller --symlink-install
+&& colcon build --packages-select hexapod_controller --symlink-install \
+&& colcon build --packages-select hexapod_controller_interfaces

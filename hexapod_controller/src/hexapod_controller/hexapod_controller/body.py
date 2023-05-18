@@ -42,8 +42,10 @@ class BodyIKNode(Node):
         # create the msg with the specific type
         cmd = ServoPositionValues()
         
-        # sending body_ik return list of lists to msg_interface id_pose 
-        # eg. [0][1] leg one, seccond axis (femur)
+        # sending the leg_values list returned from body_ik function
+        # and publishing it to the bodyIK_topic topic as our custom msg type
+        # eg. [0][1] leg one, second axis (femur)
+        # eg. [1][2] leg two, third axis (tibia)
         j, k = 0, 0
         for i in range(0, 18, 1):
             
@@ -88,7 +90,7 @@ def main(args=None):
     # ENABLE TORQUE
     gain_strength(DXL_ID)
     
-    # NODE PART
+    # CREATE THE NODE
     rclpy.init(args=args)
     nodePublish = BodyIKNode()
     rclpy.spin(nodePublish)
@@ -97,7 +99,7 @@ def main(args=None):
     # DISABLE TORQUE
     loose_strength(DXL_ID)
     
-    # CLOSING PORT
+    # CLOSE PORT
     portHandler.closePort()
     
 

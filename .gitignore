@@ -1,3 +1,7 @@
 lib
 DynamixelSDK
 ros2_ws
+.vscode
+hexapod_controller/build
+hexapod_controller/install
+hexapod_controller/log

@@ -1,18 +1,37 @@
+# Welcome to our HEXAPOD! To get started, run `docker compose up -d` in this directory
+# You can configure your container here, by modifying this file
 version: "3.9"
 services:
   ros2:
-    build: .
+    # container_name: ros2
+    
+    # To build from source
+    # build: .
+
+    # Or, to use a Dockerfile
+    context: .
+    dockerfile: ./dockerfile
+
   #  network_mode: "host"
     # restart: no
+
+  # Set port that web service will be served on. Keep container port as 80
   #  ports: 
     #  - "11811:11811" # node discoverer
+
     volumes:
     # relative PATH which SHULD work when coupled with our GIT repository
     # https://github.com/revalew/HEXAPOD.git
       - ../.:/home/ros
+
     devices:
       # USB device - where our USB to TTL converter is connected
       - /dev/ttyUSB0:/dev/ttyUSB0
+      # - /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0:/dev/ttyUSB0
       # - /dev/ttyUSB1:/dev/ttyUSB1
-# Enable the terminal - without it it would constantly pop up and close
+    
+    # Specify restart policy
+    # restart: unless-stopped
+
+    # Enable the terminal - without it it would constantly pop up and close
     tty: true

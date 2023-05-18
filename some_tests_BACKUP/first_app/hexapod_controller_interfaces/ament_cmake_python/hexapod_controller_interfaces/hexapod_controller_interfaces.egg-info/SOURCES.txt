@@ -1,8 +1,0 @@
-setup.py
-hexapod_controller_interfaces/__init__.py
-hexapod_controller_interfaces.egg-info/PKG-INFO
-hexapod_controller_interfaces.egg-info/SOURCES.txt
-hexapod_controller_interfaces.egg-info/dependency_links.txt
-hexapod_controller_interfaces.egg-info/top_level.txt
-hexapod_controller_interfaces/msg/__init__.py
-hexapod_controller_interfaces/msg/_servo_position_values.py

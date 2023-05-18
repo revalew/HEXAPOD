@@ -1,9 +1,0 @@
-[console_scripts]
-body_IK_node = hexapod_controller.body:main
-joystick_node = hexapod_controller.joystick:mainleg_1_node = hexapod_controller.legs:leg1
-leg_2_node = hexapod_controller.legs:leg2
-leg_3_node = hexapod_controller.legs:leg3
-leg_4_node = hexapod_controller.legs:leg4
-leg_5_node = hexapod_controller.legs:leg5
-leg_6_node = hexapod_controller.legs:leg6
-

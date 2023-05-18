@@ -16,15 +16,15 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='root',
+    maintainer='KKKDevTeam',
     maintainer_email='root@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='This package is responsible for controlling our HEXAPOD robot using the DynamixelSDK and ROS2 inside of the custom Docker container',
+    license='Free for all',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             "body_IK_node = hexapod_controller.body:main",
-            # "keyboard_node = hexapod_controller.keyboard:main"
+            "keyboard_node = hexapod_controller.teleop_keyboard_test:main"
             "joystick_node = hexapod_controller.joystick:main"
             "leg_1_node = hexapod_controller.legs:leg1",
             "leg_2_node = hexapod_controller.legs:leg2",
@@ -38,8 +38,8 @@ setup(
 '''
 INSTALLING THE CUSTOM NODE:
 
-body_IK_node => executable name
+body_IK_node => executable name / node name
 hexapod_controller => package name
-body => file to run
+body => file to run without the ".py" extension
 main => function from within said file which we want to run
 '''
