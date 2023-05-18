@@ -1,0 +1,20 @@
+[31mCMake Error at CMakeLists.txt:20:
+  Parse error.  Function missing ending ")".  Instead found unterminated
+  string with text "msg/BodyIKCalculate.msg
+
+  )
+
+  
+
+  ament_export_dependencies(rosidl_default_runtime)
+
+  
+
+  ament_package()
+
+  ".
+
+[0m
+-- Configuring incomplete, errors occurred!
+See also "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/CMakeFiles/CMakeOutput.log".
+gmake: *** [Makefile:747: cmake_check_build_system] Error 1

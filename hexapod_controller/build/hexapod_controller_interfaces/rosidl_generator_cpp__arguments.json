@@ -3,7 +3,8 @@
   "output_dir": "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_generator_cpp/hexapod_controller_interfaces",
   "template_dir": "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_adapter/hexapod_controller_interfaces:msg/ServoPositionValues.idl"
+    "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_adapter/hexapod_controller_interfaces:msg/ServoPositionValues.idl",
+    "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_adapter/hexapod_controller_interfaces:msg/BodyIKCalculate.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp",
@@ -21,6 +22,7 @@
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__builder.hpp.em",
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
-    "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_adapter/hexapod_controller_interfaces/msg/ServoPositionValues.idl"
+    "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_adapter/hexapod_controller_interfaces/msg/ServoPositionValues.idl",
+    "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_adapter/hexapod_controller_interfaces/msg/BodyIKCalculate.idl"
   ]
 }

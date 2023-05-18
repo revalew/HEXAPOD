@@ -1,2 +1,4 @@
+msg/BodyIKCalculate.idl
+msg/BodyIKCalculate.msg
 msg/ServoPositionValues.idl
 msg/ServoPositionValues.msg

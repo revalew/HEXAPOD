@@ -83,6 +83,7 @@ rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h: /o
 rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h: /opt/ros/humble/share/rosidl_generator_c/resource/msg__type_support.h.em
 rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h: /opt/ros/humble/share/rosidl_generator_c/resource/srv__type_support.h.em
 rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h: rosidl_adapter/hexapod_controller_interfaces/msg/ServoPositionValues.idl
+rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h: rosidl_adapter/hexapod_controller_interfaces/msg/BodyIKCalculate.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/hexapod_controller/build/hexapod_controller_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
 	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_generator_c__arguments.json
 
@@ -95,8 +96,23 @@ rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_value
 rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support.h: rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support.h
 
+rosidl_generator_c/hexapod_controller_interfaces/msg/body_ik_calculate.h: rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/hexapod_controller_interfaces/msg/body_ik_calculate.h
+
+rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.h: rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.h
+
+rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.h: rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.h
+
+rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.h: rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.h
+
 rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c: rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c
+
+rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c: rosidl_generator_c/hexapod_controller_interfaces/msg/servo_position_values.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c
 
 CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.o: CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.o: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c
@@ -112,19 +128,35 @@ CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generato
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c -o CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.s
 
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o: CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o: CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/hexapod_controller/build/hexapod_controller_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o -MF CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o.d -o CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o -c /home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c
+
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c > CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.i
+
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c -o CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.s
+
 # Object files for target hexapod_controller_interfaces__rosidl_generator_c
 hexapod_controller_interfaces__rosidl_generator_c_OBJECTS = \
-"CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.o"
+"CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.o" \
+"CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o"
 
 # External object files for target hexapod_controller_interfaces__rosidl_generator_c
 hexapod_controller_interfaces__rosidl_generator_c_EXTERNAL_OBJECTS =
 
 libhexapod_controller_interfaces__rosidl_generator_c.so: CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.o
+libhexapod_controller_interfaces__rosidl_generator_c.so: CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o
 libhexapod_controller_interfaces__rosidl_generator_c.so: CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/build.make
 libhexapod_controller_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libhexapod_controller_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libhexapod_controller_interfaces__rosidl_generator_c.so: CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/hexapod_controller/build/hexapod_controller_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libhexapod_controller_interfaces__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/hexapod_controller/build/hexapod_controller_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared library libhexapod_controller_interfaces__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +167,11 @@ CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/clean
 
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/body_ik_calculate.h
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.h
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.h
+CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.h
 CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c
 CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.h
 CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__struct.h

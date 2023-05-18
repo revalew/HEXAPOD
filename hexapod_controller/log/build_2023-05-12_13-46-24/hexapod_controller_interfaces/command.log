@@ -1,4 +1,0 @@
-Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
-Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
-Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ros/hexapod_controller/build/hexapod_controller_interfaces
-Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ros/hexapod_controller/build/hexapod_controller_interfaces

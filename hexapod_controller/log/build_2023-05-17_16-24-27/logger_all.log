@@ -1,0 +1,202 @@
+[1.453s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.453s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffa88c7f70>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffa88c78e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffa88c78e0>>, mixin_verb=('build',))
+[1.600s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.603s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[1.606s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[1.606s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.607s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.607s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.607s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.607s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.607s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ros/hexapod_controller'
+[1.608s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.608s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.608s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.610s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.663s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.665s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.665s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.666s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.666s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.667s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.667s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.668s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.668s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.668s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.669s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.669s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.669s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.670s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.670s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.670s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.670s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.670s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.671s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.671s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.671s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.671s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.672s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.672s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.672s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['ignore', 'ignore_ament_install']
+[1.673s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'ignore'
+[1.673s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'ignore_ament_install'
+[1.673s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['colcon_pkg']
+[1.673s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'colcon_pkg'
+[1.674s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['colcon_meta']
+[1.674s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'colcon_meta'
+[1.674s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['ros']
+[1.674s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'ros'
+[1.686s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hexapod_controller' with type 'ros.ament_python' and name 'hexapod_controller'
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extension 'ignore'
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extension 'ignore_ament_install'
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extensions ['colcon_pkg']
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extension 'colcon_pkg'
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extensions ['colcon_meta']
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extension 'colcon_meta'
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extensions ['ros']
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller_interfaces) by extension 'ros'
+[1.691s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hexapod_controller_interfaces' with type 'ros.ament_cmake' and name 'hexapod_controller_interfaces'
+[1.692s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.692s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.692s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.692s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.692s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.802s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'cmake_args' from command line to 'None'
+[1.802s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'cmake_target' from command line to 'None'
+[1.802s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.802s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[1.803s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[1.803s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[1.803s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[1.803s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[1.803s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.803s] DEBUG:colcon.colcon_core.verb:Building package 'hexapod_controller_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ros/hexapod_controller/build/hexapod_controller_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ros/hexapod_controller/install/hexapod_controller_interfaces', 'merge_install': False, 'path': '/home/ros/hexapod_controller/src/hexapod_controller_interfaces', 'symlink_install': False, 'test_result_base': None}
+[1.808s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_args' from command line to 'None'
+[1.808s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_target' from command line to 'None'
+[1.808s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.808s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[1.808s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_clean_first' from command line to 'False'
+[1.808s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_force_configure' from command line to 'False'
+[1.808s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'ament_cmake_args' from command line to 'None'
+[1.809s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[1.809s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.809s] DEBUG:colcon.colcon_core.verb:Building package 'hexapod_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ros/hexapod_controller/build/hexapod_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ros/hexapod_controller/install/hexapod_controller', 'merge_install': False, 'path': '/home/ros/hexapod_controller/src/hexapod_controller', 'symlink_install': False, 'test_result_base': None}
+[1.812s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.826s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.828s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ros/hexapod_controller/src/hexapod_controller_interfaces' with build type 'ament_cmake'
+[1.828s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ros/hexapod_controller/src/hexapod_controller_interfaces'
+[1.852s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.853s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.854s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.903s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake /home/ros/hexapod_controller/src/hexapod_controller_interfaces -DCMAKE_INSTALL_PREFIX=/home/ros/hexapod_controller/install/hexapod_controller_interfaces
+[9.285s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake /home/ros/hexapod_controller/src/hexapod_controller_interfaces -DCMAKE_INSTALL_PREFIX=/home/ros/hexapod_controller/install/hexapod_controller_interfaces
+[9.290s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
+[26.475s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
+[27.075s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --install /home/ros/hexapod_controller/build/hexapod_controller_interfaces
+[27.576s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_controller_interfaces)
+[27.578s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --install /home/ros/hexapod_controller/build/hexapod_controller_interfaces
+[27.602s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces' for CMake module files
+[27.608s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces' for CMake config files
+[27.611s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller_interfaces', 'cmake_prefix_path')
+[27.617s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/cmake_prefix_path.ps1'
+[27.620s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/cmake_prefix_path.dsv'
+[27.622s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/cmake_prefix_path.sh'
+[27.626s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib'
+[27.627s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller_interfaces', 'ld_library_path_lib')
+[27.633s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/ld_library_path_lib.ps1'
+[27.635s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/ld_library_path_lib.dsv'
+[27.637s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/ld_library_path_lib.sh'
+[27.639s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/bin'
+[27.640s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/pkgconfig/hexapod_controller_interfaces.pc'
+[27.645s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/python3.10/site-packages'
+[27.646s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/bin'
+[27.652s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.ps1'
+[27.656s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.dsv'
+[27.659s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.sh'
+[27.663s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.bash'
+[27.672s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.zsh'
+[27.675s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/colcon-core/packages/hexapod_controller_interfaces)
+[28.216s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_controller_interfaces)
+[28.227s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces' for CMake module files
+[28.233s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces' for CMake config files
+[28.236s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller_interfaces', 'cmake_prefix_path')
+[28.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/cmake_prefix_path.ps1'
+[28.244s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/cmake_prefix_path.dsv'
+[28.246s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/cmake_prefix_path.sh'
+[28.251s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib'
+[28.251s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller_interfaces', 'ld_library_path_lib')
+[28.257s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/ld_library_path_lib.ps1'
+[28.259s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/ld_library_path_lib.dsv'
+[28.261s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/hook/ld_library_path_lib.sh'
+[28.264s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/bin'
+[28.264s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/pkgconfig/hexapod_controller_interfaces.pc'
+[28.265s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/python3.10/site-packages'
+[28.266s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/bin'
+[28.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.ps1'
+[28.276s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.dsv'
+[28.279s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.sh'
+[28.281s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.bash'
+[28.284s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.zsh'
+[28.286s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/colcon-core/packages/hexapod_controller_interfaces)
+[28.288s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ros/hexapod_controller/src/hexapod_controller' with build type 'ament_python'
+[28.289s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller', 'ament_prefix_path')
+[28.295s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/hook/ament_prefix_path.ps1'
+[28.299s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/hook/ament_prefix_path.dsv'
+[28.301s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/hook/ament_prefix_path.sh'
+[28.309s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[28.310s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[29.494s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ros/hexapod_controller/src/hexapod_controller'
+[29.500s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[29.500s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[31.077s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --uninstall --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build
+[33.100s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller' returned '0': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --uninstall --editable --build-directory /home/ros/hexapod_controller/build/hexapod_controller/build
+[33.109s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/hexapod_controller/src/hexapod_controller': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/ros/hexapod_controller/build/hexapod_controller/build install --record /home/ros/hexapod_controller/build/hexapod_controller/install.log --single-version-externally-managed
+[34.508s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller' for CMake module files
+[34.510s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/hexapod_controller/src/hexapod_controller' returned '0': PYTHONPATH=/home/ros/hexapod_controller/build/hexapod_controller/prefix_override:/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/ros/hexapod_controller/build/hexapod_controller/build install --record /home/ros/hexapod_controller/build/hexapod_controller/install.log --single-version-externally-managed
+[34.515s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller' for CMake config files
+[34.521s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller/lib'
+[34.522s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller/bin'
+[34.522s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller/lib/pkgconfig/hexapod_controller.pc'
+[34.523s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller/lib/python3.10/site-packages'
+[34.524s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller', 'pythonpath')
+[34.530s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/hook/pythonpath.ps1'
+[34.532s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/hook/pythonpath.dsv'
+[34.534s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/hook/pythonpath.sh'
+[34.537s] Level 1:colcon.colcon_core.environment:checking '/home/ros/hexapod_controller/install/hexapod_controller/bin'
+[34.538s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_controller)
+[34.544s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/package.ps1'
+[34.546s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/package.dsv'
+[34.549s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/package.sh'
+[34.552s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/package.bash'
+[34.554s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/hexapod_controller/install/hexapod_controller/share/hexapod_controller/package.zsh'
+[34.556s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros/hexapod_controller/install/hexapod_controller/share/colcon-core/packages/hexapod_controller)
+[34.558s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[34.559s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[34.559s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[34.560s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[34.587s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[34.587s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[34.588s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[34.588s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[34.588s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+[34.588s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[34.594s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/hexapod_controller/install/local_setup.ps1'
+[34.598s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ros/hexapod_controller/install/_local_setup_util_ps1.py'
+[34.605s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/hexapod_controller/install/setup.ps1'
+[34.612s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/hexapod_controller/install/local_setup.sh'
+[34.615s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ros/hexapod_controller/install/_local_setup_util_sh.py'
+[34.618s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/hexapod_controller/install/setup.sh'
+[34.625s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/hexapod_controller/install/local_setup.bash'
+[34.628s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/hexapod_controller/install/setup.bash'
+[34.634s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/hexapod_controller/install/local_setup.zsh'
+[34.637s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/hexapod_controller/install/setup.zsh'

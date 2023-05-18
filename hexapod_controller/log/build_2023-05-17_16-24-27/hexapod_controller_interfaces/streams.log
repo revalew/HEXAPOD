@@ -1,0 +1,250 @@
+[0.072s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake /home/ros/hexapod_controller/src/hexapod_controller_interfaces -DCMAKE_INSTALL_PREFIX=/home/ros/hexapod_controller/install/hexapod_controller_interfaces
+[0.371s] -- The C compiler identification is GNU 11.3.0
+[0.649s] -- The CXX compiler identification is GNU 11.3.0
+[0.684s] -- Detecting C compiler ABI info
+[1.034s] -- Detecting C compiler ABI info - done
+[1.063s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.064s] -- Detecting C compile features
+[1.066s] -- Detecting C compile features - done
+[1.080s] -- Detecting CXX compiler ABI info
+[1.464s] -- Detecting CXX compiler ABI info - done
+[1.496s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.497s] -- Detecting CXX compile features
+[1.499s] -- Detecting CXX compile features - done
+[1.526s] -- Found ament_cmake: 1.3.4 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.307s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[2.931s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[2.958s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.025s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[3.321s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.727s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[5.593s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[6.650s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.741s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.6", minimum required is "3.6") 
+[6.765s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[6.862s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.6", minimum required is "3.5") 
+[6.862s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[6.863s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[6.864s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[6.947s] -- Found PythonExtra: .so  
+[7.136s] -- Configuring done
+[7.404s] -- Generating done
+[7.426s] -- Build files have been written to: /home/ros/hexapod_controller/build/hexapod_controller_interfaces
+[7.455s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake /home/ros/hexapod_controller/src/hexapod_controller_interfaces -DCMAKE_INSTALL_PREFIX=/home/ros/hexapod_controller/install/hexapod_controller_interfaces
+[7.459s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
+[7.666s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[7.717s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[7.768s] [  5%] Built target ament_cmake_python_copy_hexapod_controller_interfaces
+[9.084s] running egg_info
+[9.087s] creating hexapod_controller_interfaces.egg-info
+[9.088s] writing hexapod_controller_interfaces.egg-info/PKG-INFO
+[9.095s] writing dependency_links to hexapod_controller_interfaces.egg-info/dependency_links.txt
+[9.099s] writing top-level names to hexapod_controller_interfaces.egg-info/top_level.txt
+[9.103s] writing manifest file 'hexapod_controller_interfaces.egg-info/SOURCES.txt'
+[9.107s] reading manifest file 'hexapod_controller_interfaces.egg-info/SOURCES.txt'
+[9.131s] writing manifest file 'hexapod_controller_interfaces.egg-info/SOURCES.txt'
+[9.277s] [  5%] Built target ament_cmake_python_build_hexapod_controller_interfaces_egg
+[9.645s] [  5%] Built target hexapod_controller_interfaces__cpp
+[9.706s] [  7%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[9.742s] [ 10%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[9.748s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[9.811s] [ 15%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c.o[0m
+[10.173s] [ 17%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_generator_c.dir/rosidl_generator_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c.o[0m
+[10.481s] [ 20%] [32m[1mLinking C shared library libhexapod_controller_interfaces__rosidl_generator_c.so[0m
+[10.741s] [ 20%] Built target hexapod_controller_interfaces__rosidl_generator_c
+[10.797s] [ 23%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[11.758s] [ 25%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/hexapod_controller_interfaces/msg/servo_position_values__type_support.cpp.o[0m
+[11.836s] [ 28%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support.cpp.o[0m
+[11.841s] [ 30%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/hexapod_controller_interfaces/msg/detail/dds_fastrtps/servo_position_values__type_support.cpp.o[0m
+[12.885s] [ 33%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/hexapod_controller_interfaces/msg/servo_position_values__type_support.cpp.o[0m
+[13.184s] [ 35%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/hexapod_controller_interfaces/msg/body_ik_calculate__type_support.cpp.o[0m
+[13.392s] [ 38%] [32m[1mLinking CXX shared library libhexapod_controller_interfaces__rosidl_typesupport_c.so[0m
+[13.647s] [ 41%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/hexapod_controller_interfaces/msg/body_ik_calculate__type_support.cpp.o[0m
+[13.659s] [ 41%] Built target hexapod_controller_interfaces__rosidl_typesupport_c
+[13.724s] [ 43%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[14.787s] [ 46%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.cpp.o[0m
+[14.832s] [ 48%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/hexapod_controller_interfaces/msg/detail/dds_fastrtps/body_ik_calculate__type_support.cpp.o[0m
+[15.619s] [ 51%] [32m[1mLinking CXX shared library libhexapod_controller_interfaces__rosidl_typesupport_cpp.so[0m
+[15.911s] [ 51%] Built target hexapod_controller_interfaces__rosidl_typesupport_cpp
+[15.976s] [ 53%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[16.155s] [ 56%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support_c.cpp.o[0m
+[17.728s] [ 58%] [32m[1mLinking CXX shared library libhexapod_controller_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[17.916s] [ 61%] [32m[1mLinking CXX shared library libhexapod_controller_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[18.181s] [ 61%] Built target hexapod_controller_interfaces__rosidl_typesupport_introspection_cpp
+[18.260s] [ 64%] [32mBuilding CXX object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support_c.cpp.o[0m
+[18.462s] [ 64%] Built target hexapod_controller_interfaces__rosidl_typesupport_fastrtps_cpp
+[18.565s] [ 66%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.c.o[0m
+[18.574s] [ 69%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support.c.o[0m
+[18.856s] [ 71%] [32m[1mLinking C shared library libhexapod_controller_interfaces__rosidl_typesupport_introspection_c.so[0m
+[19.011s] [ 71%] Built target hexapod_controller_interfaces__rosidl_typesupport_introspection_c
+[19.983s] [ 74%] [32m[1mLinking CXX shared library libhexapod_controller_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[20.344s] [ 74%] Built target hexapod_controller_interfaces__rosidl_typesupport_fastrtps_c
+[20.438s] [ 74%] Built target hexapod_controller_interfaces
+[20.536s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[22.796s] [ 76%] Built target hexapod_controller_interfaces__py
+[22.896s] [ 79%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_generator_py.dir/rosidl_generator_py/hexapod_controller_interfaces/msg/_servo_position_values_s.c.o[0m
+[22.897s] [ 82%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_generator_py.dir/rosidl_generator_py/hexapod_controller_interfaces/msg/_body_ik_calculate_s.c.o[0m
+[23.456s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/hexapod_controller_interfaces/libhexapod_controller_interfaces__rosidl_generator_py.so[0m
+[23.655s] [ 84%] Built target hexapod_controller_interfaces__rosidl_generator_py
+[23.758s] [ 87%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/hexapod_controller_interfaces/_hexapod_controller_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[23.759s] [ 89%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/hexapod_controller_interfaces/_hexapod_controller_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[23.774s] [ 92%] [32mBuilding C object CMakeFiles/hexapod_controller_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hexapod_controller_interfaces/_hexapod_controller_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[24.338s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[24.346s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[24.393s] [100%] [32m[1mLinking C shared library rosidl_generator_py/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[24.535s] [100%] Built target hexapod_controller_interfaces__rosidl_typesupport_c__pyext
+[24.544s] [100%] Built target hexapod_controller_interfaces__rosidl_typesupport_introspection_c__pyext
+[24.596s] [100%] Built target hexapod_controller_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[24.644s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/ros/hexapod_controller/build/hexapod_controller_interfaces -- -j4 -l4
+[25.243s] Invoking command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --install /home/ros/hexapod_controller/build/hexapod_controller_interfaces
+[25.275s] -- Install configuration: ""
+[25.276s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/ament_index/resource_index/rosidl_interfaces/hexapod_controller_interfaces
+[25.277s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces
+[25.278s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg
+[25.278s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail
+[25.279s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.h
+[25.281s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__struct.h
+[25.283s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__functions.c
+[25.285s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.h
+[25.286s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.c
+[25.288s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support.h
+[25.290s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__functions.h
+[25.292s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.h
+[25.293s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/rosidl_generator_c__visibility_control.h
+[25.295s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/servo_position_values.h
+[25.297s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/body_ik_calculate.h
+[25.299s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/library_path.sh
+[25.299s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/library_path.dsv
+[25.302s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_generator_c.so
+[25.306s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_generator_c.so" to ""
+[25.307s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces
+[25.309s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg
+[25.311s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail
+[25.313s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__rosidl_typesupport_fastrtps_c.h
+[25.313s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__rosidl_typesupport_fastrtps_c.h
+[25.314s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[25.316s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_fastrtps_c.so
+[25.319s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[25.320s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces
+[25.321s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg
+[25.321s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail
+[25.322s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support.c
+[25.323s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.c
+[25.325s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__rosidl_typesupport_introspection_c.h
+[25.327s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__rosidl_typesupport_introspection_c.h
+[25.329s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[25.332s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_introspection_c.so
+[25.335s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[25.337s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_c.so
+[25.340s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_c.so" to ""
+[25.341s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces
+[25.342s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg
+[25.342s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail
+[25.343s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__builder.hpp
+[25.344s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__builder.hpp
+[25.346s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__struct.hpp
+[25.348s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.hpp
+[25.349s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__traits.hpp
+[25.351s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__traits.hpp
+[25.353s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/body_ik_calculate.hpp
+[25.354s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/servo_position_values.hpp
+[25.356s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces
+[25.357s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg
+[25.358s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail
+[25.358s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/dds_fastrtps
+[25.359s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__rosidl_typesupport_fastrtps_cpp.hpp
+[25.361s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__rosidl_typesupport_fastrtps_cpp.hpp
+[25.363s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[25.366s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[25.370s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[25.371s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces
+[25.371s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg
+[25.372s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail
+[25.372s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__type_support.cpp
+[25.374s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__rosidl_typesupport_introspection_cpp.hpp
+[25.376s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/body_ik_calculate__rosidl_typesupport_introspection_cpp.hpp
+[25.377s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/include/hexapod_controller_interfaces/hexapod_controller_interfaces/msg/detail/servo_position_values__type_support.cpp
+[25.381s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_introspection_cpp.so
+[25.384s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[25.386s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_cpp.so
+[25.389s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_typesupport_cpp.so" to ""
+[25.390s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/pythonpath.sh
+[25.392s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/pythonpath.dsv
+[25.393s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces-0.0.0-py3.10.egg-info
+[25.394s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[25.396s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[25.398s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[25.399s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[25.401s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces
+[25.402s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[25.404s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/__init__.py
+[25.406s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[25.409s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/_hexapod_controller_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[25.410s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/libhexapod_controller_interfaces__rosidl_generator_py.so
+[25.413s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg
+[25.413s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/__init__.py
+[25.415s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/_servo_position_values_s.c
+[25.417s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/_servo_position_values.py
+[25.418s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/_body_ik_calculate.py
+[25.420s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/_body_ik_calculate_s.c
+[25.422s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[25.424s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/_hexapod_controller_interfaces_s.ep.rosidl_typesupport_c.c
+[25.426s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/_hexapod_controller_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[25.605s] Listing '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces'...
+[25.607s] Compiling '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/__init__.py'...
+[25.608s] Listing '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg'...
+[25.616s] Compiling '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/__init__.py'...
+[25.618s] Compiling '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/_body_ik_calculate.py'...
+[25.619s] Compiling '/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/msg/_servo_position_values.py'...
+[25.634s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[25.638s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+[25.640s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[25.644s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+[25.646s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[25.650s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/local/lib/python3.10/dist-packages/hexapod_controller_interfaces/hexapod_controller_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+[25.652s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_generator_py.so
+[25.655s] -- Set runtime path of "/home/ros/hexapod_controller/install/hexapod_controller_interfaces/lib/libhexapod_controller_interfaces__rosidl_generator_py.so" to ""
+[25.656s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/msg/ServoPositionValues.idl
+[25.658s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/msg/BodyIKCalculate.idl
+[25.659s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/msg/ServoPositionValues.msg
+[25.660s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/msg/BodyIKCalculate.msg
+[25.661s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/ament_index/resource_index/package_run_dependencies/hexapod_controller_interfaces
+[25.663s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/ament_index/resource_index/parent_prefix_path/hexapod_controller_interfaces
+[25.665s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/ament_prefix_path.sh
+[25.666s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/ament_prefix_path.dsv
+[25.668s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/path.sh
+[25.668s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/environment/path.dsv
+[25.670s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/local_setup.bash
+[25.672s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/local_setup.sh
+[25.673s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/local_setup.zsh
+[25.675s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/local_setup.dsv
+[25.677s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.dsv
+[25.678s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/ament_index/resource_index/packages/hexapod_controller_interfaces
+[25.681s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_generator_cExport.cmake
+[25.683s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_generator_cExport-noconfig.cmake
+[25.686s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[25.688s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[25.690s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[25.693s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[25.695s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_cExport.cmake
+[25.697s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[25.700s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_generator_cppExport.cmake
+[25.703s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[25.705s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[25.708s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[25.710s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[25.713s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_cppExport.cmake
+[25.715s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[25.718s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_generator_pyExport.cmake
+[25.720s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/export_hexapod_controller_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[25.722s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/rosidl_cmake-extras.cmake
+[25.724s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[25.726s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[25.728s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[25.730s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[25.732s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[25.733s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[25.735s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfacesConfig.cmake
+[25.737s] -- Installing: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/cmake/hexapod_controller_interfacesConfig-version.cmake
+[25.739s] -- Up-to-date: /home/ros/hexapod_controller/install/hexapod_controller_interfaces/share/hexapod_controller_interfaces/package.xml
+[25.747s] Invoked command in '/home/ros/hexapod_controller/build/hexapod_controller_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros/hexapod_controller/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --install /home/ros/hexapod_controller/build/hexapod_controller_interfaces

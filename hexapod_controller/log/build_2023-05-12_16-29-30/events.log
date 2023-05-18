@@ -1,4 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.001400] (-) JobUnselected: {'identifier': 'hexapod_controller'}
-[0.001627] (-) JobUnselected: {'identifier': 'hexapod_controller_interfaces'}
-[0.003050] (-) EventReactorShutdown: {}

@@ -360,7 +360,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hexapod_controller_interfaces/msg" TYPE FILE FILES "/home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_adapter/hexapod_controller_interfaces/msg/BodyIKCalculate.idl")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hexapod_controller_interfaces/msg" TYPE FILE FILES "/home/ros/hexapod_controller/src/hexapod_controller_interfaces/msg/ServoPositionValues.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hexapod_controller_interfaces/msg" TYPE FILE FILES "/home/ros/hexapod_controller/src/hexapod_controller_interfaces/msg/BodyIKCalculate.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

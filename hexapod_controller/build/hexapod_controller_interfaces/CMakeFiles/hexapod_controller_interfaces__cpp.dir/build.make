@@ -70,6 +70,10 @@ CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_cont
 CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__builder.hpp
 CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__struct.hpp
 CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__traits.hpp
+CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/body_ik_calculate.hpp
+CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__builder.hpp
+CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.hpp
+CMakeFiles/hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__traits.hpp
 
 rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -87,6 +91,7 @@ rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp
 rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__struct.hpp.em
 rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp: rosidl_adapter/hexapod_controller_interfaces/msg/ServoPositionValues.idl
+rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp: rosidl_adapter/hexapod_controller_interfaces/msg/BodyIKCalculate.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/hexapod_controller/build/hexapod_controller_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/ros/hexapod_controller/build/hexapod_controller_interfaces/rosidl_generator_cpp__arguments.json
 
@@ -99,7 +104,23 @@ rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_val
 rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__traits.hpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__traits.hpp
 
+rosidl_generator_cpp/hexapod_controller_interfaces/msg/body_ik_calculate.hpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hexapod_controller_interfaces/msg/body_ik_calculate.hpp
+
+rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__builder.hpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__builder.hpp
+
+rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.hpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.hpp
+
+rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__traits.hpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/servo_position_values.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__traits.hpp
+
 hexapod_controller_interfaces__cpp: CMakeFiles/hexapod_controller_interfaces__cpp
+hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/body_ik_calculate.hpp
+hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__builder.hpp
+hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__struct.hpp
+hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/body_ik_calculate__traits.hpp
 hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__builder.hpp
 hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__struct.hpp
 hexapod_controller_interfaces__cpp: rosidl_generator_cpp/hexapod_controller_interfaces/msg/detail/servo_position_values__traits.hpp
