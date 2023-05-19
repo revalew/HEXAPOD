@@ -6,11 +6,11 @@ services:
     # container_name: ros2
     
     # To build from source
-    # build: .
+    build: .
 
     # Or, to use a Dockerfile
-    context: .
-    dockerfile: ./dockerfile
+    # context: .
+    # dockerfile: ./dockerfile
 
   #  network_mode: "host"
     # restart: no
