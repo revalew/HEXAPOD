@@ -8,7 +8,7 @@ import hexapod_controller.inverse_kinematics as ik
 
 # importing our new message type
 from hexapod_controller_interfaces.msg import ServoPositionValues
-from hexapod_controller_interfaces.msg import LegGroup
+from hexapod_controller_interfaces.msg import Leg
 
 class BodyIKNode(Node):    
     def __init__(self):
@@ -18,22 +18,41 @@ class BodyIKNode(Node):
         
         self.index = 0
         
-        self.g_group_1_legs_up = 1
-        self.g_group_2_legs_up = 0
-
-        # create publisher
-        # self.body_IK_ = self.create_publisher(ServoPositionValues, "bodyIK_topic", 10)
-        self.group_1_pub_ = self.create_publisher(LegGroup, "leg_group_1", 10)
-        self.group_2_pub_ = self.create_publisher(LegGroup, "leg_group_2", 10)
-        # self.timer_ = self.create_timer(1, self.walking)
-        self.timer_1_ = self.create_timer(3, self.group_1_walk)
-        self.timer_2_ = self.create_timer(1, self.group_2_walk)
+        # first walking gait
+        self.walking_gait = "tripod"
         
+        # row -> leg
+        # column -> if leg of leg is in the air
+        # leg1 === --- === --- === ---
+        # leg2 --- === --- === --- ===
+        # leg3 === --- === --- === ---
+        # leg4 --- === --- === --- ===
+        # leg5 === --- === --- === ---
+        # leg6 --- === --- === --- ===
+        
+        # index = ax number, value = leg up or down, 
+        # === means up, --- means down
+        # 1 means up, 0 means down
+        self.leg_gait_status = [[1,0,1,0,1,0],
+                                [0,1,0,1,0,1],
+                                [1,0,1,0,1,0],
+                                [0,1,0,1,0,1],
+                                [1,0,1,0,1,0],
+                                [0,1,0,1,0,1],]
+
+        # create publishers for each leg
+        # self.body_IK_ = self.create_publisher(ServoPositionValues, "bodyIK_topic", 10)
+        
+        self.leg_pub = [None] * 6 # FLAGA BLEDU
+        for leg in range(1, 7):
+            topic_name = "leg_" + str(leg)
+            self.leg_pub[leg] = self.create_publisher(Leg, topic_name, 10)  # FLAGA BLEDU
+        
+        self.timer_ = self.create_timer(1, self.group_walk)
+
         # create the leg subscriber
         # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.send_data, 20)
         
-        # self.group_1_sub_ = self.create_subscription(LegGroup, "leg_group_1", self.group_1_walk, 20)
-        # self.group_2_sub_ = self.create_subscription(LegGroup, "leg_group_2", self.group_2_walk, 20)
         
     def send_data(self):
         data = [0,0,20,0,0,0]
@@ -72,6 +91,7 @@ class BodyIKNode(Node):
         # publish the message 
         self.body_IK_.publish(cmd)
         
+        # change data for move demo -> top of function, data variables
         if self.index == 0:
             self.index = 1
         elif self.index == 1:
@@ -80,213 +100,59 @@ class BodyIKNode(Node):
             self.index = 3
         else: self.index = 0       
     
-    def group_1_walk(self, x_sign=1):
-        cmd = LegGroup()
-        index = 0
-        variant = 0
-        points = [20, 0, -20, -20, 0, 20]
+    
+    def group_walk(self):
+        # creating separate publisher msg containers
+        ax_msg = [Leg() for i in range(6)] # FLAGA BLEDU
+        
+        # constants
+        GITE_SIZE = 6
+        NUMBER_OF_LEGS = 6
+        
+        # variables
+        x = 1 # <-- move forward, change to -1 to go backward
+        
+        # iterating over gait table - column
+        for gait_index in range(6):
+            # iterating over legs gait table - rows
+            for gait_leg in range(6):
+                self.leg_trajectory(id=gait_leg, forward=x, up_or_down=self.leg_gait_status[gait_leg][gait_index]) # FLAGA BLEDU
+            
+            
+    def leg_trajectory(self, id, forward, up_or_down):
+        '''
+         Function dedicated to move specyfic leg in meaning of walking forward / backward
+         id = id of leg
+         x = forward -> 1, backward -> -1
+         up_or_down = if 1 it means that leg should be in air
+         rot_angle = trajectory line rotation in space, for future development, hexa rotation
+        '''
+        
+        index       = 0
+        variant     = 0
+        wait_time   = 0.2
+        
+        if up_or_down:
+            points  = [20;-30;-10]
+            
+        
         for x in points:
-            time.sleep(0.2)
-            '''
-            forward: 
-                leg_1: x < 0
-                leg_3: x > 0
-                leg_5: x > 0
-            
-            backward: 
-                leg_1: x > 0
-                leg_3: x < 0
-                leg_5: x < 0
-            '''
-            
-            if index > len(points) / 2 - 1 :
-                variant = 1
-                self.g_group_1_legs_up = 1
-            else:
-                self.g_group_1_legs_up = 0
-            
-            leg_value_1 = ik.leg_ik_test(-x * x_sign, 0, variant)
-            leg_value_3 = ik.leg_ik_test(x * x_sign, 2, variant)
-            leg_value_5 = ik.leg_ik_test(x * x_sign, 4, variant)
+            time.sleep(wait_time)
+
+
+            if index > len(points) / 2 - 1 : variant = 1
+
+            leg_value_1 = ik.leg_ik_test(x, 0, variant)
+            leg_value_3 = ik.leg_ik_test(x, 2, variant)
+            leg_value_5 = ik.leg_ik_test(x, 4, variant)
             
             cmd.group[0] = leg_value_1[0]
             cmd.group[1] = leg_value_1[1]
             cmd.group[2] = leg_value_1[2]
             
-            cmd.group[3] = leg_value_3[0]
-            cmd.group[4] = leg_value_3[1]
-            cmd.group[5] = leg_value_3[2]
-            
-            cmd.group[6] = leg_value_5[0]
-            cmd.group[7] = leg_value_5[1]
-            cmd.group[8] = leg_value_5[2]
-            
             self.group_1_pub_.publish(cmd)
             index += 1
-            
-    def group_2_walk(self, x_sign=1):
-        cmd = LegGroup()
-        index = 0
-        variant = 0
-        points = [20, 0, -20, -20, 0, 20]
-        for x in points:
-            time.sleep(0.2)
-            '''
-            forward: 
-                leg_1: x > 0
-                leg_3: x < 0
-                leg_5: x > 0
-            
-            backward: 
-                leg_1: x < 0
-                leg_3: x > 0
-                leg_5: x < 0
-            '''
-            
-            if index > len(points) / 2 - 1 :
-                variant = 1
-                self.g_group_2_legs_up = 1
-            else:
-                self.g_group_2_legs_up = 0
-            
-            leg_value_2 = ik.leg_ik_test(x * x_sign, 1, variant)
-            leg_value_4 = ik.leg_ik_test(-x * x_sign, 5, variant)
-            leg_value_6 = ik.leg_ik_test(x * x_sign, 3, variant)
         
-            cmd.group[0] = leg_value_2[0]
-            cmd.group[1] = leg_value_2[1]
-            cmd.group[2] = leg_value_2[2]
-            
-            cmd.group[3] = leg_value_4[0]
-            cmd.group[4] = leg_value_4[1]
-            cmd.group[5] = leg_value_4[2]
-            
-            cmd.group[6] = leg_value_6[0]
-            cmd.group[7] = leg_value_6[1]
-            cmd.group[8] = leg_value_6[2]
-            
-            self.group_2_pub_.publish(cmd)
-            index += 1
-    
-    def walking(self, msg: ServoPositionValues):
-        cmd = ServoPositionValues()
-        
-        index = 0
-        index_2 = 0
-        
-        variant = 0
-        variant_2 = 0
-        
-        points = [20, 0, -20, -20, 0, 20]
-        x_sign = 1
-        
-        sleep_time = 0.1
-        
-        if (self.g_group_2_legs_up): 
-            # self.group_2_walk(msg)
-            for x in points:
-                time.sleep(sleep_time)
-                '''
-                forward: 
-                    leg_1: x < 0
-                    leg_3: x > 0
-                    leg_5: x > 0
-                
-                backward: 
-                    leg_1: x > 0
-                    leg_3: x < 0
-                    leg_5: x < 0
-                '''
-                
-                if index > len(points) / 2 - 1 :
-                    variant = 1
-                    self.g_group_1_legs_up = 1
-                else:
-                    self.g_group_1_legs_up = 0
-                
-                leg_value_1 = ik.leg_ik_test(-x * x_sign, 0, variant)
-                leg_value_3 = ik.leg_ik_test(x * x_sign, 2, variant)
-                leg_value_5 = ik.leg_ik_test(x * x_sign, 4, variant)
-                
-                cmd.id_pose[0] = leg_value_1[0]
-                cmd.id_pose[1] = leg_value_1[1]
-                cmd.id_pose[2] = leg_value_1[2]
-                
-                cmd.id_pose[6] = leg_value_3[0]
-                cmd.id_pose[7] = leg_value_3[1]
-                cmd.id_pose[8] = leg_value_3[2]
-                
-                cmd.id_pose[12] = leg_value_5[0]
-                cmd.id_pose[13] = leg_value_5[1]
-                cmd.id_pose[14] = leg_value_5[2]
-                
-                cmd.id_pose[3] = msg.id_pose[3]
-                cmd.id_pose[4] = msg.id_pose[4]
-                cmd.id_pose[5] = msg.id_pose[5]
-                
-                cmd.id_pose[15] = msg.id_pose[15]
-                cmd.id_pose[16] = msg.id_pose[16]
-                cmd.id_pose[17] = msg.id_pose[17]
-                
-                cmd.id_pose[9] = msg.id_pose[9]
-                cmd.id_pose[10] = msg.id_pose[10]
-                cmd.id_pose[11] = msg.id_pose[11]
-                
-                self.body_IK_.publish(cmd)
-                index += 1
-                
-        elif (self.g_group_1_legs_up): 
-            # self.group_1_walk(msg)
-            for y in points:
-                time.sleep(sleep_time)
-                '''
-                forward: 
-                    leg_1: x > 0
-                    leg_3: x < 0
-                    leg_5: x > 0
-                
-                backward: 
-                    leg_1: x < 0
-                    leg_3: x > 0
-                    leg_5: x < 0
-                '''
-                
-                if index_2 > len(points) / 2 - 1 :
-                    variant_2 = 1
-                    self.g_group_2_legs_up = 1
-                else:
-                    self.g_group_2_legs_up = 0
-                
-                leg_value_2 = ik.leg_ik_test(y * x_sign, 1, variant_2)
-                leg_value_4 = ik.leg_ik_test(-y * x_sign, 5, variant_2)
-                leg_value_6 = ik.leg_ik_test(y * x_sign, 3, variant_2)
-            
-                cmd.id_pose[3] = leg_value_2[0]
-                cmd.id_pose[4] = leg_value_2[1]
-                cmd.id_pose[5] = leg_value_2[2]
-                
-                cmd.id_pose[15] = leg_value_4[0]
-                cmd.id_pose[16] = leg_value_4[1]
-                cmd.id_pose[17] = leg_value_4[2]
-                
-                cmd.id_pose[9] = leg_value_6[0]
-                cmd.id_pose[10] = leg_value_6[1]
-                cmd.id_pose[11] = leg_value_6[2]
-                
-                cmd.id_pose[0] = msg.id_pose[0]
-                cmd.id_pose[1] = msg.id_pose[1]
-                cmd.id_pose[2] = msg.id_pose[2]
-                
-                cmd.id_pose[6] = msg.id_pose[6]
-                cmd.id_pose[7] = msg.id_pose[7]
-                cmd.id_pose[8] = msg.id_pose[8]
-                
-                cmd.id_pose[12] = msg.id_pose[12]
-                cmd.id_pose[13] = msg.id_pose[13]
-                cmd.id_pose[14] = msg.id_pose[14]
-                
-                self.body_IK_.publish(cmd)
-                index_2 += 1
         
         
 def gain_strength(DXL_ID):
