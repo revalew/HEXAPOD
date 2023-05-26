@@ -33,28 +33,34 @@ class BodyIKNode(Node):
         # index = ax number, value = leg up or down, 
         # === means up, --- means down
         # 1 means up, 0 means down
-        self.leg_gait_status = [[1,0,1,0,1,0],
-                                [0,1,0,1,0,1],
-                                [1,0,1,0,1,0],
-                                [0,1,0,1,0,1],
-                                [1,0,1,0,1,0],
-                                [0,1,0,1,0,1],]
+        
+        if self.walking_gait == "tripod":                               # FLAGA BLEDU 
+            self.leg_gait_status = [[1,0,1,0,1,0],
+                                    [0,1,0,1,0,1],
+                                    [1,0,1,0,1,0],
+                                    [0,1,0,1,0,1],
+                                    [1,0,1,0,1,0],
+                                    [0,1,0,1,0,1],]
 
         # create publishers for each leg
         # self.body_IK_ = self.create_publisher(ServoPositionValues, "bodyIK_topic", 10)
         
         self.leg_pub = [None] * 6 # FLAGA BLEDU
-        for leg in range(1, 7):
-            topic_name = "leg_" + str(leg)
+        for leg in range(6):
+            topic_name = "leg_" + str(leg + 1)
             self.leg_pub[leg] = self.create_publisher(Leg, topic_name, 10)  # FLAGA BLEDU
         
-        self.timer_ = self.create_timer(1, self.group_walk)
+        self.timer_ = self.create_timer(10, self.group_walk)
 
         # create the leg subscriber
-        # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.send_data, 20)
+        # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.body_ik_inputs, 20)
         
         
-    def send_data(self):
+    def body_ik_inputs(self):
+        '''
+         Function dedicated to translate or rotate body of hexapod in 6 degrees of freedom, 
+         calculate angles of each of 18 axises
+        '''
         data = [0,0,20,0,0,0]
         data1 = [0,0,20,0,0,0]
         data2 = [0,0,-20,0,0,0]
@@ -102,9 +108,9 @@ class BodyIKNode(Node):
     
     
     def group_walk(self):
-        # creating separate publisher msg containers
-        ax_msg = [Leg() for i in range(6)] # FLAGA BLEDU
-        
+        '''
+         Function dedicated to scheduling leg sequences depending on gait
+        '''
         # constants
         GITE_SIZE = 6
         NUMBER_OF_LEGS = 6
@@ -113,9 +119,9 @@ class BodyIKNode(Node):
         x = 1 # <-- move forward, change to -1 to go backward
         
         # iterating over gait table - column
-        for gait_index in range(6):
+        for gait_index in range(GITE_SIZE):
             # iterating over legs gait table - rows
-            for gait_leg in range(6):
+            for gait_leg in range(NUMBER_OF_LEGS):
                 self.leg_trajectory(id=gait_leg, forward=x, up_or_down=self.leg_gait_status[gait_leg][gait_index]) # FLAGA BLEDU
             
             
@@ -128,35 +134,40 @@ class BodyIKNode(Node):
          rot_angle = trajectory line rotation in space, for future development, hexa rotation
         '''
         
-        index       = 0
+        # empty msg type initialization, with default values
+        cmd = Leg()
+        
+        # variables
         variant     = 0
-        wait_time   = 0.2
+        WAIT_TIME   = 0.3                                   # FLAGA BLEDU zwiekszyc?
         
+        # step logic
         if up_or_down:
-            points  = [20;-30;-10]
+            variant     = 0
+            points      = [point for p in range(20,-25,-5)]  # FLAGA BLEDU
+        else:
+            variant     = 1
+            points      = [point for p in range(-20,25,5)]   # FLAGA BLEDU tak listować punkty?
             
-        
+        # leg inverse kinematics calculations and msg publications
+        # do this for every point in trajectory
         for x in points:
-            time.sleep(wait_time)
+            # give some time for hardware to move
+            time.sleep(WAIT_TIME)
 
-
-            if index > len(points) / 2 - 1 : variant = 1
-
-            leg_value_1 = ik.leg_ik_test(x, 0, variant)
-            leg_value_3 = ik.leg_ik_test(x, 2, variant)
-            leg_value_5 = ik.leg_ik_test(x, 4, variant)
+            leg_value = ik.leg_ik(x*forward, id, variant)      # FLAGA BLEDU x * forward?
+            cmd.coxa = leg_value[0] # coxa leg value
+            cmd.femur = leg_value[1] # femur leg value
+            cmd.tibia = leg_value[2] # tibia leg value
             
-            cmd.group[0] = leg_value_1[0]
-            cmd.group[1] = leg_value_1[1]
-            cmd.group[2] = leg_value_1[2]
-            
-            self.group_1_pub_.publish(cmd)
-            index += 1
-        
+            # publishing values of leg axises for every iteration, for every point
+            self.leg_pub[id].publish(cmd)
         
         
 def gain_strength(DXL_ID):
-    # ENABLE TORQUE
+    '''
+     Function dedicated to enable torque on each of 18 axises
+    '''
     for i in DXL_ID:
         # Enable Dynamixel Torque
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE)
@@ -164,7 +175,9 @@ def gain_strength(DXL_ID):
    
         
 def loose_strength(DXL_ID):
-    # DISABLE TORQUE
+    '''
+     Function dedicated to disable torque on each of 18 axises
+    '''
     for i in range(1, 19):
         DXL_ID = i
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_DISABLE)

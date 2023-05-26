@@ -80,7 +80,7 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
     ## --------------------------------------------- ##
     return leg_values
 
-def leg_ik_test(x, id, variant):    
+def leg_ik(x, id, variant):    
     leg = id
     b = 30
     a = 20
@@ -136,5 +136,3 @@ def leg_ik_test(x, id, variant):
     # print(f"coxa_angle: {coxa_angle}")
     # print(f"ik_coxa_angle: {ik_coxa_angle}")
     return leg_values[leg]
-
-# print(f"servo positions: {leg_ik_test(0, -30)}")

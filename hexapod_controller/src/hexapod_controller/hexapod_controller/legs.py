@@ -39,13 +39,13 @@ class MotorController(Node):
             self.tibia = 11
         
         # create the leg subscriber
-        self.pose_subsciber = self.create_subscription(
-            ServoPositionValues, "bodyIK_topic", self.pose_callback_id,20)
+        # self.pose_subsciber = self.create_subscription(
+        #     ServoPositionValues, "bodyIK_topic", self.pose_callback_id,20)
 
+        topic_name = "leg_" + str(self.id_id)
+        self.leg_sub = self.create_subscription(Leg, topic_name, self.pose_callback_id, 10)  # FLAGA BLEDU
         
-    def pose_callback_id(self, msg: ServoPositionValues):
-    # def pose_callback_id(self, msg: LegGroup):
-
+    def pose_callback_id(self, msg: Leg):
         # Sleep added to solve the problem of USB to TTL converter's overload
         # time.sleep(0.0125 * self.id_id)
         time.sleep(0.025 * (self.id_id - 1) + 0.000001)
@@ -55,13 +55,13 @@ class MotorController(Node):
         groupSyncWrite = GroupSyncWrite(portHandler, packetHandler, ADDR_MX_GOAL_POSITION, self.LEN_MX_GOAL_POSITION)
         
         # Allocate goal position value into byte array
-        param_goal_position1 = [DXL_LOBYTE(DXL_LOWORD(msg.group[self.coxa])), DXL_HIBYTE(DXL_LOWORD(msg.group[self.coxa])), DXL_LOBYTE(DXL_HIWORD(msg.group[self.coxa])), DXL_HIBYTE(DXL_HIWORD(msg.group[self.coxa]))]
+        param_goal_position1 = [DXL_LOBYTE(DXL_LOWORD(msg.coxa)), DXL_HIBYTE(DXL_LOWORD(msg.coxa)), DXL_LOBYTE(DXL_HIWORD(msg.coxa)), DXL_HIBYTE(DXL_HIWORD(msg.coxa))]
     
         # Allocate goal position value into byte array
-        param_goal_position2 = [DXL_LOBYTE(DXL_LOWORD(msg.group[self.femur])), DXL_HIBYTE(DXL_LOWORD(msg.group[self.femur])), DXL_LOBYTE(DXL_HIWORD(msg.group[self.femur])), DXL_HIBYTE(DXL_HIWORD(msg.group[self.femur]))]
+        param_goal_position2 = [DXL_LOBYTE(DXL_LOWORD(msg.femur)), DXL_HIBYTE(DXL_LOWORD(msg.femur)), DXL_LOBYTE(DXL_HIWORD(msg.femur)), DXL_HIBYTE(DXL_HIWORD(msg.femur))]
     
         # Allocate goal position value into byte array
-        param_goal_position3 = [DXL_LOBYTE(DXL_LOWORD(msg.group[self.tibia])), DXL_HIBYTE(DXL_LOWORD(msg.group[self.tibia])), DXL_LOBYTE(DXL_HIWORD(msg.group[self.tibia])), DXL_HIBYTE(DXL_HIWORD(msg.group[self.tibia]))]
+        param_goal_position3 = [DXL_LOBYTE(DXL_LOWORD(msg.tibia)), DXL_HIBYTE(DXL_LOWORD(msg.tibia)), DXL_LOBYTE(DXL_HIWORD(msg.tibia)), DXL_HIBYTE(DXL_HIWORD(msg.tibia))]
         
         # Add Dynamixel#1 goal position value to the Syncwrite parameter storage
         dxl_addparam_result = groupSyncWrite.addParam(self.id_id_1, param_goal_position1)
