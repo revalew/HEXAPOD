@@ -46,8 +46,8 @@ class MotorController(Node):
     def pose_callback_id(self, msg: ServoPositionValues):
 
         # Sleep added to solve the problem of USB to TTL converter's overload
-        time.sleep(0.0125 * self.id_id)
-        # time.sleep(0.0125 * (self.id_id - 1) + 0.000001) # MAYBE WE SHOULD TRY SOMETHING LIKE THIS TO MINIMIZE THE DELAY
+        # time.sleep(0.0125 * self.id_id)
+        time.sleep(0.025 * (self.id_id - 1) + 0.000001) # MAYBE WE SHOULD TRY SOMETHING LIKE THIS TO MINIMIZE THE DELAY
 
         # self.get_logger().info("Leg listener is working!")
         
@@ -73,7 +73,7 @@ class MotorController(Node):
         dxl_addparam_result = groupSyncWrite.addParam(self.id_id_3, param_goal_position3)
         
         # Sleep added to solve the problem of USB to TTL converter's overload
-        time.sleep(0.0125*self.id_id)
+        # time.sleep(0.0125*self.id_id)
         # time.sleep(0.0125 * (self.id_id - 1) + 0.000001) # MAYBE WE SHOULD TRY SOMETHING LIKE THIS TO MINIMIZE THE DELAY
         
         # Syncwrite goal position
