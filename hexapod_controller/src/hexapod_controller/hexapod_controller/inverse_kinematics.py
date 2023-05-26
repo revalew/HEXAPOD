@@ -80,19 +80,23 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
     ## --------------------------------------------- ##
     return leg_values
 
-def leg_ik_test(x, id):    
+def leg_ik_test(x, id, variant):    
+    leg = id
     b = 30
     a = 20
+    
     # we need the elipse / circle without the x translation
-    z = mh.sqrt((b ** 2) - ((x ** 2) * (b ** 2) / (a ** 2)))
+    if variant : z = 0 
+    else : z = mh.sqrt((b ** 2) - ((x ** 2) * (b ** 2) / (a ** 2)))
 
     # positions iks kurde belka de
-    pos_x = x 
-    pos_y = 0.001
+    alpha = mh.radians(leg_rot_angle[leg] + leg_rot_angle_offset[leg])
+    # alpha = leg_rot_angle[leg] + 30
+    pos_x = x * mh.cos(alpha)
+    pos_y = x * mh.sin(alpha)
     pos_z = -z
     
     # leg ik
-    leg = id
     new_pos_x[leg] = pos_x + feet_pos_x[leg] + body_ik_x[leg]
     new_pos_y[leg] = pos_y + feet_pos_y[leg] + body_ik_y[leg]
     new_pos_z[leg] = pos_z + feet_pos_z[leg] + body_ik_z[leg]

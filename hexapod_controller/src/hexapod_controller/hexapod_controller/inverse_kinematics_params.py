@@ -102,6 +102,8 @@ tibia_servo_value = [0,0,0,0,0,0]
 
 # specyfic leg rotation angle
 leg_rot_angle = [-90, 0 , 90, -270, -180, -90]
+# leg_rot_angle_offset = [30, 30, -45, 30, -45, -30]
+leg_rot_angle_offset = [30, 60, -30, 30, -60, -30]
 
 # specyfic leg angle inverse, if "-1" that means it rotates servo angle in for loop
 # you can simply give all ones here, and rotate phisical motor
