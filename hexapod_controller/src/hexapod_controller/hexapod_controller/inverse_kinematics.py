@@ -82,7 +82,7 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
 
 def leg_ik(x, id, variant):    
     leg = id
-    b = 30
+    b = 40
     a = 20
     
     # we need the elipse / circle without the x translation

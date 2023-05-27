@@ -5,6 +5,7 @@ from rclpy.node import Node
 
 from hexapod_controller.com_settings import *
 import hexapod_controller.inverse_kinematics as ik
+from hexapod_controller.inverse_kinematics_params import *
 
 # importing our new message type
 from hexapod_controller_interfaces.msg import ServoPositionValues
@@ -50,7 +51,7 @@ class BodyIKNode(Node):
             topic_name = "leg_" + str(leg + 1)
             self.leg_pub[leg] = self.create_publisher(Leg, topic_name, 10)  # FLAGA BLEDU
         
-        self.timer_ = self.create_timer(3, self.group_walk)
+        self.timer_ = self.create_timer(0.1, self.group_walk)
 
         # create the leg subscriber
         # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.body_ik_inputs, 20)
@@ -107,23 +108,31 @@ class BodyIKNode(Node):
         else: self.index = 0       
     
     
-    def group_walk(self):
+    def group_walk(self,x=1):
         '''
          Function dedicated to scheduling leg sequences depending on gait
+         x = 1 # <-- move forward, change to -1 to go backward
         '''
         # constants
-        GITE_SIZE = 6
+        GITE_SIZE = 2
         NUMBER_OF_LEGS = 6
-                      # leg direction in coxa axis swap, preventing wrong movement
-        
-        # variables
-        x = 1 # <-- move forward, change to -1 to go backward
+        WAIT_TIME   = 1
         
         # iterating over gait table - column
         for gait_index in range(GITE_SIZE):
             # iterating over legs gait table - rows
-            for gait_leg in range(NUMBER_OF_LEGS):
-                self.leg_trajectory(id=gait_leg, forward=x, up_or_down=self.leg_gait_status[gait_leg][gait_index]) # FLAGA BLEDU
+            # for gait_leg in range(NUMBER_OF_LEGS):
+            # group 1
+            self.leg_trajectory(id=0, forward=x, up_or_down=self.leg_gait_status[0][gait_index])
+            self.leg_trajectory(id=4, forward=x, up_or_down=self.leg_gait_status[4][gait_index])
+            self.leg_trajectory(id=2, forward=x, up_or_down=self.leg_gait_status[2][gait_index])
+            
+            # group 2
+            self.leg_trajectory(id=5, forward=x, up_or_down=self.leg_gait_status[5][gait_index])
+            self.leg_trajectory(id=3, forward=x, up_or_down=self.leg_gait_status[3][gait_index])
+            self.leg_trajectory(id=1, forward=x, up_or_down=self.leg_gait_status[1][gait_index])
+            
+            time.sleep(WAIT_TIME)
             
             
     def leg_trajectory(self, id, forward, up_or_down):
@@ -140,46 +149,40 @@ class BodyIKNode(Node):
         cmd = Leg()
         
         # variables
-        variant     = 0
-        WAIT_TIME   = 0.2                                   # FLAGA BLEDU zwiekszyc?
-        LEG_DIRECTION_SWAP = [1,-1,1,-1,1,-1] 
-        points      = [p for p in range(20,-25,-5)]  # FLAGA BLEDU
-        
-        '''
-        forward: 
-            leg_1: x > 0
-            leg_3: x < 0
-            leg_5: x > 0
-        
-        backward: 
-            leg_1: x < 0
-            leg_3: x > 0
-            leg_5: x < 0
-            '''
+        trajectory_variant     = 0
+        WAIT_TIME   = 0.1                                # FLAGA BLEDU zwiekszyc?
         
         # step logic
         if up_or_down:
-            variant     = 0
-            # points      = [p for p in range(20,-25,-5)]  # FLAGA BLEDU
+            # leg in the air - elipse move
+            trajectory_variant     = 0
+            points      = [p for p in range(20,-30,-10)]
         else:
-            variant     = 1
-            # points      = [p for p in range(-20,25,5)]   # FLAGA BLEDU tak listować punkty?
+            # leg on the ground - line move
+            trajectory_variant     = 1
+            points      = [p for p in range(-20,30,40)]
             
         # leg inverse kinematics calculations and msg publications
         # do this for every point in trajectory
         for x in points:
-            # give some time for hardware to move
-            time.sleep(WAIT_TIME)
 
-            leg_value = ik.leg_ik(x*LEG_DIRECTION_SWAP[id], id, variant)      # FLAGA BLEDU x * forward?
+            leg_value = ik.leg_ik(x*LEG_DIRECTION_SWAP[id]*forward, id, trajectory_variant)
             cmd.coxa = leg_value[0] # coxa leg value
             cmd.femur = leg_value[1] # femur leg value
             cmd.tibia = leg_value[2] # tibia leg value
-            print(id)
-            print(cmd)
             
             # publishing values of leg axises for every iteration, for every point
-            self.leg_pub[id].publish(cmd)
+            """
+             leg swap, we need to tidy those swaps!
+            """
+            if id == 3: self.leg_pub[5].publish(cmd)
+            elif id == 5: self.leg_pub[3].publish(cmd)
+            else: self.leg_pub[id].publish(cmd)
+            
+            # give some time for hardware to move
+            time.sleep(WAIT_TIME)
+        # time.sleep(WAIT_TIME)
+            
         
         
 def gain_strength(DXL_ID):

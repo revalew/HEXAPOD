@@ -43,14 +43,9 @@ class MotorController(Node):
         #     ServoPositionValues, "bodyIK_topic", self.pose_callback_id,20)
 
         topic_name = "leg_" + str(self.id_id)
-        self.leg_sub = self.create_subscription(Leg, topic_name, self.pose_callback_id, 10)  # FLAGA BLEDU
+        self.leg_sub = self.create_subscription(Leg, topic_name, self.pose_callback_id, 20)  # FLAGA BLEDU
         
     def pose_callback_id(self, msg: Leg):
-        # Sleep added to solve the problem of USB to TTL converter's overload
-        # time.sleep(0.0125 * self.id_id)
-        time.sleep(0.025 * (self.id_id - 1) + 0.000001)
-
-        
         # Initialize Groupsyncwrite instance
         groupSyncWrite = GroupSyncWrite(portHandler, packetHandler, ADDR_MX_GOAL_POSITION, self.LEN_MX_GOAL_POSITION)
         
@@ -77,6 +72,9 @@ class MotorController(Node):
 
         # Clear syncwrite parameter storage
         groupSyncWrite.clearParam()
+        
+        # Sleep added to solve the problem of USB to TTL converter's overload
+        time.sleep(0.025 * (self.id_id - 1) + 0.000001)
         
         
 # NODE FUNCTIONS called from setup.py / hexapod.launch.py

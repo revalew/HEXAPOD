@@ -1,5 +1,10 @@
 import math as mh
 
+
+## --------------------------------------------- ##
+# OTHER PARAMS
+LEG_DIRECTION_SWAP = [-1,1,1,1,1,-1] 
+
 ## --------------------------------------------- ##
 # DIRECT INPUTS - STEP 1
 # robot geometry
@@ -68,8 +73,9 @@ roll_z = [0,0,0,0,0,0]
 pitch_z = [0,0,0,0,0,0]
 body_ik_x = [0,0,0,0,0,0]
 body_ik_y = [0,0,0,0,0,0]
-body_ik_z = [0,0,0,0,0,0]
-
+# body_ik_z = [0,0,0,0,0,0]
+body_ik_z = [-20,-20,-20,-20,-20,-20] # changed bcs it look cool!
+ 
 ## --------------------------------------------- ##
 # LEG IK - STEP 5
 
@@ -101,9 +107,10 @@ femur_servo_value = [0,0,0,0,0,0]
 tibia_servo_value = [0,0,0,0,0,0]
 
 # specyfic leg rotation angle
-leg_rot_angle = [-90, 0 , 90, -270, -180, -90]
-# leg_rot_angle_offset = [30, 30, -45, 30, -45, -30]
-leg_rot_angle_offset = [30, 60, -30, 30, -60, -30]
+leg_rot_angle = [-90, 0 , 90, -270, -180, -90] # FLAGA ZAMIANA NOG!!!!
+# leg_rot_angle = [-90, 0 , 90, -90 -180, -270]
+leg_rot_angle_offset = [30, 60, -30, 30, -60, -30] # FLAGA ZAMIANA NOG!!!!
+# leg_rot_angle_offset = [30, 60, -30, -30, -60, 30]
 
 # specyfic leg angle inverse, if "-1" that means it rotates servo angle in for loop
 # you can simply give all ones here, and rotate phisical motor
