@@ -90,6 +90,7 @@ def leg_ik(x, id, variant):
     else : z = mh.sqrt((b ** 2) - ((x ** 2) * (b ** 2) / (a ** 2)))
 
     # positions iks kurde belka de
+    # alpha = mh.radians(leg_rot_angle[leg])
     alpha = mh.radians(leg_rot_angle[leg] + leg_rot_angle_offset[leg])
     # alpha = leg_rot_angle[leg] + 30
     pos_x = x * mh.cos(alpha)
