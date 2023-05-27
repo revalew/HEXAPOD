@@ -10,6 +10,7 @@ from hexapod_controller.inverse_kinematics_params import *
 # importing our new message type
 from hexapod_controller_interfaces.msg import ServoPositionValues
 from hexapod_controller_interfaces.msg import Leg
+from hexapod_controller_interfaces.msg import ControllStatus
 
 class BodyIKNode(Node):    
     def __init__(self):
@@ -19,39 +20,9 @@ class BodyIKNode(Node):
         
         self.index = 0
         
-        # first walking gait
-        self.walking_gait = "tripod"
+        self.controll_status_pub_ = self.create_publisher(ControllStatus, "control_status", 10)
         
-        # row -> leg
-        # column -> if leg of leg is in the air
-        # leg1 === --- === --- === ---
-        # leg2 --- === --- === --- ===
-        # leg3 === --- === --- === ---
-        # leg4 --- === --- === --- ===
-        # leg5 === --- === --- === ---
-        # leg6 --- === --- === --- ===
-        
-        # index = ax number, value = leg up or down, 
-        # === means up, --- means down
-        # 1 means up, 0 means down
-        
-        if self.walking_gait == "tripod":                               # FLAGA BLEDU 
-            self.leg_gait_status = [[1,0,1,0,1,0],
-                                    [0,1,0,1,0,1],
-                                    [1,0,1,0,1,0],
-                                    [0,1,0,1,0,1],
-                                    [1,0,1,0,1,0],
-                                    [0,1,0,1,0,1],]
-
-        # create publishers for each leg
-        # self.body_IK_ = self.create_publisher(ServoPositionValues, "bodyIK_topic", 10)
-        
-        self.leg_pub = [None] * 6 # FLAGA BLEDU
-        for leg in range(6):
-            topic_name = "leg_" + str(leg + 1)
-            self.leg_pub[leg] = self.create_publisher(Leg, topic_name, 10)  # FLAGA BLEDU
-        
-        self.timer_ = self.create_timer(0.1, self.group_walk)
+        self.timer_ = self.create_timer(2, self.group_walk)
 
         # create the leg subscriber
         # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.body_ik_inputs, 20)
@@ -69,15 +40,15 @@ class BodyIKNode(Node):
         
         goal_pos = [data, data1, data2, data3]
         
-        self.t = time.time()
+        # self.t = time.time()
         leg_values = ik.body_ik(goal_pos[self.index][0],
                                 goal_pos[self.index][1],
                                 goal_pos[self.index][2],
                                 goal_pos[self.index][3],
                                 goal_pos[self.index][4],
                                 goal_pos[self.index][5])
-        self.elapsed = time.time() - self.t
-        self.get_logger().info('calculation took: %s' % (self.elapsed))
+        # self.elapsed = time.time() - self.t
+        # self.get_logger().info('calculation took: %s' % (self.elapsed))
         
         # create the msg with the specific type
         cmd = ServoPositionValues()
@@ -108,81 +79,15 @@ class BodyIKNode(Node):
         else: self.index = 0       
     
     
-    def group_walk(self,x=1):
+    def group_walk(self, x=1):
         '''
          Function dedicated to scheduling leg sequences depending on gait
          x = 1 # <-- move forward, change to -1 to go backward
         '''
-        # constants
-        GITE_SIZE = 2
-        NUMBER_OF_LEGS = 6
-        WAIT_TIME   = 1
-        
-        # iterating over gait table - column
-        for gait_index in range(GITE_SIZE):
-            # iterating over legs gait table - rows
-            # for gait_leg in range(NUMBER_OF_LEGS):
-            # group 1
-            self.leg_trajectory(id=0, forward=x, up_or_down=self.leg_gait_status[0][gait_index])
-            self.leg_trajectory(id=4, forward=x, up_or_down=self.leg_gait_status[4][gait_index])
-            self.leg_trajectory(id=2, forward=x, up_or_down=self.leg_gait_status[2][gait_index])
-            
-            # group 2
-            self.leg_trajectory(id=5, forward=x, up_or_down=self.leg_gait_status[5][gait_index])
-            self.leg_trajectory(id=3, forward=x, up_or_down=self.leg_gait_status[3][gait_index])
-            self.leg_trajectory(id=1, forward=x, up_or_down=self.leg_gait_status[1][gait_index])
-            
-            time.sleep(WAIT_TIME)
-            
-            
-    def leg_trajectory(self, id, forward, up_or_down):
-        '''
-         Function dedicated to move specyfic leg in meaning of walking forward / backward
-         id = id of leg
-         x = forward -> 1, backward -> -1
-         up_or_down = if 1 it means that leg should be in air
-         rot_angle = trajectory line rotation in space, for future development, hexa rotation
-         leg_direction = leg direction in coxa axis swap, preventing wrong movement
-        '''
-        
-        # empty msg type initialization, with default values
-        cmd = Leg()
-        
-        # variables
-        trajectory_variant     = 0
-        WAIT_TIME   = 0.1                                # FLAGA BLEDU zwiekszyc?
-        
-        # step logic
-        if up_or_down:
-            # leg in the air - elipse move
-            trajectory_variant     = 0
-            points      = [p for p in range(20,-30,-10)]
-        else:
-            # leg on the ground - line move
-            trajectory_variant     = 1
-            points      = [p for p in range(-20,30,40)]
-            
-        # leg inverse kinematics calculations and msg publications
-        # do this for every point in trajectory
-        for x in points:
-
-            leg_value = ik.leg_ik(x*LEG_DIRECTION_SWAP[id]*forward, id, trajectory_variant)
-            cmd.coxa = leg_value[0] # coxa leg value
-            cmd.femur = leg_value[1] # femur leg value
-            cmd.tibia = leg_value[2] # tibia leg value
-            
-            # publishing values of leg axises for every iteration, for every point
-            """
-             leg swap, we need to tidy those swaps!
-            """
-            if id == 3: self.leg_pub[5].publish(cmd)
-            elif id == 5: self.leg_pub[3].publish(cmd)
-            else: self.leg_pub[id].publish(cmd)
-            
-            # give some time for hardware to move
-            time.sleep(WAIT_TIME)
-        # time.sleep(WAIT_TIME)
-            
+        cmd = ControllStatus()
+        cmd.status_name = "walk_tripod"
+        cmd.variable_1 = x
+        self.controll_status_pub_.publish(cmd) 
         
         
 def gain_strength(DXL_ID):

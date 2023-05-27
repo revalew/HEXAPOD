@@ -107,9 +107,9 @@ femur_servo_value = [0,0,0,0,0,0]
 tibia_servo_value = [0,0,0,0,0,0]
 
 # specyfic leg rotation angle
-leg_rot_angle = [-90, 0 , 90, -270, -180, -90] # FLAGA ZAMIANA NOG!!!!
+leg_rot_angle = [-90, 0 , 90, -270, -180, -90]
 # leg_rot_angle = [-90, 0 , 90, -90 -180, -270]
-leg_rot_angle_offset = [30, 60, -30, 30, -60, -30] # FLAGA ZAMIANA NOG!!!!
+leg_rot_angle_offset = [30, 60, -30, 30, -60, -30]
 # leg_rot_angle_offset = [30, 60, -30, -30, -60, 30]
 
 # specyfic leg angle inverse, if "-1" that means it rotates servo angle in for loop
@@ -120,3 +120,28 @@ tibia_angle_inverse_flag = [1, 1, 1, -1, -1, -1]
 
 # return array init
 leg_values = [[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0]]
+
+
+
+
+# WALKING GAITS
+
+# row -> leg
+# column -> if leg of leg is in the air
+# leg1 === --- === --- === ---
+# leg2 --- === --- === --- ===
+# leg3 === --- === --- === ---
+# leg4 --- === --- === --- ===
+# leg5 === --- === --- === ---
+# leg6 --- === --- === --- ===
+
+# index = ax number, value = leg up or down, 
+# === means up, --- means down
+# 1 means up, 0 means down
+
+tripod_gait = [[1,0,1,0,1,0],
+               [0,1,0,1,0,1],
+               [1,0,1,0,1,0],
+               [0,1,0,1,0,1],
+               [1,0,1,0,1,0],
+               [0,1,0,1,0,1],]
