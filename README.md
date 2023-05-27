@@ -1,6 +1,7 @@
 # HEXAPOD Robot 🤖🕷
 <p align='center'>
 <img src="./img/hexapod.png" width="375" height="260" />
+<img src="./img/hexapod_walk.gif" width="375" height="260" />
 </p>
 
 ## About:
@@ -55,3 +56,27 @@ Many hours and iterations later we finally managed to use the ROS2 capabilities 
 <br>
 <img src="./img/custom_interface.png" height="105" />
 </p>
+
+### First walk:
+After a while, we implemented a leg trajectory with leg inverse kinematics calculation and a walking gaits template. For now, we use only one walking gait pattern but, we never know if we need some more in the future, so we prepare architecture for this scenario. Right now, we are thinking about improving the ttl speed for faster movements or changing publisher/subscriber for services. 
+summary:
+- implemented leg trajectory and walking gaits
+- added some more custom messages, ex. controll_status msg for future easier robot control and machine state of the robot.
+- changed code architecture a bit
+
+<p align='center'>
+<img src="./img/hexapod_walk.gif" width="375" height="260" />
+<img src="./img/hexapod_tripod.gif" width="375" height="260" />
+</p>
+
+Actual problems:
+- ttl half-duplex communication is too slow for 18 axes working that fast
+
+Next improvements and development:
+- changing some of mechanics, 3d printed less slippery foot caps
+- wireless keyboard / Xbox controller control of walking
+- rotating while walking
+- code optimization
+- IMU sensor implementation and body roll pitch compensation
+- faster ttl communication
+- LIDAR envoirment scann, room mapping
