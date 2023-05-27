@@ -142,8 +142,20 @@ class BodyIKNode(Node):
         # variables
         variant     = 0
         WAIT_TIME   = 0.2                                   # FLAGA BLEDU zwiekszyc?
-        LEG_DIRECTION_SWAP = [-1,-1,-1,-1,-1,-1] 
+        LEG_DIRECTION_SWAP = [1,-1,1,-1,1,-1] 
         points      = [p for p in range(20,-25,-5)]  # FLAGA BLEDU
+        
+        '''
+        forward: 
+            leg_1: x > 0
+            leg_3: x < 0
+            leg_5: x > 0
+        
+        backward: 
+            leg_1: x < 0
+            leg_3: x > 0
+            leg_5: x < 0
+            '''
         
         # step logic
         if up_or_down:
@@ -159,7 +171,7 @@ class BodyIKNode(Node):
             # give some time for hardware to move
             time.sleep(WAIT_TIME)
 
-            leg_value = ik.leg_ik(x, id, variant)      # FLAGA BLEDU x * forward?
+            leg_value = ik.leg_ik(x*LEG_DIRECTION_SWAP[id], id, variant)      # FLAGA BLEDU x * forward?
             cmd.coxa = leg_value[0] # coxa leg value
             cmd.femur = leg_value[1] # femur leg value
             cmd.tibia = leg_value[2] # tibia leg value
