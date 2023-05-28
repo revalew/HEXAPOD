@@ -1,7 +1,17 @@
+# exclude the libraries
 lib
 DynamixelSDK
-ros2_ws
+
+# exclude settings
 .vscode
+
+# exclude test workspace
+ros2_ws
+
+# exclude the build directories to avoid problems when changing the platform / host machine
 hexapod_controller/build
 hexapod_controller/install
 hexapod_controller/log
+
+# exclude all of the cache folders in any level of subdirectory
+**/__pycache__

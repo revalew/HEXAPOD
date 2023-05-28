@@ -8,7 +8,7 @@
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
-  <depend>threading</depend>
+  <!-- <depend>threading</depend> -->
   <depend>math</depend>
   <depend>dynamixel_sdk</depend>
   <depend>hexapod_controller_interfaces</depend>

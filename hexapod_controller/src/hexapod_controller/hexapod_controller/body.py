@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-# My first Node!
+
+# ROS imports
 import rclpy
 from rclpy.node import Node
 
+# communication settings
 from hexapod_controller.com_settings import *
-import hexapod_controller.inverse_kinematics as ik
-from hexapod_controller.inverse_kinematics_params import *
 
-# importing our new message type
+# Inverse Kinematics calculations
+from hexapod_controller.inverse_kinematics_params import *
+import hexapod_controller.inverse_kinematics as ik
+
+# import custom message types
 from hexapod_controller_interfaces.msg import ServoPositionValues
 from hexapod_controller_interfaces.msg import Leg
 from hexapod_controller_interfaces.msg import ControllStatus
@@ -15,23 +19,19 @@ from hexapod_controller_interfaces.msg import ControllStatus
 class BodyIKNode(Node):    
     def __init__(self):
         super().__init__("body_IK")
-       
         self.get_logger().info("HEXAPOD body Inverse Kinematics calculation has been started.")
-        
         self.index = 0
-        
         self.controll_status_pub_ = self.create_publisher(ControllStatus, "control_status", 10)
-        
         self.timer_ = self.create_timer(2, self.group_walk)
 
         # create the leg subscriber
         # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.body_ik_inputs, 20)
         
-        
+
     def body_ik_inputs(self):
         '''
-         Function dedicated to translate or rotate body of hexapod in 6 degrees of freedom, 
-         calculate angles of each of all 18 axes
+         Function to translate or rotate the body of the HEXAPOD in 6 degrees of freedom
+         and calculate angles of all 18 axis
         '''
         data = [0,0,20,0,0,0]
         data1 = [0,0,20,0,0,0]
@@ -40,15 +40,12 @@ class BodyIKNode(Node):
         
         goal_pos = [data, data1, data2, data3]
         
-        # self.t = time.time()
         leg_values = ik.body_ik(goal_pos[self.index][0],
                                 goal_pos[self.index][1],
                                 goal_pos[self.index][2],
                                 goal_pos[self.index][3],
                                 goal_pos[self.index][4],
                                 goal_pos[self.index][5])
-        # self.elapsed = time.time() - self.t
-        # self.get_logger().info('calculation took: %s' % (self.elapsed))
         
         # create the msg with the specific type
         cmd = ServoPositionValues()
@@ -81,8 +78,9 @@ class BodyIKNode(Node):
     
     def group_walk(self, x=1):
         '''
-         Function dedicated to scheduling leg sequences depending on gait
-         x = 1 # <-- move forward, change to -1 to go backward
+         Function to schedule the leg sequences depending on the chosen gait pattern
+         
+         x : 1 => move forward, -1 => move backward
         '''
         cmd = ControllStatus()
         cmd.status_name = "walk_tripod"
@@ -95,7 +93,6 @@ def gain_strength(DXL_ID):
      Enable torque on all 18 axes
     '''
     for i in DXL_ID:
-        # Enable Dynamixel Torque
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE)
         time.sleep(0.1)
    
