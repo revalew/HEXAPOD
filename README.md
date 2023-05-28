@@ -6,15 +6,15 @@
 
 ## Table of Contents
 * [About](https://github.com/revalew/HEXAPOD/tree/master#about)
-* [Progress report](https://github.com/revalew/HEXAPOD/edit/master/README.md#progress-report)
+* [Progress report](https://github.com/revalew/HEXAPOD/tree/master#progress-report)
   * [First success](https://github.com/revalew/HEXAPOD/tree/master#first-success)
   * [Successful connection](https://github.com/revalew/HEXAPOD/tree/master#successful-connection)
   * [First Stand up](https://github.com/revalew/HEXAPOD/tree/master#first-stand-up)
   * [Controlling all of the servos w/ Inverse Kinematics](https://github.com/revalew/HEXAPOD/tree/master#controlling-all-of-the-servos-w-inverse-kinematics)
   * [First walk](https://github.com/revalew/HEXAPOD/tree/master#first-walk)
-* [Issues & plans](https://github.com/revalew/HEXAPOD/edit/master/README.md#issues--plans)
-  * [Current problems](https://github.com/revalew/HEXAPOD/edit/master/README.md#current-problems)
-  * [Future improvements and plans of development](https://github.com/revalew/HEXAPOD/edit/master/README.md#future-improvements-and-plans-of-development)
+* [Issues & plans](https://github.com/revalew/HEXAPOD/tree/master#issues--plans)
+  * [Current problems](https://github.com/revalew/HEXAPOD/tree/master#current-problems)
+  * [Future improvements and plans of development](https://github.com/revalew/HEXAPOD/tree/master#future-improvements-and-plans-of-development)
 <!--   * []() -->
 <!--   * []() -->
 
