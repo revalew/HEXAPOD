@@ -1,65 +1,37 @@
 #!/usr/bin/env python3
-# My first Node!
+
+# ROS imports
 import rclpy
 from rclpy.node import Node
 
+# communication settings
 from hexapod_controller.com_settings import *
+
+# Inverse Kinematics calculations
+from hexapod_controller.inverse_kinematics_params import *
 import hexapod_controller.inverse_kinematics as ik
 
-# importing our new message type
+# import custom message types
 from hexapod_controller_interfaces.msg import ServoPositionValues
 from hexapod_controller_interfaces.msg import Leg
+from hexapod_controller_interfaces.msg import ControllStatus
 
 class BodyIKNode(Node):    
     def __init__(self):
         super().__init__("body_IK")
-       
         self.get_logger().info("HEXAPOD body Inverse Kinematics calculation has been started.")
-        
         self.index = 0
-        
-        # first walking gait
-        self.walking_gait = "tripod"
-        
-        # row -> leg
-        # column -> if leg of leg is in the air
-        # leg1 === --- === --- === ---
-        # leg2 --- === --- === --- ===
-        # leg3 === --- === --- === ---
-        # leg4 --- === --- === --- ===
-        # leg5 === --- === --- === ---
-        # leg6 --- === --- === --- ===
-        
-        # index = ax number, value = leg up or down, 
-        # === means up, --- means down
-        # 1 means up, 0 means down
-        
-        if self.walking_gait == "tripod":                               # FLAGA BLEDU 
-            self.leg_gait_status = [[1,0,1,0,1,0],
-                                    [0,1,0,1,0,1],
-                                    [1,0,1,0,1,0],
-                                    [0,1,0,1,0,1],
-                                    [1,0,1,0,1,0],
-                                    [0,1,0,1,0,1],]
-
-        # create publishers for each leg
-        # self.body_IK_ = self.create_publisher(ServoPositionValues, "bodyIK_topic", 10)
-        
-        self.leg_pub = [None] * 6 # FLAGA BLEDU
-        for leg in range(6):
-            topic_name = "leg_" + str(leg + 1)
-            self.leg_pub[leg] = self.create_publisher(Leg, topic_name, 10)  # FLAGA BLEDU
-        
-        self.timer_ = self.create_timer(10, self.group_walk)
+        self.controll_status_pub_ = self.create_publisher(ControllStatus, "control_status", 10)
+        self.timer_ = self.create_timer(2, self.group_walk)
 
         # create the leg subscriber
         # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.body_ik_inputs, 20)
         
-        
+
     def body_ik_inputs(self):
         '''
-         Function dedicated to translate or rotate body of hexapod in 6 degrees of freedom, 
-         calculate angles of each of 18 axises
+         Function to translate or rotate the body of the HEXAPOD in 6 degrees of freedom
+         and calculate angles of all 18 axis
         '''
         data = [0,0,20,0,0,0]
         data1 = [0,0,20,0,0,0]
@@ -68,15 +40,12 @@ class BodyIKNode(Node):
         
         goal_pos = [data, data1, data2, data3]
         
-        self.t = time.time()
         leg_values = ik.body_ik(goal_pos[self.index][0],
                                 goal_pos[self.index][1],
                                 goal_pos[self.index][2],
                                 goal_pos[self.index][3],
                                 goal_pos[self.index][4],
                                 goal_pos[self.index][5])
-        self.elapsed = time.time() - self.t
-        self.get_logger().info('calculation took: %s' % (self.elapsed))
         
         # create the msg with the specific type
         cmd = ServoPositionValues()
@@ -107,76 +76,30 @@ class BodyIKNode(Node):
         else: self.index = 0       
     
     
-    def group_walk(self):
+    def group_walk(self, x=1):
         '''
-         Function dedicated to scheduling leg sequences depending on gait
+         Function to schedule the leg sequences depending on the chosen gait pattern
+         
+         x : 1 => move forward, -1 => move backward
         '''
-        # constants
-        GITE_SIZE = 6
-        NUMBER_OF_LEGS = 6
-        
-        # variables
-        x = 1 # <-- move forward, change to -1 to go backward
-        
-        # iterating over gait table - column
-        for gait_index in range(GITE_SIZE):
-            # iterating over legs gait table - rows
-            for gait_leg in range(NUMBER_OF_LEGS):
-                self.leg_trajectory(id=gait_leg, forward=x, up_or_down=self.leg_gait_status[gait_leg][gait_index]) # FLAGA BLEDU
-            
-            
-    def leg_trajectory(self, id, forward, up_or_down):
-        '''
-         Function dedicated to move specyfic leg in meaning of walking forward / backward
-         id = id of leg
-         x = forward -> 1, backward -> -1
-         up_or_down = if 1 it means that leg should be in air
-         rot_angle = trajectory line rotation in space, for future development, hexa rotation
-        '''
-        
-        # empty msg type initialization, with default values
-        cmd = Leg()
-        
-        # variables
-        variant     = 0
-        WAIT_TIME   = 0.3                                   # FLAGA BLEDU zwiekszyc?
-        
-        # step logic
-        if up_or_down:
-            variant     = 0
-            points      = [point for p in range(20,-25,-5)]  # FLAGA BLEDU
-        else:
-            variant     = 1
-            points      = [point for p in range(-20,25,5)]   # FLAGA BLEDU tak listować punkty?
-            
-        # leg inverse kinematics calculations and msg publications
-        # do this for every point in trajectory
-        for x in points:
-            # give some time for hardware to move
-            time.sleep(WAIT_TIME)
-
-            leg_value = ik.leg_ik(x*forward, id, variant)      # FLAGA BLEDU x * forward?
-            cmd.coxa = leg_value[0] # coxa leg value
-            cmd.femur = leg_value[1] # femur leg value
-            cmd.tibia = leg_value[2] # tibia leg value
-            
-            # publishing values of leg axises for every iteration, for every point
-            self.leg_pub[id].publish(cmd)
+        cmd = ControllStatus()
+        cmd.status_name = "walk_tripod"
+        cmd.variable_1 = x
+        self.controll_status_pub_.publish(cmd) 
         
         
 def gain_strength(DXL_ID):
     '''
-     Function dedicated to enable torque on each of 18 axises
+     Enable torque on all 18 axes
     '''
     for i in DXL_ID:
-        # Enable Dynamixel Torque
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE)
         time.sleep(0.1)
    
         
 def loose_strength(DXL_ID):
     '''
-     Function dedicated to disable torque on each of 18 axises
+     Disable torque on all 18 axes
     '''
     for i in range(1, 19):
         DXL_ID = i

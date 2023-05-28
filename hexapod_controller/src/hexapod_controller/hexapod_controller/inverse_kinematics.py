@@ -1,9 +1,14 @@
+# Inverse Kinematics calculations
 from hexapod_controller.inverse_kinematics_params import *
 
 def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot_z_input):
-    # INFO - function calculate a body inverse kinematics
-    # INPUTS - desire positions in 6 def of freedom
-    # OUTPUT - angle for each motor ex. leg_value[1][2] is a tibia angle for seccond leg
+    '''
+    DESCRIPTION - function calculating the inverse kinematics of HEXAPOD's body
+
+    INPUTS - desired positions represented with 6 degrees of freedom
+    
+    OUTPUT - angle for each motor ex. leg_value[1][2] is a tibia angle of the seccond leg
+    '''
 
     # control inputs
     pos_x = pos_x_input
@@ -66,7 +71,7 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
         femur_servo_angle[leg] = femur_angle_inverse_flag[leg] * femur_angle[leg] + 150
         tibia_servo_angle[leg] = tibia_angle_inverse_flag[leg] * tibia_angle[leg] + 150
 
-        # servo values Dynamixel motors A12, rates (0 - 1023), min-max angles (0 - 300deg)
+        # servo values for Dynamixel motors AX-12A, avalible steps (0 - 1023), min-max angles (0 - 300deg)
         coxa_servo_value[leg] = coxa_servo_angle[leg] / 300 * 1023
         femur_servo_value[leg] = femur_servo_angle[leg] / 300 * 1023
         tibia_servo_value[leg] = tibia_servo_angle[leg] / 300 * 1023
@@ -76,22 +81,22 @@ def body_ik(pos_x_input, pos_y_input, pos_z_input, rot_x_input, rot_y_input, rot
         leg_values[leg][1] = int(femur_servo_value[leg])
         leg_values[leg][2] = int(tibia_servo_value[leg])
 
-
     ## --------------------------------------------- ##
     return leg_values
 
 def leg_ik(x, id, variant):    
     leg = id
-    b = 30
+    
+    # ellipse parameters
+    b = 40
     a = 20
     
-    # we need the elipse / circle without the x translation
+    # calculate the trajectory using the ellipse function
+    # we need the ellipse / circle without the x translation
     if variant : z = 0 
     else : z = mh.sqrt((b ** 2) - ((x ** 2) * (b ** 2) / (a ** 2)))
 
-    # positions iks kurde belka de
     alpha = mh.radians(leg_rot_angle[leg] + leg_rot_angle_offset[leg])
-    # alpha = leg_rot_angle[leg] + 30
     pos_x = x * mh.cos(alpha)
     pos_y = x * mh.sin(alpha)
     pos_z = -z
@@ -110,9 +115,7 @@ def leg_ik(x, id, variant):
     ik_femur_angle[leg] = 90 - (ik_a1[leg] + ik_a2[leg]) * 180 / mh.pi
     ik_coxa_angle[leg] = 90 - mh.atan2(new_pos_x[leg], new_pos_y[leg]) * 180 / mh.pi
 
-    
     # leg angles
-    # leg inverse kinematics angles
     coxa_angle[leg] = ik_coxa_angle[leg] + leg_rot_angle[leg]
     femur_angle[leg] = ik_femur_angle[leg]
     tibia_angle[leg] = ik_tibia_angle[leg]
@@ -122,17 +125,14 @@ def leg_ik(x, id, variant):
     femur_servo_angle[leg] = femur_angle_inverse_flag[leg] * femur_angle[leg] + 150
     tibia_servo_angle[leg] = tibia_angle_inverse_flag[leg] * tibia_angle[leg] + 150
 
-    # servo values Dynamixel motors A12, rates (0 - 1023), min-max angles (0 - 300deg)
+    # servo values for Dynamixel motors AX-12A, avalible steps (0 - 1023), min-max angles (0 - 300deg)
     coxa_servo_value[leg] = coxa_servo_angle[leg] / 300 * 1023
     femur_servo_value[leg] = femur_servo_angle[leg] / 300 * 1023
     tibia_servo_value[leg] = tibia_servo_angle[leg] / 300 * 1023
 
-    # saves values for return
+    # save values for return
     leg_values[leg][0] = int(coxa_servo_value[leg])
     leg_values[leg][1] = int(femur_servo_value[leg])
     leg_values[leg][2] = int(tibia_servo_value[leg])
 
-    
-    # print(f"coxa_angle: {coxa_angle}")
-    # print(f"ik_coxa_angle: {ik_coxa_angle}")
     return leg_values[leg]

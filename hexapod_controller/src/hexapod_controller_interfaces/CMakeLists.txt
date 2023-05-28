@@ -14,6 +14,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/BodyIKCalculate.msg"
   "msg/LegGroup.msg"
   "msg/Leg.msg"
+  "msg/ControllStatus.msg"
 )
 
 ament_export_dependencies(rosidl_default_runtime)
