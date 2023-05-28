@@ -4,7 +4,21 @@
 <img src="./img/hexapod_walk.gif" width="375" height="260" />
 </p>
 
-## About:
+## Table of Contents
+* [About](https://github.com/revalew/HEXAPOD/tree/master#about)
+* [Progress report](https://github.com/revalew/HEXAPOD/edit/master/README.md#progress-report)
+  * [First success](https://github.com/revalew/HEXAPOD/tree/master#first-success)
+  * [Successful connection](https://github.com/revalew/HEXAPOD/tree/master#successful-connection)
+  * [First Stand up](https://github.com/revalew/HEXAPOD/tree/master#first-stand-up)
+  * [Controlling all of the servos w/ Inverse Kinematics](https://github.com/revalew/HEXAPOD/tree/master#controlling-all-of-the-servos-w-inverse-kinematics)
+  * [First walk](https://github.com/revalew/HEXAPOD/tree/master#first-walk)
+* [Issues & plans](https://github.com/revalew/HEXAPOD/edit/master/README.md#issues--plans)
+  * [Current problems](https://github.com/revalew/HEXAPOD/edit/master/README.md#current-problems)
+  * [Future improvements and plans of development](https://github.com/revalew/HEXAPOD/edit/master/README.md#future-improvements-and-plans-of-development)
+<!--   * []() -->
+<!--   * []() -->
+
+## About
 This is the repository of the academic project which my friends and I are developing. By any means is it perfect, but we will work **HARD** to improve the functionality and make it work! 
 
 What we want to achieve:
@@ -17,6 +31,8 @@ What we want to achieve:
 - Learn about OOP programming in python and ROS2,
 - Learn how to use Git & GitHub to collaborate.
 
+## Progress report
+
 ### First success:
 We created a closed loop control system utilizing:
 - Publisher node,
@@ -28,6 +44,8 @@ We created a closed loop control system utilizing:
 <img src="./img/turtle.png" width="375" height="260" />
 </p>
 
+----
+
 ### Successful connection:
 We managed to connect the servos and made sure that all 18 of them were working! 🥳
 
@@ -35,12 +53,16 @@ We managed to connect the servos and made sure that all 18 of them were working!
 <img src="./img/first_move.gif" width="375" height="260" />
 </p>
 
+----
+
 ### First Stand up:
 After few attempts HEXAPOD can finaly stand up easily! Still a lot of work to do, but we are ready to migrate the prototype Python scripts to ROS2 to control all of the servos simultaneously.
 
 <p align='center'>
 <img src="./img/hexapod_standup.gif" width="375" height="260" />
 </p>
+
+----
 
 ### Controlling all of the servos w/ Inverse Kinematics:
 Many hours and iterations later we finally managed to use the ROS2 capabilities to move every leg simultaneously! To achieve this we used:
@@ -57,6 +79,8 @@ Many hours and iterations later we finally managed to use the ROS2 capabilities 
 <img src="./img/custom_interface.png" height="105" />
 </p>
 
+----
+
 ### First walk:
 After a while, we implemented the leg trajectory calculation using the inverse kinematics of the leg and succesfully added a gait pattern. For now, we use only one walking pattern, but we may need more in the future, so we prepared the code's architecture for this scenario. Right now, we want to improve the speed of UART communication to move faster or change the ROS publisher / subscriber to services.
 
@@ -70,16 +94,19 @@ Summary:
 <img src="./img/hexapod_tripod.gif" width="375" height="260" />
 </p>
 
-----
 
-#### Current problems:
+## Issues & plans
+
+### Current problems:
 - Communication using half-duplex UART is too slow for 18 axes to work as fast as we would like to,
 - Feet of the robot are really smooth and slippery so there is no friction when walking, which causes the robot to slide all over the place.
 
-#### Future improvements and plans of development:
+### Future improvements and plans of development:
 - changing mechanical parts, e.g. 3D printed less slippery feet,
 - teleoperation using keyboard or Xbox controller,
-- rotating the body while walking,
+- changing the pitch and roll of the body while walking,
+- turning while standing still,
+- turning while walking,
 - implementation of the IMU sensor and body roll pitch compensation,
 - code optimization,
 - faster communication,
