@@ -73,13 +73,14 @@ Summary:
 ----
 
 #### Current problems:
-- Communication using half-duplex UART is too slow for 18 axes to work as fast as we would like to.
+- Communication using half-duplex UART is too slow for 18 axes to work as fast as we would like to,
+- Feet of the robot are really smooth and slippery so there is no friction when walking, which causes the robot to slide all over the place.
 
 #### Future improvements and plans of development:
 - changing mechanical parts, e.g. 3D printed less slippery feet,
 - teleoperation using keyboard or Xbox controller,
 - rotating the body while walking,
-- implementation of the IMU sensor and body roll pitch compensation
+- implementation of the IMU sensor and body roll pitch compensation,
 - code optimization,
 - faster communication,
 - environment scanning using LIDAR - room mapping.
