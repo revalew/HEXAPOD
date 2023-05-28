@@ -42,7 +42,7 @@ After few attempts HEXAPOD can finaly stand up easily! Still a lot of work to do
 <img src="./img/hexapod_standup.gif" width="375" height="260" />
 </p>
 
-### Controlling all of the servos /w Inverse Kinematics:
+### Controlling all of the servos w/ Inverse Kinematics:
 Many hours and iterations later we finally managed to use the ROS2 capabilities to move every leg simultaneously! To achieve this we used:
 - improved code structure - we moved every leg into one file and made separate functions for each leg,
 - custom interface, which is basically an array of positions for the servos,
@@ -58,25 +58,28 @@ Many hours and iterations later we finally managed to use the ROS2 capabilities 
 </p>
 
 ### First walk:
-After a while, we implemented a leg trajectory with leg inverse kinematics calculation and a walking gaits template. For now, we use only one walking gait pattern but, we never know if we need some more in the future, so we prepare architecture for this scenario. Right now, we are thinking about improving the ttl speed for faster movements or changing publisher/subscriber for services. 
-summary:
-- implemented leg trajectory and walking gaits
-- added some more custom messages, ex. controll_status msg for future easier robot control and machine state of the robot.
-- changed code architecture a bit
+After a while, we implemented the leg trajectory calculation using the inverse kinematics of the leg and succesfully added a gait pattern. For now, we use only one walking pattern, but we may need more in the future, so we prepared the code's architecture for this scenario. Right now, we want to improve the speed of UART communication to move faster or change the ROS publisher / subscriber to services.
+
+Summary:
+- implemented leg trajectory and gait patterns,
+- added custom messages, e.g. controll_status to monitor the status of the robot in the future,
+- changed the code's architecture.
 
 <p align='center'>
 <img src="./img/hexapod_walk.gif" width="375" height="260" />
 <img src="./img/hexapod_tripod.gif" width="375" height="260" />
 </p>
 
-Actual problems:
-- ttl half-duplex communication is too slow for 18 axes working that fast
+----
 
-Next improvements and development:
-- changing some of mechanics, 3d printed less slippery foot caps
-- wireless keyboard / Xbox controller control of walking
-- rotating while walking
-- code optimization
-- IMU sensor implementation and body roll pitch compensation
-- faster ttl communication
-- LIDAR envoirment scann, room mapping
+#### Current problems:
+- Communication using half-duplex UART is too slow for 18 axes to work as fast as we would like to.
+
+#### Future improvements and plans of development:
+- changing mechanical parts, e.g. 3D printed less slippery feet,
+- teleoperation using keyboard or Xbox controller,
+- rotating the body while walking,
+- implementation of the IMU sensor and body roll pitch compensation
+- code optimization,
+- faster communication,
+- environment scanning using LIDAR - room mapping.
