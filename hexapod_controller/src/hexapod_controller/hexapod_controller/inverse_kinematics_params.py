@@ -70,8 +70,8 @@ roll_z = [0,0,0,0,0,0]
 pitch_z = [0,0,0,0,0,0]
 body_ik_x = [0,0,0,0,0,0]
 body_ik_y = [0,0,0,0,0,0]
-# body_ik_z = [0,0,0,0,0,0]
-body_ik_z = [-20,-20,-20,-20,-20,-20] # testing - movement with angled body
+body_ik_z = [0,0,0,0,0,0]
+# body_ik_z = [-20,-20,-20,-20,-20,-20] # testing - movement with angled body
  
 ## --------------------------------------------- ##
 # LEG IK - STEP 5

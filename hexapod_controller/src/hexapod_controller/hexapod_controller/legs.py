@@ -15,12 +15,15 @@ import hexapod_controller.inverse_kinematics as ik
 from hexapod_controller_interfaces.msg import ServoPositionValues
 from hexapod_controller_interfaces.msg import Leg
 from hexapod_controller_interfaces.msg import ControllStatus
+from hexapod_controller_interfaces.msg import BodyIKCalculate
 
 class MotorController(Node):
     def __init__(self, id):
         
         # Data Byte Length
-        self.LEN_MX_GOAL_POSITION = 4
+        self.LEN_MX_GOAL_POSITION   = 4
+        self.goal_pos               = [0,0,0,0,0,0]
+        self.move_direction         = 0
         
         # Name of the node
         name = f"pose_subscriber_{id}"
@@ -62,8 +65,18 @@ class MotorController(Node):
         # topic_name = f"leg_{self.id_id}" # this may be less resource-intensive
         self.leg_pub_ = self.create_publisher(Leg, topic_name, 10)
 
-        # self.leg_sub = self.create_subscription(Leg, topic_name, self.pose_callback_id, 20)
-        self.controll_status_sub_ = self.create_subscription(ControllStatus, "control_status", self.gait_iteration, 10)
+        self.leg_sub = self.create_subscription(Leg, topic_name, self.pose_callback_id, 20)
+        self.controll_status_sub_ = self.create_subscription(ControllStatus, "control_status", self.gait_iteration, 20)
+        self.keyboard_callback_sub_ = self.create_subscription(BodyIKCalculate, "body_IK_calculations", self.keyboard_callback, 20)
+       
+    def keyboard_callback(self, msg: BodyIKCalculate):
+        self.goal_pos[0] = msg.position_of_the_body[0]
+        self.goal_pos[1] = msg.position_of_the_body[1]
+        self.goal_pos[2] = msg.position_of_the_body[2]
+        self.goal_pos[3] = msg.position_of_the_body[3]
+        self.goal_pos[4] = msg.position_of_the_body[4]
+        self.goal_pos[5] = msg.position_of_the_body[5]
+        self.move_direction = msg.move_direction
         
     def pose_callback_id(self, msg: Leg):
         '''
@@ -100,7 +113,7 @@ class MotorController(Node):
         
         # Sleep added to solve the problem of USB to TTL converter's overload
         # time.sleep(0.125 * (self.id_index) + 0.000001)
-        time.sleep(0.025 * (self.id_id - 1) + 0.000001)
+        time.sleep(0.025)
         
         
     def gait_iteration(self, msg: ControllStatus):
@@ -115,11 +128,9 @@ class MotorController(Node):
         # TRIPOD GAIT PATTERN
         if msg.status_name == "walk_tripod":
             GAIT_SIZE = 2
-            x = msg.variable_1 # variable to determine the walking direction
             
             for gait_index in range(GAIT_SIZE):
-                time.sleep(0.2)
-                self.leg_trajectory(direction=x, up_or_down=tripod_gait[self.id_index][gait_index])
+                self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
                 
         
     def leg_trajectory(self, direction, up_or_down):
@@ -147,7 +158,6 @@ class MotorController(Node):
         # variables
         trajectory_variant      = 0  
         WAIT_TIME               = 0.005
-        LEG_SLEEP_TIME          = [0,0.075,0.1,0.125,0.150,0.025,0.05]
         
         # step logic
         if up_or_down:
@@ -163,68 +173,30 @@ class MotorController(Node):
         for x in points:
 
             # calculate the angles of the servos
-            leg_value = ik.leg_ik(x*LEG_DIRECTION_SWAP[self.id_index]*direction, self.id_index, trajectory_variant)
+            leg_value = ik.body_ik(self.goal_pos[0],
+                                self.goal_pos[1],
+                                self.goal_pos[2],
+                                self.goal_pos[3],
+                                self.goal_pos[4],
+                                self.goal_pos[5],
+                                x*LEG_DIRECTION_SWAP[self.id_index]*direction,
+                                self.id_index,
+                                trajectory_variant)
+            
             cmd.coxa = leg_value[0] # coxa leg value
             cmd.femur = leg_value[1] # femur leg value
             cmd.tibia = leg_value[2] # tibia leg value
             
             """
-
-
-
             <TODO>
                 TIDY THE SWAPS!!! THEY CAN BE FOUND in "inverse_kinematics_params.py" IN LINE 5
             </TODO>
-
-            
-
             """
+            
             # publishing values of leg axes for current point each iteration 
-            # time.sleep(WAIT_TIME)
-            # self.leg_pub_.publish(cmd)
+            time.sleep(WAIT_TIME)
+            self.leg_pub_.publish(cmd)
             
-            
-
-
-
-
-            # ---------------------------------------------------------------------------------------------------------------------------
-            # CODE BELOW JUST FOR TESTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            # CODE BELOW JUST FOR TESTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            # CODE BELOW JUST FOR TESTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            # ---------------------------------------------------------------------------------------------------------------------------
-            
-            groupSyncWrite = GroupSyncWrite(portHandler, packetHandler, ADDR_MX_GOAL_POSITION, self.LEN_MX_GOAL_POSITION)
-            
-            # Allocate goal position value into byte array
-            param_goal_position1 = [DXL_LOBYTE(DXL_LOWORD(leg_value[0])), DXL_HIBYTE(DXL_LOWORD(leg_value[0])), DXL_LOBYTE(DXL_HIWORD(leg_value[0])), DXL_HIBYTE(DXL_HIWORD(leg_value[0]))]
-        
-            # Allocate goal position value into byte array
-            param_goal_position2 = [DXL_LOBYTE(DXL_LOWORD(leg_value[1])), DXL_HIBYTE(DXL_LOWORD(leg_value[1])), DXL_LOBYTE(DXL_HIWORD(leg_value[1])), DXL_HIBYTE(DXL_HIWORD(leg_value[1]))]
-        
-            # Allocate goal position value into byte array
-            param_goal_position3 = [DXL_LOBYTE(DXL_LOWORD(leg_value[2])), DXL_HIBYTE(DXL_LOWORD(leg_value[2])), DXL_LOBYTE(DXL_HIWORD(leg_value[2])), DXL_HIBYTE(DXL_HIWORD(leg_value[2]))]
-            
-            # Add Dynamixel#1 goal position value to the Syncwrite parameter storage
-            dxl_addparam_result = groupSyncWrite.addParam(self.id_id_1, param_goal_position1)
-            
-            # Add Dynamixel#2 goal position value to the Syncwrite parameter storage
-            dxl_addparam_result = groupSyncWrite.addParam(self.id_id_2, param_goal_position2)
-            
-            # Add Dynamixel#3 goal position value to the Syncwrite parameter storage
-            dxl_addparam_result = groupSyncWrite.addParam(self.id_id_3, param_goal_position3)
-            
-            # Syncwrite goal position
-            dxl_comm_result = groupSyncWrite.txPacket()
-
-            # Clear syncwrite parameter storage
-            groupSyncWrite.clearParam()
-            
-            # Sleep added to solve the problem of USB to TTL converter's overload
-            time.sleep(0.02 * (self.id_index) + 0.000001)
-            # time.sleep(LEG_SLEEP_TIME[self.id_index])
-            
-        
         
 # NODE FUNCTIONS called from setup.py / hexapod.launch.py
 def leg1(args=None):
