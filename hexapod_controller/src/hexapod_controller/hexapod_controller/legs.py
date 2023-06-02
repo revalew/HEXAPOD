@@ -15,12 +15,15 @@ import hexapod_controller.inverse_kinematics as ik
 from hexapod_controller_interfaces.msg import ServoPositionValues
 from hexapod_controller_interfaces.msg import Leg
 from hexapod_controller_interfaces.msg import ControllStatus
+from hexapod_controller_interfaces.msg import BodyIKCalculate
 
 class MotorController(Node):
     def __init__(self, id):
         
         # Data Byte Length
-        self.LEN_MX_GOAL_POSITION = 4
+        self.LEN_MX_GOAL_POSITION   = 4
+        self.goal_pos               = [0,0,0,0,0,0]
+        self.move_direction         = 0
         
         # Name of the node
         name = f"pose_subscriber_{id}"
@@ -63,7 +66,17 @@ class MotorController(Node):
         self.leg_pub_ = self.create_publisher(Leg, topic_name, 10)
 
         self.leg_sub = self.create_subscription(Leg, topic_name, self.pose_callback_id, 20)
-        self.controll_status_sub_ = self.create_subscription(ControllStatus, "control_status", self.gait_iteration, 10)
+        self.controll_status_sub_ = self.create_subscription(ControllStatus, "control_status", self.gait_iteration, 20)
+        self.keyboard_callback_sub_ = self.create_subscription(BodyIKCalculate, "body_IK_calculations", self.keyboard_callback, 20)
+       
+    def keyboard_callback(self, msg: BodyIKCalculate):
+        self.goal_pos[0] = msg.position_of_the_body[0]
+        self.goal_pos[1] = msg.position_of_the_body[1]
+        self.goal_pos[2] = msg.position_of_the_body[2]
+        self.goal_pos[3] = msg.position_of_the_body[3]
+        self.goal_pos[4] = msg.position_of_the_body[4]
+        self.goal_pos[5] = msg.position_of_the_body[5]
+        self.move_direction = msg.move_direction
         
     def pose_callback_id(self, msg: Leg):
         '''
@@ -115,10 +128,9 @@ class MotorController(Node):
         # TRIPOD GAIT PATTERN
         if msg.status_name == "walk_tripod":
             GAIT_SIZE = 2
-            x = msg.variable_1 # variable to determine the walking direction
             
             for gait_index in range(GAIT_SIZE):
-                self.leg_trajectory(direction=x, up_or_down=tripod_gait[self.id_index][gait_index])
+                self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
                 
         
     def leg_trajectory(self, direction, up_or_down):
@@ -161,7 +173,16 @@ class MotorController(Node):
         for x in points:
 
             # calculate the angles of the servos
-            leg_value = ik.leg_ik(x*LEG_DIRECTION_SWAP[self.id_index]*direction, self.id_index, trajectory_variant)
+            leg_value = ik.body_ik(self.goal_pos[0],
+                                self.goal_pos[1],
+                                self.goal_pos[2],
+                                self.goal_pos[3],
+                                self.goal_pos[4],
+                                self.goal_pos[5],
+                                x*LEG_DIRECTION_SWAP[self.id_index]*direction,
+                                self.id_index,
+                                trajectory_variant)
+            
             cmd.coxa = leg_value[0] # coxa leg value
             cmd.femur = leg_value[1] # femur leg value
             cmd.tibia = leg_value[2] # tibia leg value

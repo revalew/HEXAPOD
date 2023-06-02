@@ -27,6 +27,11 @@ Rotation:
     U   I
     J   K
     M   ,
+    
+Movement direction:
+    1
+    2
+    3
 
 ---------------------------
 W / S : X translation
@@ -37,29 +42,37 @@ U / I : X rotation
 J / K : Y rotation
 M / , : Z rotation
 
+1 : move forward
+2 : move backward
+3 : move stop
 ---------------------------
 
 anything else : back to initial position
 
 CTRL-C to quit
 """
+movementDirection = {
+    '1': 1,
+    '2': -1,
+    # '3': 0,
+}
 
 moveBindings = {
-    'w': (1, 0, 0),
-    's': (-1, 0, 0),
-    'd': (0, 1, 0),
-    'a': (0, -1, 0),
-    'q': (0, 0, 1),
-    'e': (0, 0, -1),
+    'w': (10, 0, 0),
+    's': (-10, 0, 0),
+    'd': (0, 10, 0),
+    'a': (0, -10, 0),
+    'q': (0, 0, 10),
+    'e': (0, 0, -10),
 }
 
 rotationBindings = {
-    'u': (1, 0, 0),
-    'i': (-1, 0, 0),
-    'j': (0, 1, 0),
-    'k': (0, -1, 0),
-    'm': (0, 0, 1),
-    ',': (0, 0, -1),
+    'u': (2, 0, 0),
+    'i': (-2, 0, 0),
+    'j': (0, 2, 0),
+    'k': (0, -2, 0),
+    'm': (0, 0, 2),
+    ',': (0, 0, -2),
 }
 
 # TODO !!!
@@ -130,7 +143,7 @@ def main():
 
     node = rclpy.create_node('teleop_keyboard_test')
     pub_ = node.create_publisher(BodyIKCalculate, "body_IK_calculations", 10)
-    sub_ = node.create_subscription(BodyIKCalculate, "body_IK_calculations", positionSubscriber, 10)
+    # sub_ = node.create_subscription(BodyIKCalculate, "body_IK_calculations", positionSubscriber, 10)
 
     transX = 0
     transY = 0
@@ -139,6 +152,7 @@ def main():
     rotY = 0
     rotZ = 0
     status = 0
+    direction = 0
 
     try:
         print(msg)
@@ -155,9 +169,11 @@ def main():
                 transY = transY + moveBindings[key][1]
                 transZ = transZ + moveBindings[key][2]
             elif key in rotationBindings.keys():
-                rotX = rotX + moveBindings[key][0]
-                rotY = rotY + moveBindings[key][1]
-                rotZ = rotZ + moveBindings[key][2]              
+                rotX = rotX + rotationBindings[key][0]
+                rotY = rotY + rotationBindings[key][1]
+                rotZ = rotZ + rotationBindings[key][2]              
+            elif key in movementDirection.keys():
+                direction = movementDirection[key]
             else:
                 transX = 0
                 transY = 0
@@ -165,6 +181,7 @@ def main():
                 rotX = 0
                 rotY = 0
                 rotZ = 0
+                direction = 0
                 if (key == '\x03'):
                     break
 
@@ -175,6 +192,7 @@ def main():
             cmd.position_of_the_body[3] = rotX
             cmd.position_of_the_body[4] = rotY
             cmd.position_of_the_body[5] = rotZ
+            cmd.move_direction = direction
             pub_.publish(cmd)
 
     except Exception as e:
@@ -188,6 +206,7 @@ def main():
         cmd.position_of_the_body[3] = 0
         cmd.position_of_the_body[4] = 0
         cmd.position_of_the_body[5] = 0
+        cmd.move_direction = 0
         pub_.publish(cmd)
 
         restoreTerminalSettings(settings)
