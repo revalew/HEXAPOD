@@ -22,7 +22,7 @@ class BodyIKNode(Node):
         self.get_logger().info("HEXAPOD body Inverse Kinematics calculation has been started.")
         self.index = 0
         self.controll_status_pub_ = self.create_publisher(ControllStatus, "control_status", 10)
-        self.timer_ = self.create_timer(2, self.group_walk)
+        self.timer_ = self.create_timer(1.8, self.group_walk)
 
         # create the leg subscriber
         # self.pose_subsciber = self.create_subscription(ServoPositionValues, "bodyIK_topic", self.body_ik_inputs, 20)
