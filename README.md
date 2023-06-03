@@ -2,6 +2,7 @@
 <p align='center'>
 <img src="./img/hexapod.png" width="375" height="260" />
 <img src="./img/hexapod_walk.gif" width="375" height="260" />
+<br>
 <img src="./img/hexapod_teleop_body_IK.gif" width="375" height="260" />
 <img src="./img/hexapod_teleop_walk.gif" width="375" height="260" />
 </p>
@@ -14,11 +15,12 @@
   * [First Stand up](https://github.com/revalew/HEXAPOD/tree/master#first-stand-up)
   * [Controlling all of the servos w/ Inverse Kinematics](https://github.com/revalew/HEXAPOD/tree/master#controlling-all-of-the-servos-w-inverse-kinematics)
   * [First walk](https://github.com/revalew/HEXAPOD/tree/master#first-walk)
+  * [Custom leg design](https://github.com/revalew/HEXAPOD/tree/master#custom-leg-design)
+  * [Teleoperating HEXAPOD with a keyboard](https://github.com/revalew/HEXAPOD/tree/master#teleoperating-hexapod-with-a-keyboard)
 * [Issues & plans](https://github.com/revalew/HEXAPOD/tree/master#issues--plans)
   * [Current problems](https://github.com/revalew/HEXAPOD/tree/master#current-problems)
   * [Future improvements and plans of development](https://github.com/revalew/HEXAPOD/tree/master#future-improvements-and-plans-of-development)
-<!--   * []() -->
-<!--   * []() -->
+
 
 ## About
 This is the repository of the academic project which my friends and I are developing. By any means is it perfect, but we will work **HARD** to improve the functionality and make it work! 
@@ -96,6 +98,30 @@ Summary:
 <img src="./img/hexapod_tripod.gif" width="375" height="260" />
 </p>
 
+----
+
+### Design your own leg:
+Because of the problems we were having with the current leg design, we decided to make a new one. The legs we were using were very slippery, so the robot was struggling and sliding all over the table. The new design aims to solve this problem by adding rubber feet. The first thing we tried was generative design, but it turned out to be really difficult to print with our current 3D printer and our knowledge of printing in general.
+We then moved to a simpler design, but as always we forgot something and this time the design was flawed because it only allowed the angle to change in a range of 0-180 degrees.
+We quickly fixed the angle limitation problem. We changed the length of the leefs that attach the leg to the servo and slightly modified the shape and now everything looks amazing. Now we can try them out in real life and see if this helps to solve the lack of friction problem.
+<p align='center'>
+<img src="./img/hexapod_generative_leg.jpg" width="375" height="260" />
+<img src="./img/hexapod_new_leg.png" width="375" height="260" />
+<br>
+<img src="./img/hexapod_new_leg_movement.gif" width="375" height="260" />
+</p>
+
+----
+
+### Teleoperating HEXAPOD with a keyboard:
+After improving the walking algorithm we were finally able to implement the teleop of the HEXAPOD and the results exceeded our expectations. Everything went smoothly and we were able to move the robot using a keyboard. We can now control the parameters that define the body (translation and rotation) and change the direction in which we want to walk. The best thing is that we can now easily combine walking and changing the position of the body! This allows us to walk with a rotated body or walk over/under different objects. This was also the first real life test of our newly designed leg, and now we know that... we have to redesign it again because the silicone feet are not properly angled. The feet are also very stiff, so we want to address that as well. We also have another idea to improve the shape of the leg, so we will be testing many different things in the coming weeks.
+
+<p align='center'>
+<img src="./img/hexapod_teleop_body_IK.gif" width="375" height="260" />
+<img src="./img/hexapod_teleop_walk.gif" width="375" height="260" />
+</p>
+
+----
 
 ## Issues & plans
 
@@ -104,12 +130,12 @@ Summary:
 - Feet of the robot are really smooth and slippery so there is no friction when walking, which causes the robot to slide all over the place.
 
 ### Future improvements and plans of development:
-- changing mechanical parts, e.g. 3D printed less slippery feet,
-- teleoperation using keyboard or Xbox controller,
-- changing the pitch and roll of the body while walking,
-- turning while standing still,
-- turning while walking,
-- implementation of the IMU sensor and body roll pitch compensation,
-- code optimization,
-- faster communication,
-- environment scanning using LIDAR - room mapping.
+- changing mechanical parts, e.g. 3D printed less slippery feet (✅),
+- teleoperation using keyboard or Xbox controller (✅),
+- changing the pitch and roll of the body while walking (✅),
+- turning while standing still (❌),
+- turning while walking (❌),
+- implementation of the IMU sensor and body roll pitch compensation (❌),
+- code optimization (❓),
+- faster communication (❌),
+- environment scanning using LIDAR - room mapping (❌).
