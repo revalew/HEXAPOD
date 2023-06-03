@@ -2,6 +2,8 @@
 <p align='center'>
 <img src="./img/hexapod.png" width="375" height="260" />
 <img src="./img/hexapod_walk.gif" width="375" height="260" />
+<img src="./img/hexapod_teleop_body_IK.gif" width="375" height="260" />
+<img src="./img/hexapod_teleop_walk.gif" width="375" height="260" />
 </p>
 
 ## Table of Contents
