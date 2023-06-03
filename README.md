@@ -15,7 +15,7 @@
   * [First Stand up](https://github.com/revalew/HEXAPOD/tree/master#first-stand-up)
   * [Controlling all of the servos w/ Inverse Kinematics](https://github.com/revalew/HEXAPOD/tree/master#controlling-all-of-the-servos-w-inverse-kinematics)
   * [First walk](https://github.com/revalew/HEXAPOD/tree/master#first-walk)
-  * [Custom leg design](https://github.com/revalew/HEXAPOD/tree/master#custom-leg-design)
+  * [Our own leg design](https://github.com/revalew/HEXAPOD/tree/master#our-own-leg-design)
   * [Teleoperating HEXAPOD with a keyboard](https://github.com/revalew/HEXAPOD/tree/master#teleoperating-hexapod-with-a-keyboard)
 * [Issues & plans](https://github.com/revalew/HEXAPOD/tree/master#issues--plans)
   * [Current problems](https://github.com/revalew/HEXAPOD/tree/master#current-problems)
@@ -100,7 +100,7 @@ Summary:
 
 ----
 
-### Design your own leg:
+### Our own leg design:
 Because of the problems we were having with the current leg design, we decided to make a new one. The legs we were using were very slippery, so the robot was struggling and sliding all over the table. The new design aims to solve this problem by adding rubber feet. The first thing we tried was generative design, but it turned out to be really difficult to print with our current 3D printer and our knowledge of printing in general.
 We then moved to a simpler design, but as always we forgot something and this time the design was flawed because it only allowed the angle to change in a range of 0-180 degrees.
 We quickly fixed the angle limitation problem. We changed the length of the leefs that attach the leg to the servo and slightly modified the shape and now everything looks amazing. Now we can try them out in real life and see if this helps to solve the lack of friction problem.
