@@ -43,7 +43,7 @@ class BodyIKNode(Node):
         self.controll_status_pub_.publish(cmd) 
         
         
-    # !!! ------ BETA CODE BELOW ------
+    # !!! --- WORK IN PROGRESS BELOW ---
     
     # TODO think about robot state machine
     def robot_state_machine_callback(self):
