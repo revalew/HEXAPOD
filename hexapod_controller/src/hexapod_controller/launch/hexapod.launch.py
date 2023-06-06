@@ -1,6 +1,7 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
+
 def generate_launch_description():
     '''
     Every parameter here is related to the custom node inside of the "setup.py"

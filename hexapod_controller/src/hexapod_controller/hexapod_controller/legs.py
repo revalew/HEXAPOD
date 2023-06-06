@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+'''
+    File info:
+    Class MotorController implementation. Class provide separate calculations for each leg, that solution solves converter's overload and speeds up inverse kinematics calculations.
+'''
+
+
 # ROS imports
 import rclpy
 from rclpy.node import Node
@@ -16,6 +22,7 @@ from hexapod_controller_interfaces.msg import ServoPositionValues
 from hexapod_controller_interfaces.msg import Leg
 from hexapod_controller_interfaces.msg import ControllStatus
 from hexapod_controller_interfaces.msg import BodyIKCalculate
+
 
 class MotorController(Node):
     def __init__(self, id):
@@ -56,20 +63,22 @@ class MotorController(Node):
             self.tibia = 11
             self.id_index = 3
         
-        # create the leg subscriber
-        # self.pose_subsciber = self.create_subscription(
-        #     ServoPositionValues, "bodyIK_topic", self.pose_callback_id,20)
-        
         # create the leg specific topic and its publisher
         topic_name = "leg_" + str(self.id_id)
         # topic_name = f"leg_{self.id_id}" # this may be less resource-intensive
         self.leg_pub_ = self.create_publisher(Leg, topic_name, 10)
 
+        # create the leg subscribers
         self.leg_sub = self.create_subscription(Leg, topic_name, self.pose_callback_id, 20)
         self.controll_status_sub_ = self.create_subscription(ControllStatus, "control_status", self.gait_iteration, 20)
         self.keyboard_callback_sub_ = self.create_subscription(BodyIKCalculate, "body_IK_calculations", self.keyboard_callback, 20)
        
+       
     def keyboard_callback(self, msg: BodyIKCalculate):
+        '''
+        Function responsible for receiving data from topic "body_IK_calculations", 
+        pub. file: teleop_keyboard_test.py
+        '''
         self.goal_pos[0] = msg.position_of_the_body[0]
         self.goal_pos[1] = msg.position_of_the_body[1]
         self.goal_pos[2] = msg.position_of_the_body[2]
@@ -77,6 +86,7 @@ class MotorController(Node):
         self.goal_pos[4] = msg.position_of_the_body[4]
         self.goal_pos[5] = msg.position_of_the_body[5]
         self.move_direction = msg.move_direction
+        
         
     def pose_callback_id(self, msg: Leg):
         '''
@@ -112,7 +122,6 @@ class MotorController(Node):
         groupSyncWrite.clearParam()
         
         # Sleep added to solve the problem of USB to TTL converter's overload
-        # time.sleep(0.125 * (self.id_index) + 0.000001)
         time.sleep(0.025)
         
         
@@ -120,15 +129,11 @@ class MotorController(Node):
         '''
         Function to iterate through the indices of the gait pattern matrix to calculate the trajectory of each leg
 
-        <TODO>
-                DESCRIPTION!
-        </TODO>
+        # TODO descritption
         '''
 
         # TRIPOD GAIT PATTERN
         if msg.status_name == "walk_tripod":
-            GAIT_SIZE = 2
-            
             for gait_index in range(GAIT_SIZE):
                 self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
                 
@@ -141,6 +146,7 @@ class MotorController(Node):
         x : 1 => move forward, -1 => move backward
         up_or_down : 1 => leg should be up, 0 => leg should be down
 
+        # TODO descritption     
         <TODO>
             NEEDS EXPLAINING!!!:
             rot_angle : trajectory line rotation in space, for future development, hexa rotation
@@ -173,7 +179,7 @@ class MotorController(Node):
         for x in points:
 
             # calculate the angles of the servos
-            leg_value = ik.body_ik(self.goal_pos[0],
+            leg_value = ik.body_move(self.goal_pos[0],
                                 self.goal_pos[1],
                                 self.goal_pos[2],
                                 self.goal_pos[3],
@@ -186,12 +192,6 @@ class MotorController(Node):
             cmd.coxa = leg_value[0] # coxa leg value
             cmd.femur = leg_value[1] # femur leg value
             cmd.tibia = leg_value[2] # tibia leg value
-            
-            """
-            <TODO>
-                TIDY THE SWAPS!!! THEY CAN BE FOUND in "inverse_kinematics_params.py" IN LINE 5
-            </TODO>
-            """
             
             # publishing values of leg axes for current point each iteration 
             time.sleep(WAIT_TIME)
