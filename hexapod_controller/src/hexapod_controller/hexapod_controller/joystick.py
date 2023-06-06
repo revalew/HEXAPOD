@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-# My first Node!
+
+'''
+    !!! This file is not in use yet
+'''
+
+
 import rclpy
 from rclpy.node import Node
 
@@ -11,8 +16,6 @@ from hexapod_controller_interfaces.msg import BodyIKCalculate
 class JoystickNode(Node):
     def __init__(self):
         super().__init__("body_IK")
-       
-        self.get_logger().info("HEXAPOD body Inverse Kinematics calculation has been started.")
 
         # create publisher
         self.joy_data_ = self.create_publisher(BodyIKCalculate, "joy_data_topic", 10)

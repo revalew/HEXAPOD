@@ -1,3 +1,9 @@
+'''
+    File info:
+    Parameters for inverse kinematics and walking algorithms
+'''
+
+
 # calculation import
 import math as mh
 
@@ -139,6 +145,7 @@ in the matrix below this is represented by:
 1 => the leg is up
 0 => the leg is down
 '''
+GAIT_SIZE = 6
 
 tripod_gait = [[1,0,1,0,1,0],
                [0,1,0,1,0,1],

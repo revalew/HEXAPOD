@@ -1,3 +1,10 @@
+'''
+    File info:
+    Controlling the tilt, roll and pitch of the robot's body as well as its gait using the keyboard.
+    Publishing command on topic "body_IK_calculations"
+'''
+
+
 # detecting the OS
 import sys
 

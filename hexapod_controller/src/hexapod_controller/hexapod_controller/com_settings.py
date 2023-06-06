@@ -1,3 +1,9 @@
+'''
+    File info:      
+    uart communication settings for dynamxel AX-12A servos
+'''
+
+
 # import os
 # import time
 
