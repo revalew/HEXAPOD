@@ -52,12 +52,23 @@ M / , : Z rotation
 1 : move forward
 2 : move backward
 3 : move stop
+
+
 ---------------------------
 
 anything else : back to initial position
 
 CTRL-C to quit
 """
+
+chooseRobotState = {
+    '0': "idle",
+    '4': "walk",
+    '5': "rotate_left",
+    '6': "rotate_right",
+    '7': "body_manipulation",
+}
+
 movementDirection = {
     '1': 1,
     '2': -1,
@@ -160,6 +171,7 @@ def main():
     rotZ = 0
     status = 0
     direction = 0
+    robot_state = "idle"
 
     try:
         print(msg)
@@ -181,6 +193,8 @@ def main():
                 rotZ = rotZ + rotationBindings[key][2]              
             elif key in movementDirection.keys():
                 direction = movementDirection[key]
+            elif key in chooseRobotState.keys():
+                robot_state = chooseRobotState[key]
             else:
                 transX = 0
                 transY = 0
@@ -189,6 +203,7 @@ def main():
                 rotY = 0
                 rotZ = 0
                 direction = 0
+                robot_state = "idle"
                 if (key == '\x03'):
                     break
 
@@ -200,6 +215,7 @@ def main():
             cmd.position_of_the_body[4] = rotY
             cmd.position_of_the_body[5] = rotZ
             cmd.move_direction = direction
+            cmd.robot_state = robot_state
             pub_.publish(cmd)
 
     except Exception as e:
@@ -214,6 +230,7 @@ def main():
         cmd.position_of_the_body[4] = 0
         cmd.position_of_the_body[5] = 0
         cmd.move_direction = 0
+        cmd.robot_state = "idle"
         pub_.publish(cmd)
 
         restoreTerminalSettings(settings)

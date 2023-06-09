@@ -134,8 +134,28 @@ class MotorController(Node):
 
         # TRIPOD GAIT PATTERN
         if msg.status_name == "walk_tripod":
+            # for gait_index in range(GAIT_SIZE):
+            #     self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
+            self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
+                
+        if msg.status_name == "rotate_left_tripod":
             for gait_index in range(GAIT_SIZE):
+                
+                if (self.id_index == 0 or self.id_index == 1 or self.id_index == 2 ):
+                    self.move_direction = -1
+                    
                 self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
+                
+        if msg.status_name == "rotate_right_tripod":
+            for gait_index in range(GAIT_SIZE):
+                
+                if (self.id_index == 3 or self.id_index == 4 or self.id_index == 5 ):
+                    self.move_direction = -1
+                    
+                self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
+                
+        if msg.status_name == "body_manipulation":
+            self.body_manipulation()
                 
         
     def leg_trajectory(self, direction, up_or_down):
@@ -163,20 +183,29 @@ class MotorController(Node):
         
         # variables
         trajectory_variant      = 0  
-        WAIT_TIME               = 0.005
+        WAIT_TIME               = 0.04
         
         # step logic
-        if up_or_down:
-            # leg in the air - ellipse movement
-            trajectory_variant  = 0
-            points              = [p for p in range(20,-21,-10)]
-        else:
-            # leg on the ground - line movement
-            trajectory_variant  = 1
-            points              = [p for p in range(-20,21,10)]
+        # if up_or_down:
+        #     # leg in the air - ellipse movement
+        #     trajectory_variant  = 0
+        #     # points              = [p for p in range(20,-21,-10)]
+        #     points              = [20, 10, 0, -10, -20]
+        # else:
+        #     # leg on the ground - line movement
+        #     trajectory_variant  = 1
+        #     # points              = [p for p in range(-20,21,10)]
+        #     points              = [-20, -10, 0, 10, 20]
+        
+        points              = [20, 10, 0, -10, -20, -20, -10, 0, 10, 20]
             
         # leg inverse kinematics calculation and msg publication for every point in trajectory
+        index = 0
         for x in points:
+            
+            if (index > 4):
+                trajectory_variant = 1
+            index += 1
 
             # calculate the angles of the servos
             leg_value = ik.body_move(self.goal_pos[0],
@@ -196,6 +225,31 @@ class MotorController(Node):
             # publishing values of leg axes for current point each iteration 
             time.sleep(WAIT_TIME)
             self.leg_pub_.publish(cmd)
+            
+
+    
+    def body_manipulation(self):
+        '''
+            Change the position of the body based on the keyboard input
+        '''
+        
+        # msg initialization with default values
+        cmd = Leg()
+        
+        leg_value = ik.body_ik(self.id_index,
+                                self.goal_pos[0],
+                                self.goal_pos[1],
+                                self.goal_pos[2],
+                                self.goal_pos[3],
+                                self.goal_pos[4],
+                                self.goal_pos[5])
+        
+        cmd.coxa = leg_value[0] # coxa leg value
+        cmd.femur = leg_value[1] # femur leg value
+        cmd.tibia = leg_value[2] # tibia leg value
+        
+        # publishing values of leg axes for current point each iteration 
+        self.leg_pub_.publish(cmd)
             
         
 # NODE FUNCTIONS called from setup.py / hexapod.launch.py
