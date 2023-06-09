@@ -145,7 +145,7 @@ in the matrix below this is represented by:
 1 => the leg is up
 0 => the leg is down
 '''
-GAIT_SIZE = 6
+GAIT_SIZE = 2
 
 tripod_gait = [[1,0,1,0,1,0],
                [0,1,0,1,0,1],

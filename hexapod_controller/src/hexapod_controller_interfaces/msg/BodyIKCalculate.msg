@@ -3,6 +3,7 @@
 # INITIALIZE ALL OF THE VALUES WITH 0 - STARTING POSSITION
 int16[6] position_of_the_body [0, 0, 0, 0, 0, 0]
 int16 move_direction 0
+string robot_state "idle"
 
 # position_of_the_body:
 #     0: transX
@@ -16,3 +17,10 @@ int16 move_direction 0
 #     1: forward
 #    -1: backward
 #     0: STOP
+
+# robot_state
+#     "idle":               do nothing
+#     "walk":               walking in a specified direction
+#     "rotate_left":        rotate the body anti-clockwise
+#     "rotate_right":       rotate the body clockwise
+#     "body_manipulation":  manipulate the position of the body (ONLY BODY)
