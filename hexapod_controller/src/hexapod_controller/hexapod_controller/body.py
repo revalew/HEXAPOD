@@ -35,7 +35,7 @@ class BodyIKNode(Node):
         self.controll_status_pub_ = self.create_publisher(ControllStatus, "control_status", 10)
         self.keyboard_callback_sub_ = self.create_subscription(BodyIKCalculate, "body_IK_calculations", self.keyboard_callback, 20)
         
-        self.timer_ = self.create_timer(1.8, self.robot_state_machine_callback)
+        self.timer_ = self.create_timer(0.2, self.robot_state_machine_callback)
     
     
     def group_walk(self, x=1):
@@ -54,7 +54,6 @@ class BodyIKNode(Node):
         '''
         cmd = ControllStatus()
         cmd.status_name = "rotate_left_tripod"
-        # cmd.variable_1 = x
         self.controll_status_pub_.publish(cmd) 
         
         
@@ -64,7 +63,6 @@ class BodyIKNode(Node):
         '''
         cmd = ControllStatus()
         cmd.status_name = "rotate_right_tripod"
-        # cmd.variable_1 = x
         self.controll_status_pub_.publish(cmd)
         
         

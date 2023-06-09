@@ -32,6 +32,14 @@ class MotorController(Node):
         self.goal_pos               = [0,0,0,0,0,0]
         self.move_direction         = 0
         
+        
+        self.points                 = [20, 10, 0, -10, -20, -20, -10, 0, 10, 20]
+        self.index                  = 0
+        self.trajectory_variant     = 0
+        self.gait_index             = 0 
+        
+        
+        
         # Name of the node
         name = f"pose_subscriber_{id}"
         super().__init__(name)
@@ -62,6 +70,15 @@ class MotorController(Node):
             self.femur = 10
             self.tibia = 11
             self.id_index = 3
+            
+        self.up_or_down = tripod_gait[self.id_index][self.gait_index]
+        
+        if self.up_or_down:
+            self.trajectory_variant  = 0
+            self.index               = 0
+        else:
+            self.trajectory_variant  = 1
+            self.index               = 5
         
         # create the leg specific topic and its publisher
         topic_name = "leg_" + str(self.id_id)
@@ -135,30 +152,31 @@ class MotorController(Node):
         # TRIPOD GAIT PATTERN
         if msg.status_name == "walk_tripod":
             # for gait_index in range(GAIT_SIZE):
-            #     self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
-            self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
+            self.leg_trajectory(direction=self.move_direction)
+            
+            # self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][self.gait_index])
                 
         if msg.status_name == "rotate_left_tripod":
-            for gait_index in range(GAIT_SIZE):
+            # for gait_index in range(GAIT_SIZE):
                 
-                if (self.id_index == 0 or self.id_index == 1 or self.id_index == 2 ):
-                    self.move_direction = -1
-                    
-                self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
+            if (self.id_index == 0 or self.id_index == 1 or self.id_index == 2 ):
+                self.move_direction = -1
+                
+            self.leg_trajectory(direction=self.move_direction)
                 
         if msg.status_name == "rotate_right_tripod":
-            for gait_index in range(GAIT_SIZE):
+            # for gait_index in range(GAIT_SIZE):
                 
-                if (self.id_index == 3 or self.id_index == 4 or self.id_index == 5 ):
-                    self.move_direction = -1
-                    
-                self.leg_trajectory(direction=self.move_direction, up_or_down=tripod_gait[self.id_index][gait_index])
+            if (self.id_index == 3 or self.id_index == 4 or self.id_index == 5 ):
+                self.move_direction = -1
+                
+            self.leg_trajectory(direction=self.move_direction)
                 
         if msg.status_name == "body_manipulation":
             self.body_manipulation()
                 
         
-    def leg_trajectory(self, direction, up_or_down):
+    def leg_trajectory(self, direction):
         '''
         Function responsible for moving a specific leg to walk forward / backward
 
@@ -182,8 +200,7 @@ class MotorController(Node):
         cmd = Leg()
         
         # variables
-        trajectory_variant      = 0  
-        WAIT_TIME               = 0.04
+        WAIT_TIME               = 0.05
         
         # step logic
         # if up_or_down:
@@ -197,35 +214,47 @@ class MotorController(Node):
         #     # points              = [p for p in range(-20,21,10)]
         #     points              = [-20, -10, 0, 10, 20]
         
-        points              = [20, 10, 0, -10, -20, -20, -10, 0, 10, 20]
+        
             
-        # leg inverse kinematics calculation and msg publication for every point in trajectory
-        index = 0
-        for x in points:
             
-            if (index > 4):
-                trajectory_variant = 1
-            index += 1
 
-            # calculate the angles of the servos
-            leg_value = ik.body_move(self.goal_pos[0],
-                                self.goal_pos[1],
-                                self.goal_pos[2],
-                                self.goal_pos[3],
-                                self.goal_pos[4],
-                                self.goal_pos[5],
-                                x*LEG_DIRECTION_SWAP[self.id_index]*direction,
-                                self.id_index,
-                                trajectory_variant)
+        # leg inverse kinematics calculation and msg publication for every point in trajectory
+        # if (self.index > 4 and not up_or_down):
+        if (self.index > 4):
+            self.trajectory_variant  = 1
+
+        
+        # if (self.index >= 9 and up_or_down): 
+        if (self.index >= 9): 
+            self.index = 0
+            self.trajectory_variant = 0
+        
+            # if (self.gait_index == 0): self.gait_index = 1
+            # else: self.gait_index = 0
             
-            cmd.coxa = leg_value[0] # coxa leg value
-            cmd.femur = leg_value[1] # femur leg value
-            cmd.tibia = leg_value[2] # tibia leg value
-            
-            # publishing values of leg axes for current point each iteration 
-            time.sleep(WAIT_TIME)
-            self.leg_pub_.publish(cmd)
-            
+        x = self.points[self.index]
+
+        # calculate the angles of the servos
+        leg_value = ik.body_move(self.goal_pos[0],
+                            self.goal_pos[1],
+                            self.goal_pos[2],
+                            self.goal_pos[3],
+                            self.goal_pos[4],
+                            self.goal_pos[5],
+                            x*LEG_DIRECTION_SWAP[self.id_index]*direction,
+                            self.id_index,
+                            self.trajectory_variant)
+        
+        cmd.coxa = leg_value[0] # coxa leg value
+        cmd.femur = leg_value[1] # femur leg value
+        cmd.tibia = leg_value[2] # tibia leg value
+        
+        # publishing values of leg axes for current point each iteration 
+        # time.sleep(WAIT_TIME)
+        self.leg_pub_.publish(cmd)
+        
+        self.index += 1
+        
 
     
     def body_manipulation(self):
@@ -250,6 +279,7 @@ class MotorController(Node):
         
         # publishing values of leg axes for current point each iteration 
         self.leg_pub_.publish(cmd)
+    
             
         
 # NODE FUNCTIONS called from setup.py / hexapod.launch.py
