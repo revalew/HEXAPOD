@@ -30,29 +30,48 @@ Translation:
     Q   W   E
     A   S   D
 
+---------------------------
 Rotation:
     U   I
     J   K
     M   ,
     
+---------------------------
 Movement direction:
     1
     2
     3
 
 ---------------------------
+Controll mode / state:
+    4
+    5
+    6
+    7
+    0
+
+---------------------------
 W / S : X translation
 A / D : Y translation
 Q / E : Z translation
 
+---------------------------
 U / I : X rotation
 J / K : Y rotation
 M / , : Z rotation
 
+---------------------------
 1 : move forward
 2 : move backward
 3 : move stop
 
+---------------------------
+4 : walk in a given direction (can be changed with 1 and 2)
+5 : rotate the robot counter-clockwise
+6 : rotate the robot clockwise
+7 : enter the body manipulation mode (standing still)
+
+0 : idle state, do nothing
 
 ---------------------------
 
