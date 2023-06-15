@@ -50,7 +50,7 @@ class BodyIKNode(Node):
         
     def group_rotate_left(self, x=1):
         '''
-            Rotate the robot anti-clockwise
+        Rotate the robot anti-clockwise
         '''
         cmd = ControllStatus()
         cmd.status_name = "rotate_left_tripod"
@@ -59,7 +59,7 @@ class BodyIKNode(Node):
         
     def group_rotate_right(self, x=1):
         '''
-            Rotate the robot clockwise
+        Rotate the robot clockwise
         '''
         cmd = ControllStatus()
         cmd.status_name = "rotate_right_tripod"
@@ -68,7 +68,7 @@ class BodyIKNode(Node):
         
     def group_body_manipulation(self):
         '''
-            Manipulate the position of the body
+        Manipulate the position of the body
         '''
         cmd = ControllStatus()
         cmd.status_name = "body_manipulation"
@@ -77,11 +77,10 @@ class BodyIKNode(Node):
         
     def keyboard_callback(self, msg: BodyIKCalculate):
         self.robot_state = msg.robot_state
-        
+    
+
     # !!! --- WORK IN PROGRESS BELOW ---
     def robot_state_machine_callback(self):
-        
-        
         # walk
         if (self.robot_state == "walk"):
             self.get_logger().info("HEXAPOD's status: walk.")
@@ -107,14 +106,24 @@ class BodyIKNode(Node):
         elif (self.robot_state == "body_manipulation"):
             self.get_logger().info("HEXAPOD's status: body_manipulation.")
             self.group_body_manipulation()
-            
+
+        # ENABLE torque
+        elif (self.robot_state == "torque_enable"):
+            self.get_logger().info("HEXAPOD's status: torque_enable.")
+            gain_strength()
+        
+        # DISABLE torque
+        elif (self.robot_state == "torque_disable"):
+            self.get_logger().info("HEXAPOD's status: torque_disable.")
+            loose_strength()
+
         # idle
         else:
             self.get_logger().info("HEXAPOD's status: idle.")
     # !!! -----------------------------
         
         
-def gain_strength(DXL_ID):
+def gain_strength(DXL_ID = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]):
     '''
      Enable torque on all 18 axes
     '''
@@ -123,7 +132,7 @@ def gain_strength(DXL_ID):
         time.sleep(0.1)
    
         
-def loose_strength(DXL_ID):
+def loose_strength(DXL_ID = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]):
     '''
      Disable torque on all 18 axes
     '''
