@@ -160,7 +160,8 @@ class MotorController(Node):
             # for gait_index in range(GAIT_SIZE):
                 
             if (self.id_index == 0 or self.id_index == 1 or self.id_index == 2 ):
-                self.move_direction = -1
+                # self.move_direction = -1  # !! CHANGED HERE
+                self.move_direction *= -1
                 
             self.leg_trajectory(direction=self.move_direction)
                 
@@ -168,7 +169,8 @@ class MotorController(Node):
             # for gait_index in range(GAIT_SIZE):
                 
             if (self.id_index == 3 or self.id_index == 4 or self.id_index == 5 ):
-                self.move_direction = -1
+                # self.move_direction = -1  # !! CHANGED HERE
+                self.move_direction *= -1
                 
             self.leg_trajectory(direction=self.move_direction)
                 
@@ -259,7 +261,7 @@ class MotorController(Node):
     
     def body_manipulation(self):
         '''
-            Change the position of the body based on the keyboard input
+        Change the position of the body based on the keyboard input
         '''
         
         # msg initialization with default values

@@ -49,6 +49,7 @@ as BodyIKCalculate message.
 |       5   9                                                               |
 |       6   0                                                               |
 |       7                                                                   |
+|                                                                           |
 |---------------------------------------------------------------------------|
 |   4 : walk in a given direction (can be changed with 1 and 2)             |
 |   5 : rotate the robot counter-clockwise                                  |
@@ -79,7 +80,6 @@ chooseRobotState = {
 movementDirection = {
     '1': 1,
     '2': -1,
-    # '3': 0,
 }
 
 moveBindings = {
@@ -177,7 +177,7 @@ def main():
     rotY = 0
     rotZ = 0
     status = 0
-    direction = 0
+    direction = 1
     robot_state = "idle"
 
     try:
@@ -209,7 +209,7 @@ def main():
                 rotX = 0
                 rotY = 0
                 rotZ = 0
-                direction = 0
+                direction = 1
                 robot_state = "idle"
                 if (key == '\x03'):
                     break
@@ -236,7 +236,7 @@ def main():
         cmd.position_of_the_body[3] = 0
         cmd.position_of_the_body[4] = 0
         cmd.position_of_the_body[5] = 0
-        cmd.move_direction = 0
+        cmd.move_direction = 1
         cmd.robot_state = "idle"
         pub_.publish(cmd)
 
