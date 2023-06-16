@@ -13,5 +13,8 @@ hexapod_controller/build
 hexapod_controller/install
 hexapod_controller/log
 
+# exclude the backup directory as we no longer need it
+some_tests_BACKUP
+
 # exclude all of the cache folders in any level of subdirectory
 **/__pycache__
