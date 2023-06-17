@@ -15,11 +15,11 @@
 <table align="center" text-align="center">
 <thead><th align="center">
 
-### EN
+#### EN
 
 </th><th>&emsp;&emsp;</th><th align="center">
 
-### PL
+#### PL
 
 </th></thead>
 <tbody>
