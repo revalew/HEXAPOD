@@ -14,12 +14,10 @@
 <table align="center" text-align="center">
 <thead><th align="center">
 
-### EN
-
+#### EN
 </th><th>&emsp;&emsp;</th><th align="center">
 
-### PL
-
+#### PL
 </th></thead>
 <tbody>
 <tr><td align="center">
@@ -52,21 +50,21 @@
 ---
 
 ## Spis treści
-* [O projekcie](https://github.com/revalew/HEXAPOD/tree/master#o-projekcie)
-* [Postęp prac](https://github.com/revalew/HEXAPOD/tree/master#postep-prac)
-  * [Pierwszy sukces](https://github.com/revalew/HEXAPOD/tree/master#pierwszy-sukces)
-  * [Pomyślne połączenie](https://github.com/revalew/HEXAPOD/tree/master#pomyslne-polaczenie)
-  * [Pierwsze powstanie](https://github.com/revalew/HEXAPOD/tree/master#pierwsze-powstanie)
-  * [Sterowanie wszystkimi serwomechanizmami za pomocą kinematyki odwrotnej](https://github.com/revalew/HEXAPOD/tree/master#sterowanie-wszystkimi-serwomechanizmami-za-pomoca-kinematyki-odwrotnej)
-  * [Pierwsza przechadzka](https://github.com/revalew/HEXAPOD/tree/master#pierwsza-przechadzka)
-  * [Nasz własny projekt nogi](https://github.com/revalew/HEXAPOD/tree/master#nasz-wlasny-projekt-nogi)
-  * [Teleobsługa HEXAPODa za pomocą klawiatury (zdalne sterowanie)](https://github.com/revalew/HEXAPOD/tree/master#teleobsługa-hexapoda-za-pomoca-klawiatury-zdalne-sterowanie)
-  * [Ulepszenie struktury kodu poprzez dodanie maszyny stanów robota](https://github.com/revalew/HEXAPOD/tree/master#ulepszenie-struktury-kodu-poprzez-dodanie-maszyny-stanow-robota)
-  * [Bezprzewodowe sterowanie robotem zasilanym z baterii](https://github.com/revalew/HEXAPOD/tree/master#bezprzewodowe-sterowanie-robotem-zasilanym-z-baterii)
-  * [Dodanie prywatnego punktu dostępu (*Access Point*)](https://github.com/revalew/HEXAPOD/tree/master#dodanie-prywatnego-punktu-dostepu-access-point)
-* [Problemy i plany na przyszłość](https://github.com/revalew/HEXAPOD/tree/master#problemy-i-plany-na-przyszłosc)
-  * [Bieżące problemy](https://github.com/revalew/HEXAPOD/tree/master#biezace-problemy)
-  * [Przyszłe ulepszenia i plany rozwoju](https://github.com/revalew/HEXAPOD/tree/master#przyszle-ulepszenia-i-plany-rozwoju)
+* [O projekcie](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#o-projekcie)
+* [Postęp prac](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#post%C4%99p-prac)
+  * [Pierwszy sukces](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pierwszy-sukces)
+  * [Pomyślne połączenie](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pomy%C5%9Blne-po%C5%82%C4%85czenie)
+  * [Pierwsze powstanie](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pierwsze-powstanie)
+  * [Sterowanie wszystkimi serwomechanizmami za pomocą kinematyki odwrotnej](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#sterowanie-wszystkimi-serwomechanizmami-za-pomoc%C4%85-kinematyki-odwrotnej)
+  * [Pierwsza przechadzka](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pierwsza-przechadzka)
+  * [Nasz własny projekt nogi](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#nasz-w%C5%82asny-projekt-nogi)
+  * [Teleobsługa HEXAPODa za pomocą klawiatury (zdalne sterowanie)](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#teleobs%C5%82uga-hexapoda-za-pomoc%C4%85-klawiatury-zdalne-sterowanie)
+  * [Ulepszenie struktury kodu poprzez dodanie maszyny stanów robota](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#ulepszenie-struktury-kodu-poprzez-dodanie-maszyny-stan%C3%B3w-robota)
+  * [Bezprzewodowe sterowanie robotem zasilanym z baterii](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#bezprzewodowe-sterowanie-robotem-zasilanym-z-baterii)
+  * [Dodanie prywatnego punktu dostępu (*Access Point*)](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#dodanie-prywatnego-punktu-dost%C4%99pu-access-point)
+* [Problemy i plany na przyszłość](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#problemy-i-plany-na-przysz%C5%82o%C5%9B%C4%87)
+  * [Bieżące problemy](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#bie%C5%BC%C4%85ce-problemy)
+  * [Przyszłe ulepszenia i plany rozwoju](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#przysz%C5%82e-ulepszenia-i-plany-rozwoju)
 
 
 ## O projekcie
