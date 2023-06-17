@@ -40,7 +40,7 @@
 </td></tr>
 <tr><td align="center">
 
-[Read the README in English (EN)](./docs/README.md)
+[Read the README in English (EN)](./README.md)
 
 </td><td>&emsp;</td><td align="center">
 
