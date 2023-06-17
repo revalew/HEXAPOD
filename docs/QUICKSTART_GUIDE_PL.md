@@ -37,11 +37,11 @@ Na komputerze Raspberry Pi należy zainstalować Docker oraz Git
 ## Pierwsze uruchomienie programu
 
 Po zainstalowaniu wymaganego oprogramowania, należy wykonać następujące czynności:
-- Przejść do wybranego przez siebie katalogu (np. /home/pi/)
+- Przejść do wybranego przez siebie katalogu (np. `/home/pi/`, gdzie pi to nazwa użytkownika)
     ```bash
     cd /home/pi/
     ```
-    lub utworzyć własny w dowolnym miejścu (np. /root/),
+    lub utworzyć własny w dowolnym miejscu (np. `/root/`),
     ```bash
     mkdir ~/HEXAPOD/
     ```
@@ -53,12 +53,12 @@ Po zainstalowaniu wymaganego oprogramowania, należy wykonać następujące czyn
     ```bash
     cd ~/HEXAPOD/docker
     ```
-- Upewnić się, że konwerter TTL jest podpięty do portu USB i ma adres /dev/ttyUSB0,
+- Upewnić się, że konwerter TTL jest podpięty do portu USB i ma adres `/dev/ttyUSB0`,
     ```bash
     dmesg | grep tty
     ```
     jeżeli konwerter ma inny adres, należy zmienić go na odpowiedni w pliku *docker-compose.yml* w sekcji *devices*.
--  Utworzyć obraz docker zgodnie z instrukcjami pliku *dockerfile*
+- Utworzyć obraz docker zgodnie z instrukcjami pliku *dockerfile*
     ```bash
     docker build -t ros2 .
     ```
@@ -71,7 +71,7 @@ Po zainstalowaniu wymaganego oprogramowania, należy wykonać następujące czyn
     ```bash
     docker exec -it docker_ros2_1 bash
     ```
-    jeżeli występuje błąd nazwy (docker_ros2_1 sięnie zgadza), należy sprawdzić nazwę kontenera za pomocą 
+    jeżeli występuje błąd nazwy (docker_ros2_1 się nie zgadza), należy sprawdzić nazwę kontenera
     ```bash
     docker ps
     ```
@@ -98,7 +98,7 @@ Po zainstalowaniu wymaganego oprogramowania, należy wykonać następujące czyn
     ```bash
     ros2 run hexapod_controller keyboard_node
     ```
- Po skończonej zabawie można zamknąć aplikację w obu terminalach (każdy osobno) za pomocą kombinacji "Ctrl + C".
+Po skończonej zabawie można zamknąć aplikację w obu terminalach (każdy osobno) za pomocą kombinacji "Ctrl + C".
 
 ---
 
@@ -123,8 +123,8 @@ Po zgaśnięciu diody zielonej (chwilę miga po wyłączeniu), która sygnalizuj
 
 ## Kolejne uruchomienia programu
 
- Gdy raz już zbudujemy kontener i skompilujemy program, to możemy go znacznie szybciej uruchamiać:
- - Upewnić się, że konwerter TTL jest podpięty do portu USB i ma adres /dev/ttyUSB0,
+Gdy raz już zbudujemy kontener i skompilujemy program, to możemy go znacznie szybciej uruchamiać:
+- Upewnić się, że konwerter TTL jest podpięty do portu USB i ma adres `/dev/ttyUSB0`,
     ```bash
     dmesg | grep tty
     ```
@@ -165,11 +165,11 @@ Po zgaśnięciu diody zielonej (chwilę miga po wyłączeniu), która sygnalizuj
 ```bash
 dmesg | grep tty
 ```
-Po ustaleniu numeru należy go zmienić w ustawieniach (w pliku *docker-compose.yml*) i na nowo uruchomić kontener. Tutaj jednak może się okazać, że nasz program nie działa, pomimo uruchomienia kontenera. W takim przypadku należy wykorzystać plik o adekwatnej nazwie "whyDoIhaveToDoThis.txt", znajdującym się w folderze docker/ i skopiować całą jego zawartość. Skopiowaną treść należy wkleić w oknie terminala (w kontenerze) i wcisnąć przycisk "Enter".
+Po ustaleniu numeru należy go zmienić w ustawieniach (w pliku *docker-compose.yml*) i na nowo uruchomić kontener. Tutaj jednak może się okazać, że nasz program nie działa, pomimo uruchomienia kontenera. W takim przypadku należy wykorzystać plik o adekwatnej nazwie "whyDoIhaveToDoThis.txt", znajdującym się w folderze `docker/` i skopiować całą jego zawartość. Skopiowaną treść należy wkleić w oknie terminala (w kontenerze) i wcisnąć przycisk "Enter".
 
 ---
 
-**Q:** Wywołanie polecenia ```colcon build``` skutkuje pojawieniem się błędów i aplikacja nie działa.
+**Q:** Wywołanie polecenia `colcon build` skutkuje pojawieniem się błędów i aplikacja nie działa.
 
 **A:** Należy usunąć katalogi instalacyjne
 ```bash
