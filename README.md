@@ -1,4 +1,5 @@
 # HEXAPOD Robot 🤖🕷
+
 <p align='center'>
   <img src="./img/hexapod.png" width="375" height="260" />
   <img src="./img/hexapod_walk.gif" width="375" height="260" />
@@ -6,6 +7,50 @@
   <img src="./img/hexapod_remote_rotate.gif" width="375" height="260" />
   <img src="./img/hexapod_remote_body.gif" width="375" height="260" />
 </p>
+
+---
+
+## Choose your language
+
+<table align="center" text-align="center">
+<thead><th align="center">
+
+#### EN
+
+</th><th>&emsp;&emsp;</th><th align="center">
+
+#### PL
+
+</th></thead>
+<tbody>
+<tr><td align="center">
+
+[Read the QuickStart Guide in English (EN)](./docs/QUICKSTART_GUIDE_EN.md)
+
+<!-- |README|QuickStart Guide|
+|:-:|:-:|
+|[Read the README in English (EN)](./docs/README.md)|[Read the QuickStart Guide in English (EN)](./docs/QUICKSTART_GUIDE_EN.md)| -->
+</td><td>&emsp;</td><td align="center">
+
+[Przeczytaj QuickStart Guide po polsku (PL)](./docs/QUICKSTART_GUIDE_PL.md)
+
+<!-- |README|QuickStart Guide|
+|:-:|:-:|
+|[Przeczytaj README po polsku (PL)](./docs/README_PL.md)|[Przeczytaj QuickStart Guide po polsku (PL)](./docs/QUICKSTART_GUIDE_PL.md)| -->
+</td></tr>
+<tr><td align="center">
+
+[Read the README in English (EN)](./README.md)
+
+</td><td>&emsp;</td><td align="center">
+
+[Przeczytaj README po polsku (PL)](./docs/README_PL.md)
+
+</td></tr>
+</tbody>
+</table>
+
+---
 
 ## Table of Contents
 * [About](https://github.com/revalew/HEXAPOD/tree/master#about)
@@ -19,6 +64,7 @@
   * [Teleoperating HEXAPOD with a keyboard](https://github.com/revalew/HEXAPOD/tree/master#teleoperating-hexapod-with-a-keyboard)
   * [Improved the code structure by adding the robot state machine](https://github.com/revalew/HEXAPOD/tree/master#improved-the-code-structure-by-adding-the-robot-state-machine)
   * [Controlling the battery powered robot wirelessly](https://github.com/revalew/HEXAPOD/tree/master#controlling-the-battery-powered-robot-wirelessly)
+  * [Adding the private Access Point](https://github.com/revalew/HEXAPOD/tree/master#adding-the-private-access-point)
 * [Issues & plans](https://github.com/revalew/HEXAPOD/tree/master#issues--plans)
   * [Current problems](https://github.com/revalew/HEXAPOD/tree/master#current-problems)
   * [Future improvements and plans of development](https://github.com/revalew/HEXAPOD/tree/master#future-improvements-and-plans-of-development)
@@ -74,7 +120,7 @@ After few attempts HEXAPOD can finaly stand up easily! Still a lot of work to do
 Many hours and iterations later we finally managed to use the ROS2 capabilities to move every leg simultaneously! To achieve this we used:
 - improved code structure - we moved every leg into one file and made separate functions for each leg,
 - custom interface, which is basically an array of positions for the servos,
-- different packet structure for controlling the servos - we used a Dynamixel's class called "GroupSyncWrite" to minimize the number of the messages sent (just 6 now!),
+- different packet structure for controlling the servos - we used a DynamixelSDK's class called "GroupSyncWrite" to minimize the number of the messages sent (just 6 now!),
 - launch file, which spawns a separate process for each of the legs and for the body, allowing us to execute them at the same time.
 
 <p align='center'>
@@ -106,6 +152,7 @@ Summary:
 Because of the problems we were having with the current leg design, we decided to make a new one. The legs we were using were very slippery, so the robot was struggling and sliding all over the table. The new design aims to solve this problem by adding rubber feet. The first thing we tried was generative design, but it turned out to be really difficult to print with our current 3D printer and our knowledge of printing in general.
 We then moved to a simpler design, but as always we forgot something and this time the design was flawed because it only allowed the angle to change in a range of 0-180 degrees.
 We quickly fixed the angle limitation problem. We changed the length of the leefs that attach the leg to the servo and slightly modified the shape and now everything looks amazing. Now we can try them out in real life and see if this helps to solve the lack of friction problem.
+
 <p align='center'>
   <img src="./img/hexapod_generative_leg.jpg" width="375" height="260" />
   <img src="./img/hexapod_new_leg.png" width="375" height="260" />
@@ -149,6 +196,11 @@ In the gifs below you can see that we have managed to implement the inverse kine
 
 ----
 
+### Adding the private Access Point
+This time we added the ESP8266 to act as an access point for our robot and laptop, so now we can take the HEXAPOD for a longer walk outside of our workshop! This may not seem like much, but it helped us impress the Project Supervisor at the university when the robot walked into his office on its own 😎.
+
+----
+
 ## Issues & plans
 
 ### Current problems:
@@ -158,7 +210,7 @@ In the gifs below you can see that we have managed to implement the inverse kine
 - changing mechanical parts, e.g. 3D printed less slippery feet (✅),
 - teleoperation using keyboard (✅),
 - teleoperation using Xbox controller (❌),
-- add the ESP8266 as a private access point to become a fully mobile platform (❌),
+- add the ESP8266 as a private access point to become a fully mobile platform (✅),
 - changing the pitch and roll of the body while walking (✅),
 - turning while standing still (✅),
 - turning while walking (❌),
