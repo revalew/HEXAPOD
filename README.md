@@ -16,11 +16,9 @@
 <thead><th align="center">
 
 #### EN
-
-</th><th>&emsp;&emsp;</th><th align="center">
+</th><th>&emsp;</th><th align="center">
 
 #### PL
-
 </th></thead>
 <tbody>
 <tr><td align="center">
@@ -65,7 +63,7 @@
   * [Improved the code structure by adding the robot state machine](https://github.com/revalew/HEXAPOD/tree/master#improved-the-code-structure-by-adding-the-robot-state-machine)
   * [Controlling the battery powered robot wirelessly](https://github.com/revalew/HEXAPOD/tree/master#controlling-the-battery-powered-robot-wirelessly)
   * [Adding the private Access Point](https://github.com/revalew/HEXAPOD/tree/master#adding-the-private-access-point)
-  * [Enhanced traction](https://github.com/revalew/HEXAPOD/tree/master#enchanced-traction)
+  * [Improved traction](https://github.com/revalew/HEXAPOD/tree/master#improved-traction)
 * [Issues & plans](https://github.com/revalew/HEXAPOD/tree/master#issues--plans)
   * [Current problems](https://github.com/revalew/HEXAPOD/tree/master#current-problems)
   * [Future improvements and plans of development](https://github.com/revalew/HEXAPOD/tree/master#future-improvements-and-plans-of-development)
@@ -202,12 +200,12 @@ This time we added the ESP8266 to act as an access point for our robot and lapto
 
 ----
 
-### Enhanced traction
-With newly designed and 3D-printed legs, we were able to increase the friction of the legs on the ground. Significant here are the rubber "pads" which, through the weight of the robot, flex and further increase friction. This resulted in greater accuracy of the gait trajectory of the entire robot. Now it can be said that the robot walks stably and straight. The problem of slipping legs has been overcome! 
+### Improved traction
+With newly designed and 3D printed legs, we were able to increase the friction of the legs. This is thanks to the rubber "pads" that flex under the weight of the robot, further increasing friction. This resulted in a more accurate gait trajectory for the robot as a whole. The robot can now be said to walk in a stable and straight manner. The problem of the legs slipping has been solved!
 
 <p align='center'>
-  <img src="./img/hexapod_new_legs.jpg" width="375" height="260" />
   <img src="./img/hexapod_compared_to_first.jpg" width="375" height="260" />
+  <img src="./img/hexapod_new_legs.jpg" width="375" height="260" />
 </p>
 
 ----

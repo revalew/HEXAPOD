@@ -2,20 +2,21 @@
 
 <p align='center'>
   <img src="../img/hexapod.png" width="375" height="260" />
-  <img src="../img/hexapod_walk.gif" width="375" height="260" />
+  <img src="../img/hexapod_compared_to_first.jpg" width="375" height="260" />
   <br>
   <img src="../img/hexapod_remote_rotate.gif" width="375" height="260" />
   <img src="../img/hexapod_remote_body.gif" width="375" height="260" />
 </p>
 
 ---
+
 ## Wybierz swój język
 
 <table align="center" text-align="center">
 <thead><th align="center">
 
 #### EN
-</th><th>&emsp;&emsp;</th><th align="center">
+</th><th>&emsp;</th><th align="center">
 
 #### PL
 </th></thead>
@@ -50,22 +51,22 @@
 ---
 
 ## Spis treści
-* [O projekcie](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#o-projekcie)
-* [Postęp prac](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#post%C4%99p-prac)
-  * [Pierwszy sukces](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pierwszy-sukces)
-  * [Pomyślne połączenie](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pomy%C5%9Blne-po%C5%82%C4%85czenie)
-  * [Pierwsze powstanie](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pierwsze-powstanie)
-  * [Sterowanie wszystkimi serwomechanizmami za pomocą kinematyki odwrotnej](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#sterowanie-wszystkimi-serwomechanizmami-za-pomoc%C4%85-kinematyki-odwrotnej)
-  * [Pierwsza przechadzka](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#pierwsza-przechadzka)
-  * [Nasz własny projekt nogi](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#nasz-w%C5%82asny-projekt-nogi)
-  * [Teleobsługa HEXAPODa za pomocą klawiatury (zdalne sterowanie)](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#teleobs%C5%82uga-hexapoda-za-pomoc%C4%85-klawiatury-zdalne-sterowanie)
-  * [Ulepszenie struktury kodu poprzez dodanie maszyny stanów robota](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#ulepszenie-struktury-kodu-poprzez-dodanie-maszyny-stan%C3%B3w-robota)
-  * [Bezprzewodowe sterowanie robotem zasilanym z baterii](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#bezprzewodowe-sterowanie-robotem-zasilanym-z-baterii)
-  * [Dodanie prywatnego punktu dostępu (*Access Point*)](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#dodanie-prywatnego-punktu-dost%C4%99pu-access-point)
-* [Problemy i plany na przyszłość](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#problemy-i-plany-na-przysz%C5%82o%C5%9B%C4%87)
-  * [Bieżące problemy](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#bie%C5%BC%C4%85ce-problemy)
-  * [Przyszłe ulepszenia i plany rozwoju](https://github.com/revalew/HEXAPOD/tree/master/docs/README_PL.md#przysz%C5%82e-ulepszenia-i-plany-rozwoju)
-
+* [O projekcie](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#o-projekcie)
+* [Postęp prac](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#post%C4%99p-prac)
+  * [Pierwszy sukces](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#pierwszy-sukces)
+  * [Pomyślne połączenie](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#pomy%C5%9Blne-po%C5%82%C4%85czenie)
+  * [Pierwsze powstanie](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#pierwsze-powstanie)
+  * [Sterowanie wszystkimi serwomechanizmami za pomocą kinematyki odwrotnej](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#sterowanie-wszystkimi-serwomechanizmami-za-pomoc%C4%85-kinematyki-odwrotnej)
+  * [Pierwsza przechadzka](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#pierwsza-przechadzka)
+  * [Nasz własny projekt nogi](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#nasz-w%C5%82asny-projekt-nogi)
+  * [Teleobsługa HEXAPODa za pomocą klawiatury (zdalne sterowanie)](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#teleobs%C5%82uga-hexapoda-za-pomoc%C4%85-klawiatury-zdalne-sterowanie)
+  * [Ulepszenie struktury kodu poprzez dodanie maszyny stanów robota](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#ulepszenie-struktury-kodu-poprzez-dodanie-maszyny-stan%C3%B3w-robota)
+  * [Bezprzewodowe sterowanie robotem zasilanym z baterii](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#bezprzewodowe-sterowanie-robotem-zasilanym-z-baterii)
+  * [Dodanie prywatnego punktu dostępu (*Access Point*)](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#dodanie-prywatnego-punktu-dost%C4%99pu-access-point)
+  * [Zwiększenie przyczepności](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#zwi%C4%99kszenie-przyczepno%C5%9Bci)
+* [Problemy i plany na przyszłość](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#problemy-i-plany-na-przysz%C5%82o%C5%9B%C4%87)
+  * [Bieżące problemy](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#bie%C5%BC%C4%85ce-problemy)
+  * [Przyszłe ulepszenia i plany rozwoju](https://github.com/revalew/HEXAPOD/blob/master/docs/README_PL.md#przysz%C5%82e-ulepszenia-i-plany-rozwoju)
 
 ## O projekcie
 To jest repozytorium projektu akademickiego, który ja i moi przyjaciele rozwijamy. W żadnym wypadku nie jest on idealny, ale będziemy **CIĘŻKO** pracować, aby poprawić funkcjonalność i sprawić, by wszystko działało jak należy!
@@ -197,6 +198,16 @@ Na poniższych gifach widać, że udało nam się zaimplementować odwrotną kin
 
 ### Dodanie prywatnego punktu dostępu (*Access Point*)
 Tym razem dodaliśmy mikrokontroler ESP8266, aby działał jako punkt dostępu dla naszego robota i laptopa, więc teraz możemy zabrać HEXAPODa na dłuższy spacer poza nasz warsztat! To może nie wydawać się wiele, ale pomogło nam to zaimponować Opiekunowi Projektu na uczelni, gdy robot sam wszedł do jego biura 😎.
+
+----
+
+### Zwiększenie przyczepności
+Dzięki nowo zaprojektowanym i wydrukowanym w 3D nogom, udało nam się zwiększyć tarcie nóg. A dokładniej dzięki gumowym "podkładkom" (stopom), które uginają się pod ciężarem robota, dodatkowo zwiększając tarcie. Zaowocowało to dokładniejszą trajektorią chodu całego robota. Można teraz powiedzieć, że robot chodzi stabilnie i prosto. Problem ślizgających się nóg został rozwiązany!
+
+<p align='center'>
+  <img src="../img/hexapod_compared_to_first.jpg" width="375" height="260" />
+  <img src="../img/hexapod_new_legs.jpg" width="375" height="260" />
+</p>
 
 ----
 
