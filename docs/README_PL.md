@@ -23,14 +23,14 @@
 <tbody>
 <tr><td align="center">
 
-[Read the QuickStart Guide in English (EN)](./docs/QUICKSTART_GUIDE_EN.md)
+[Read the QuickStart Guide in English (EN)](./QUICKSTART_GUIDE_EN.md)
 
 <!-- |README|QuickStart Guide|
 |:-:|:-:|
 |[Read the README in English (EN)](./docs/README.md)|[Read the QuickStart Guide in English (EN)](./docs/QUICKSTART_GUIDE_EN.md)| -->
 </td><td>&emsp;</td><td align="center">
 
-[Przeczytaj QuickStart Guide po polsku (PL)](./docs/QUICKSTART_GUIDE_PL.md)
+[Przeczytaj QuickStart Guide po polsku (PL)](./QUICKSTART_GUIDE_PL.md)
 
 <!-- |README|QuickStart Guide|
 |:-:|:-:|
@@ -42,7 +42,7 @@
 
 </td><td>&emsp;</td><td align="center">
 
-[Przeczytaj README po polsku (PL)](./docs/README_PL.md)
+[Przeczytaj README po polsku (PL)](./README_PL.md)
 
 </td></tr>
 </tbody>
