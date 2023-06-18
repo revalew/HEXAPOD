@@ -2,7 +2,7 @@
 
 <p align='center'>
   <img src="./img/hexapod.png" width="375" height="260" />
-  <img src="./img/hexapod_walk.gif" width="375" height="260" />
+  <img src="./img/hexapod_compared_to_first.jpg" width="375" height="260" />
   <br>
   <img src="./img/hexapod_remote_rotate.gif" width="375" height="260" />
   <img src="./img/hexapod_remote_body.gif" width="375" height="260" />
@@ -16,11 +16,9 @@
 <thead><th align="center">
 
 #### EN
-
-</th><th>&emsp;&emsp;</th><th align="center">
+</th><th>&emsp;</th><th align="center">
 
 #### PL
-
 </th></thead>
 <tbody>
 <tr><td align="center">
@@ -65,6 +63,7 @@
   * [Improved the code structure by adding the robot state machine](https://github.com/revalew/HEXAPOD/tree/master#improved-the-code-structure-by-adding-the-robot-state-machine)
   * [Controlling the battery powered robot wirelessly](https://github.com/revalew/HEXAPOD/tree/master#controlling-the-battery-powered-robot-wirelessly)
   * [Adding the private Access Point](https://github.com/revalew/HEXAPOD/tree/master#adding-the-private-access-point)
+  * [Improved traction](https://github.com/revalew/HEXAPOD/tree/master#improved-traction)
 * [Issues & plans](https://github.com/revalew/HEXAPOD/tree/master#issues--plans)
   * [Current problems](https://github.com/revalew/HEXAPOD/tree/master#current-problems)
   * [Future improvements and plans of development](https://github.com/revalew/HEXAPOD/tree/master#future-improvements-and-plans-of-development)
@@ -198,6 +197,16 @@ In the gifs below you can see that we have managed to implement the inverse kine
 
 ### Adding the private Access Point
 This time we added the ESP8266 to act as an access point for our robot and laptop, so now we can take the HEXAPOD for a longer walk outside of our workshop! This may not seem like much, but it helped us impress the Project Supervisor at the university when the robot walked into his office on its own 😎.
+
+----
+
+### Improved traction
+With newly designed and 3D printed legs, we were able to increase the friction of the legs. This is thanks to the rubber "pads" that flex under the weight of the robot, further increasing friction. This resulted in a more accurate gait trajectory for the robot as a whole. The robot can now be said to walk in a stable and straight manner. The problem of the legs slipping has been solved!
+
+<p align='center'>
+  <img src="./img/hexapod_compared_to_first.jpg" width="375" height="260" />
+  <img src="./img/hexapod_new_legs.jpg" width="375" height="260" />
+</p>
 
 ----
 
